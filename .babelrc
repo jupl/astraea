@@ -1,0 +1,22 @@
+{
+  "only": ["src"],
+  "plugins": [
+    "transform-inline-environment-variables",
+    "transform-runtime",
+    "react-hot-loader/babel"
+  ],
+  "env": {
+    "development": {
+      "presets": [["es2015", {"modules": false}]]
+    },
+    "production": {
+      "presets": [["es2015", {"modules": false}]]
+    },
+    "storybook": {
+      "presets": ["es2015"]
+    },
+    "test": {
+      "presets": ["es2015"]
+    }
+  }
+}
