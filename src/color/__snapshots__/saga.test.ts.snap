@@ -1,0 +1,126 @@
+exports[`Color saga should cycle until a previous/next event is fired 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "RACE": Object {
+      "end": Object {
+        "@@redux-saga/IO": true,
+        "TAKE": Object {
+          "pattern": Array [
+            "COLORS_PREVIOUS_COLOR",
+            "COLORS_NEXT_COLOR",
+          ],
+        },
+      },
+      "timeout": Object {
+        "@@redux-saga/IO": true,
+        "CALL": Object {
+          "args": Array [
+            4000,
+          ],
+          "context": null,
+          "fn": [Function],
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Color saga should cycle until a previous/next event is fired 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "type": "COLORS_AUTO_NEXT_COLOR",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Color saga should cycle until a previous/next event is fired 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "RACE": Object {
+      "end": Object {
+        "@@redux-saga/IO": true,
+        "TAKE": Object {
+          "pattern": Array [
+            "COLORS_PREVIOUS_COLOR",
+            "COLORS_NEXT_COLOR",
+          ],
+        },
+      },
+      "timeout": Object {
+        "@@redux-saga/IO": true,
+        "CALL": Object {
+          "args": Array [
+            4000,
+          ],
+          "context": null,
+          "fn": [Function],
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Color saga should cycle until a previous/next event is fired 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "type": "COLORS_AUTO_NEXT_COLOR",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Color saga should cycle until a previous/next event is fired 5`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "RACE": Object {
+      "end": Object {
+        "@@redux-saga/IO": true,
+        "TAKE": Object {
+          "pattern": Array [
+            "COLORS_PREVIOUS_COLOR",
+            "COLORS_NEXT_COLOR",
+          ],
+        },
+      },
+      "timeout": Object {
+        "@@redux-saga/IO": true,
+        "CALL": Object {
+          "args": Array [
+            4000,
+          ],
+          "context": null,
+          "fn": [Function],
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Color saga should cycle until a previous/next event is fired 6`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;

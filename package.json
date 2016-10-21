@@ -1,0 +1,77 @@
+{
+  "name": "Application",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "^6.0.0",
+    "npm": "^3.0.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts",
+      "tsx"
+    ],
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.tsx?$"
+  },
+  "scripts": {
+    "start": "npm run build:prod",
+    "clean": "[ -d dist ] && trash dist || true",
+    "coverage": "jest --coverage",
+    "lint": "tsc --noEmit && tslint 'src/**/*.ts{,x}'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "server": "cross-env NODE_ENV=development HOT_MODULES=true node hot-server",
+    "storybook": "cross-env NODE_ENV=storybook start-storybook -p 9001",
+    "build": "npm run clean && cross-env HOT_MODULES=false webpack",
+    "build:dev": "cross-env NODE_ENV=development npm run build",
+    "build:prod": "cross-env NODE_ENV=production npm run build"
+  },
+  "dependencies": {
+    "@types/enzyme": "^2.4.34",
+    "@types/jest": "^15.1.32",
+    "@types/node": "^6.0.41",
+    "@types/react": "^0.14.36",
+    "@types/react-dom": "^0.14.17",
+    "@types/react-redux": "^4.4.32",
+    "@types/redux-actions": "^0.8.30",
+    "awesome-typescript-loader": "^2.2.4",
+    "babel-plugin-transform-inline-environment-variables": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "copy-webpack-plugin": "^3.0.1",
+    "cross-env": "^3.1.1",
+    "css-loader": "^0.25.0",
+    "file-loader": "^0.9.0",
+    "globule": "^1.0.0",
+    "json-loader": "^0.5.4",
+    "normalize.css": "^5.0.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0",
+    "redux-actions": "^0.12.0",
+    "redux-saga": "^0.12.0",
+    "style-loader": "^0.13.1",
+    "trash-cli": "^1.3.0",
+    "typescript": "^2.0.3",
+    "webpack": "^2.1.0-beta.25"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.23.0",
+    "enzyme": "^2.4.1",
+    "eventsource-polyfill": "^0.9.6",
+    "fbjs-scripts": "^0.7.1",
+    "hapi": "^15.1.1",
+    "hapi-webpack-plugin": "^1.3.0",
+    "jest": "^16.0.1",
+    "react-addons-test-utils": "^15.3.2",
+    "react-test-renderer": "^15.3.2",
+    "redux-devtools-extension": "^1.0.0",
+    "redux-logger": "^2.7.0",
+    "tslint": "^3.15.1",
+    "tslint-react": "^1.0.0"
+  }
+}

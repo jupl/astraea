@@ -1,0 +1,30 @@
+exports[`<Color.ColorPage> should inject action props as expected 1`] = `
+Array [
+  Array [
+    Object {
+      "type": "COLORS_PREVIOUS_COLOR",
+    },
+  ],
+  Array [
+    Object {
+      "type": "COLORS_NEXT_COLOR",
+    },
+  ],
+]
+`;
+
+exports[`<Color.ColorPage> should inject props from store as expected 1`] = `
+Object {
+  "color": "red",
+  "style": undefined,
+}
+`;
+
+exports[`<Color.ColorPage> should inject props from store as expected 2`] = `
+Object {
+  "color": "red",
+  "style": Object {
+    "flex": 1,
+  },
+}
+`;

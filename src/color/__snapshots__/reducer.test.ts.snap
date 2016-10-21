@@ -1,0 +1,13 @@
+exports[`Color reducer should handle auto next color 1`] = `"#2ecc40"`;
+
+exports[`Color reducer should handle auto next color 2`] = `"#ffdc00"`;
+
+exports[`Color reducer should handle next color 1`] = `"#2ecc40"`;
+
+exports[`Color reducer should handle next color 2`] = `"#ffdc00"`;
+
+exports[`Color reducer should handle previous color 1`] = `"#ff851b"`;
+
+exports[`Color reducer should handle previous color 2`] = `"#ffdc00"`;
+
+exports[`Color reducer should start with initial state 1`] = `"#39cccc"`;
