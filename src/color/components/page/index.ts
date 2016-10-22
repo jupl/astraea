@@ -1,8 +1,9 @@
 import {CSSProperties} from 'react'
 import {connect} from 'react-redux'
+import {Dispatch} from 'redux'
 import ColorPage, {Props as TemplateProps, Actions} from './template'
 import {nextColor, previousColor} from '../../actions'
-import {Dispatch, State} from '../../../app/reducer'
+import {State} from '../../reducer'
 
 /** Properties for wrapped component */
 interface Props {
@@ -27,7 +28,7 @@ export function props({color}: State, {style}: Props): TemplateProps {
  * @param dispatch Redux store dispatch function
  * @return Props to pass to component
  */
-export function actions(dispatch: Dispatch): Actions {
+export function actions(dispatch: Dispatch<State>): Actions {
   return {
     onNextColor: () => dispatch(nextColor()),
     onPreviousColor: () => dispatch(previousColor()),
