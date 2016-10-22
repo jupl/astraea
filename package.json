@@ -19,10 +19,10 @@
   "scripts": {
     "start": "npm run build:prod",
     "clean": "[ -d dist ] && trash dist || true",
-    "coverage": "jest --coverage",
+    "coverage": "npm run test -- --coverage",
     "lint": "tsc --noEmit && tslint 'src/**/*.ts{,x}'",
     "test": "jest",
-    "test:watch": "jest --watch",
+    "test:watch": "npm run test -- --watch",
     "server": "cross-env NODE_ENV=development HOT_MODULES=true node hot-server",
     "storybook": "cross-env NODE_ENV=storybook start-storybook -p 9001",
     "build": "npm run clean && cross-env HOT_MODULES=false webpack",
