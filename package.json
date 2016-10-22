@@ -20,6 +20,7 @@
     "start": "npm run build:prod",
     "clean": "[ -d dist ] && trash dist || true",
     "coverage": "npm run test -- --coverage",
+    "coverage:watch": "npm run coverage -- --watch",
     "lint": "tsc --noEmit && tslint 'src/**/*.ts{,x}'",
     "test": "jest",
     "test:watch": "npm run test -- --watch",

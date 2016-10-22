@@ -145,6 +145,9 @@ Verify that code is valid using TypeScript and TSLint. For customzation modify `
 ### `coverage`
 Like `test` task, but also collects code coverage, which becomes available in the `coverage/` directory.
 
+### `coverage:watch`
+Run converage once and rerun on changes using Jest.
+
 ### `storybook`
 Start a local server for React Storybook on port 9001. For more information visit the [documentation for React Storybook](https://getstorybook.io/docs).
 
