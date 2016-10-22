@@ -4,12 +4,12 @@ import {Store} from 'redux'
 const {AppContainer} = require('react-hot-loader')
 
 /** Container component properties */
-interface Props {
+interface Props<P> {
   /** Redux store instance */
-  store: Store<any> // tslint:disable-line:no-any
+  store: Store<any> // ts-lint:disable-line:no-any
 
   /** Component to render */
-  component: any // tslint:disable-line:no-any
+  component: React.ComponentClass<P> | (() => React.ReactElement<P>)
 }
 
 /**
@@ -17,7 +17,7 @@ interface Props {
  * @param props Component properties
  * @return Container component
  */
-export default function Container({store, component: Component}: Props) {
+export default function Container<P>({store, component: Component}: Props<P>) {
   return (
     <AppContainer>
       <Provider store={store}>
