@@ -55,13 +55,12 @@ export default function newStore<S>(options: Options<S>): Store<S> {
   const enhancer = composeWithDevTools(config)(applyMiddleware(...middlewares))
 
   // Create store instance
-  const store = createStore(reducer, initialState, enhancer)
+  const store = createStore(reducer, initialState!, enhancer)
 
   // Start running saga
   if(sagaMiddleware && saga) {
     sagaMiddleware.run(saga)
   }
 
-  // Typecast as initialState may not be defined
-  return store as Store<S>
+  return store
 }
