@@ -37,7 +37,7 @@ exports[`<App.Root> Template should render as expected 1`] = `
           "marginRight": 4,
         }
       }>
-      Welcome
+      Hello, World
     </span>
     <button
       onClick={[Function]}

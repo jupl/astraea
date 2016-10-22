@@ -40,7 +40,7 @@ export default function ColorPage({
     <div style={style}>
       <div style={GRADIENT_STYLE}>
         <button style={BUTTON_STYLE} onClick={onPreviousColor}>&lt;</button>
-        <span style={TEXT_STYLE}>Welcome</span>
+        <span style={TEXT_STYLE}>Hello, World</span>
         <button style={BUTTON_STYLE} onClick={onNextColor}>&gt;</button>
       </div>
     </div>

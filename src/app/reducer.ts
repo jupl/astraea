@@ -2,10 +2,7 @@ import {combineReducers, Dispatch} from 'redux'
 import color, {State as Color} from '../color/reducer'
 
 /** Structure of application state */
-export interface State {
-  /** Color state */
-  color: Color
-}
+export type State = Color
 
 /** Dispatcher bound to application state */
 export type Dispatch = Dispatch<State>
