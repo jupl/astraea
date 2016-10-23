@@ -29,7 +29,7 @@
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "server": "cross-env NODE_ENV=development HOT_MODULES=true node hot-server",
-    "storybook": "cross-env NODE_ENV=storybook start-storybook -p 9001",
+    "server:story": "cross-env NODE_ENV=storybook start-storybook -p 9001",
     "build": "npm run clean && cross-env HOT_MODULES=false webpack",
     "build:dev": "cross-env NODE_ENV=development npm run build",
     "build:prod": "cross-env NODE_ENV=production npm run build"

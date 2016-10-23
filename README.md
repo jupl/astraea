@@ -130,6 +130,9 @@ Start a local development server in port 3000 by default. To use another port ha
 - [Hot reloading](https://webpack.github.io/docs/hot-module-replacement.html) (including [React Hot Loader](https://github.com/gaearon/react-hot-loader))
 - [Redux DevTools Extension](http://zalmoxisus.github.io/redux-devtools-extension/) (if unavailable [Logger for Redux](https://github.com/evgenyrodionov/redux-logger) is used)
 
+### `server:story`
+Start a local server for React Storybook on port 9001. For more information visit the [documentation for React Storybook](https://getstorybook.io/docs).
+
 ### `build:dev`
 Build application and include assets into a packaged build in the `dist/` directory. This build is not minifed and includes source maps. Ideal for development.
 
@@ -150,9 +153,6 @@ Like `test` task, but also collects code coverage, which becomes available in th
 
 ### `coverage:watch`
 Run converage once and rerun on changes using Jest.
-
-### `storybook`
-Start a local server for React Storybook on port 9001. For more information visit the [documentation for React Storybook](https://getstorybook.io/docs).
 
 [<sup>Back to top</sup>](#astraea-typescript--react--redux-boilerplate)
 
