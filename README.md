@@ -34,32 +34,32 @@ This is a boilerplate project for developing a mid to large scale client-side ap
 ### Overview
 ```
 astraea/
-| +- .webpack/   # Webpack build configuration
-| +- .storybook/ # Webpack configuration
-| +- assets/     # Static files to icnlude in builds
-| +- coverage/   # Code coverage reports
-| +- dist/       # Result build data from build tasks
-+- src/
-|  +- app/                # Application domain
-|  |  +- components/root/ # Top level applicaiton view
-|  |  +- actions.test.js  # Test to ensure all actions are valid
-|  |  +- reducer.js       # Reducer for whole application
-|  |  +- saga.js          # Saga entry for whole application
-|  |  +- styles.js        # Styling for application container
-|  +- lib/                     # General purpose utilities
-|  |  +- components/container/ # Application wrapper component
-|  |  +- create-store.ts       # Helper to create a Redux store
-|  |  +- declarations.d.ts     # TypeScript declarations for project
-|  +- domain1/ # See Domains section below
-|  +- domain2/
-|  +- domainX/
-|  +- app.tsx # Application entry point
-+- hot-server.js     # Source code for local development server
-+- package.json      # Configuration, tasks, and dependencies
-+- preprocessor.js   # Set up TypeScript for Jest
-+- tsconfig.json     # TypeScript configuration
-+- tslint.json       # TypeScript linting rules
-+- yarn.lock         # Dependency pinning from Yarn
+├─ .webpack/   # Webpack build configuration
+├─ .storybook/ # Webpack configuration
+├─ assets/     # Static files to icnlude in builds
+├─ coverage/   # Code coverage reports
+├─ dist/       # Result build data from build tasks
+├─ src/
+│  ├─ app/                # Application domain
+│  │  ├─ components/root/ # Top level applicaiton view
+│  │  ├─ actions.test.js  # Test to ensure all actions are valid
+│  │  ├─ reducer.js       # Reducer for whole application
+│  │  ├─ saga.js          # Saga entry for whole application
+│  │  └─ styles.js        # Styling for application container
+│  ├─ lib/                     # General purpose utilities
+│  │  ├─ components/container/ # Application wrapper component
+│  │  ├─ create─store.ts       # Helper to create a Redux store
+│  │  └─ declarations.d.ts     # TypeScript declarations for project
+│  ├─ domain1/ # See Domains section below
+│  ├─ domain2/
+│  ├─ domainX/
+│  └─ app.tsx # Application entry point
+├─ hot─server.js     # Source code for local development server
+├─ package.json      # Configuration, tasks, and dependencies
+├─ preprocessor.js   # Set up TypeScript for Jest
+├─ tsconfig.json     # TypeScript configuration
+├─ tslint.json       # TypeScript linting rules
+└─ yarn.lock         # Dependency pinning from Yarn
 ```
 
 ### Entry Points
@@ -68,13 +68,13 @@ When JavaScript code is built, any files directly inside the `src/` directory ar
 ### Domains
 ```
 domain/
-+- components/
-|  +- component1/ # See Component sections below
-|  +- component2/
-|  +- componentX/
-+- actions.ts # Redux actions for domain
-+- reducer.ts # Domain reducer
-+- saga.ts    # Domain sagas
+├─ components/
+│  ├─ component1/ # See Component sections below
+│  ├─ component2/
+│  └─ componentX/
+├─ actions.ts # Redux actions for domain
+├─ reducer.ts # Domain reducer
+└─ saga.ts    # Domain sagas
 ```
 
 Rather than group items by things like components/reducers/actions/etc., items are grouped by domain which can be a saner option as the project grows. Examples of domains can be things like resources (ex. `blog/`, `users/`) or other things. (ex. `ui/`) Domains may include things like components, actions, reducer, sagas, etc. but they don't have to include all of them. In fact, you can think of `app/` and `lib/` as domains. Other files may be present as well.
@@ -82,8 +82,8 @@ Rather than group items by things like components/reducers/actions/etc., items a
 ### Components
 ```
 component/
-+- index.ts
-+- template.tsx
+├─ index.ts
+└─ template.tsx
 ```
 
 React components are grouped in a directory.
