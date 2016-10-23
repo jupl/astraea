@@ -12,7 +12,7 @@ describe('Actions', () => {
   it('should be unique names', () => {
     const names = actionsTable
       .map(Object.keys)
-      .reduce((array, names) => [...array, ...names], [])
+      .reduce((array, keys) => [...array, ...keys], [])
     expect(names).toEqual([...new Set(names)])
   })
 

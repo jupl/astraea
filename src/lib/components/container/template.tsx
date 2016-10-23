@@ -6,7 +6,7 @@ const {AppContainer} = require('react-hot-loader')
 /** Container component properties */
 interface Props<P> {
   /** Redux store instance */
-  store: Store<any> // ts-lint:disable-line:no-any
+  store: Store<any> // tslint:disable-line:no-any
 
   /** Component to render */
   component: React.ComponentClass<P> | (() => React.ReactElement<P>)

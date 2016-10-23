@@ -21,7 +21,7 @@
     "clean": "[ -d dist ] && trash dist || true",
     "coverage": "npm run test -- --coverage",
     "coverage:watch": "npm run coverage -- --watch",
-    "lint": "tsc --noEmit && tslint 'src/**/*.ts{,x}'",
+    "lint": "tslint --type-check --project tsconfig.json 'src/**/*.ts{,x}'",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "server": "cross-env NODE_ENV=development HOT_MODULES=true node hot-server",
@@ -74,6 +74,6 @@
     "redux-devtools-extension": "^1.0.0",
     "redux-logger": "^2.7.0",
     "tslint": "^3.15.1",
-    "tslint-react": "^1.0.0"
+    "tslint-react": "^1.1.0"
   }
 }
