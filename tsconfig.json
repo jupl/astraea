@@ -20,10 +20,6 @@
     "useBabel": true,
     "useCache": true
   },
-  "exclude": [
-    "dist",
-    "node_modules"
-  ],
   "include": [
     "src/**/*"
   ]
