@@ -32,7 +32,8 @@
     "server:story": "cross-env NODE_ENV=storybook start-storybook -p 9001",
     "build": "npm run clean && cross-env HOT_MODULES=false webpack",
     "build:dev": "cross-env NODE_ENV=development npm run build",
-    "build:prod": "cross-env NODE_ENV=production npm run build"
+    "build:prod": "cross-env NODE_ENV=production npm run build",
+    "build:story": "cross-env NODE_ENV=storybook build-storybook -o story"
   },
   "dependencies": {
     "@types/enzyme": "^2.4.34",

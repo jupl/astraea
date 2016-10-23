@@ -42,6 +42,7 @@ astraea/
 ├─ assets/     # Static files to icnlude in builds
 ├─ coverage/   # Code coverage reports
 ├─ dist/       # Result build data from build tasks
+├─ story/      # Result storybook build
 ├─ src/
 │  ├─ app/                # Application domain
 │  │  ├─ components/root/ # Top level applicaiton view
@@ -138,6 +139,9 @@ Build application and include assets into a packaged build in the `dist/` direct
 
 ### `build:prod`
 Build application and include assets into a packaged build in the `dist/` directory. This build is minified (with dead code elimination) and does not include source maps. Ideal for production. This task is also available as an alias to `start`. (`npm start`, `yarn start`)
+
+### `build:story`
+Generate a static build of React Storybook in the `story/` disrectory.
 
 ### `test`
 Run tests once using Jest. For more information visit the [documentation for Jest](facebook.github.io/jest/docs/configuration.html).
