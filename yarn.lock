@@ -2126,6 +2126,10 @@ escodegen@^1.6.1, escodegen@1.8.x:
   optionalDependencies:
     source-map "~0.2.0"
 
+eslint-config-jupl:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-jupl/-/eslint-config-jupl-0.4.1.tgz#14b1e48eae8638676f44bc9fa09a19872844c128"
+
 esprima@^2.6.0, esprima@^2.7.1, esprima@~2.7.0, esprima@2.7.x:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-2.7.3.tgz#96e3b70d5779f6ad49cd032673d1c312767ba581"
