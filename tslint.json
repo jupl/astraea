@@ -89,13 +89,7 @@
     "object-literal-shorthand": true,
     "one-line": false,
     "one-variable-per-declaration": false,
-    "ordered-imports": [
-      false,
-      {
-        "import-sources-order": "case-insensitive",
-        "named-imports-order": "case-insensitive"
-      }
-    ],
+    "ordered-imports": false,
     "quotemark": [true, "single", "jsx-double", "avoid-escape"],
     "semicolon": [true, "never"],
     "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
