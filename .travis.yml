@@ -9,5 +9,10 @@ before_install:
   - npm install -g yarn
 install:
   - yarn
+script:
+  - yarn run lint
+  - yarn run coverage
+  - yarn run build:dev
+  - yarn run build:prod
 after:
   - yarn test
