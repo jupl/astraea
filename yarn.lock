@@ -2127,7 +2127,7 @@ escodegen@^1.6.1, escodegen@1.8.x:
   optionalDependencies:
     source-map "~0.2.0"
 
-eslint-config-jupl@0.4.2:
+eslint-config-jupl@^0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/eslint-config-jupl/-/eslint-config-jupl-0.4.2.tgz#b1b8beb3a5e6b9e0b78763101e20201ce3b45b9a"
 
