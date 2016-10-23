@@ -35,11 +35,8 @@ export default function newStore<S>(options: Options<S>): Store<S> {
   let middlewares: SagaMiddleware[] = []
 
   // Create saga middleware if saga is provided
-  let sagaMiddleware: SagaMiddleware | undefined
-  if(saga) {
-    sagaMiddleware = createSagaMiddleware()
-    middlewares = [...middlewares, sagaMiddleware]
-  }
+  const sagaMiddleware = saga && createSagaMiddleware()
+  middlewares = sagaMiddleware ? [...middlewares, sagaMiddleware] : middlewares
 
   // Add redux-logger middleware in development when there's no Redux DevTools
   if(process.env.NODE_ENV !== 'production' && devToolsAvailable) {
