@@ -946,7 +946,7 @@ babel-plugin-transform-strict-mode@^6.8.0:
     babel-runtime "^6.0.0"
     babel-types "^6.8.0"
 
-babel-preset-es2015@^6.14.0:
+babel-preset-es2015@^6.14.0, babel-preset-es2015@^6.16.0:
   version "6.16.0"
   resolved "https://registry.yarnpkg.com/babel-preset-es2015/-/babel-preset-es2015-6.16.0.tgz#59acecd1efbebaf48f89404840f2fe78c4d2ad5c"
   dependencies:
