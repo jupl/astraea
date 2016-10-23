@@ -1,7 +1,7 @@
 const {
   DefinePlugin,
   LoaderOptionsPlugin,
-  optimize: {DedupePlugin, UglifyJsPlugin},
+  optimize: {UglifyJsPlugin},
 } = require('webpack')
 
 /**
@@ -17,7 +17,6 @@ module.exports = config => {
       compress: {drop_console: true, drop_debugger: true},
       output: {comments: false},
     }),
-    new DedupePlugin(),
     new DefinePlugin({'process.env.NODE_ENV': '"production"'}),
   ]
 }
