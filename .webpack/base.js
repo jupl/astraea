@@ -5,13 +5,16 @@ const {resolve} = require('./util')
 
 /**
  * Build base Webpack configuration with defaults that can be expanded upon
+ * @param {Object} options - Options
+ * @param {string} options.source - Source path to read source code from
+ * @param {string} options.destination - Destination path to write assets out
  * @return {Object} Webpack configuration
  */
-module.exports = () => {
+module.exports = ({source, destination}) => {
   const config = {
-    entry: entries(),
+    entry: entries(source),
     output: {
-      path: resolve('dist'),
+      path: resolve(destination),
       filename: '[name].js',
       publicPath: '/',
     },
@@ -43,12 +46,13 @@ module.exports = () => {
 
 /**
  * Build entries configuration for Webpack based on our app structure by
- * looking for all top-level JS files in src to compile
+ * looking for all top-level JS files in source to compile
+ * @param {string} source - Source directory
  * @return {Object} Entries configuration for Webpack
  */
-function entries() {
-  return find(resolve('src/*.{js,ts,tsx}'))
-    .reduce((obj, file) => Object.assign(obj, {
-      [basename(file, extname(file))]: [file],
-    }), {})
+function entries(source) {
+  const files = find(resolve(source, '*.{js,ts,tsx}'))
+  return files.reduce((obj, file) => Object.assign(obj, {
+    [basename(file, extname(file))]: [file],
+  }), {})
 }
