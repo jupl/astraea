@@ -38,7 +38,7 @@ This is a boilerplate project for developing a mid to large scale client-side ap
 ### Overview
 ```
 astraea/
-├─ .webpack/   # Webpack build configuration
+├─ .webpack/   # Webpack build configuration builder
 ├─ .storybook/ # Webpack configuration
 ├─ assets/     # Static files to icnlude in builds
 ├─ coverage/   # Code coverage reports
@@ -64,6 +64,7 @@ astraea/
 ├─ preprocessor.js   # Set up TypeScript for Jest
 ├─ tsconfig.json     # TypeScript configuration
 ├─ tslint.json       # TypeScript linting rules
+├─ webpack.config.js # Webpack build configuration
 └─ yarn.lock         # Dependency pinning from Yarn
 ```
 
