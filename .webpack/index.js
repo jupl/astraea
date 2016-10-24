@@ -33,7 +33,7 @@ module.exports = ({
     console.info('--- webpack: using development configuration')
     break
   case 'production':
-    addAssets(config)
+    addAssets(config, {assets})
     addProduction(config)
     console.info('--- webpack: using production configuration')
     break
