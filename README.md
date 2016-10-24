@@ -128,8 +128,8 @@ npm run build:dev
 yarn run lint
 ```
 
-### `server`
-Start a local development server in port 3000 by default. To use another port have the environment variable `PORT` set to a number or modify `hot-server.js`. The following is provided in the development server:
+### `server:hot`
+Start a local development server in port 3000 by default. To use another port have the environment variable `PORT` set to a number or modify `hot-server.js`. This task is also available as an alias to `server`. The following is provided in the development server:
 - [Hot reloading](https://webpack.github.io/docs/hot-module-replacement.html) (including [React Hot Loader](https://github.com/gaearon/react-hot-loader))
 - [Redux DevTools Extension](http://zalmoxisus.github.io/redux-devtools-extension/) (if unavailable [Logger for Redux](https://github.com/evgenyrodionov/redux-logger) is used)
 
