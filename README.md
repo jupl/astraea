@@ -20,6 +20,7 @@ This is a boilerplate project for developing a mid to large scale client-side ap
 - [Node.js](https://nodejs.org/en/) (6.x minimum required)
   - [npm CLI](https://docs.npmjs.com/cli/npm) is usually included with Node.js
 - [Yarn](https://yarnpkg.com/en/docs/install) (recommended)
+- Editor with support for TypeScript, [TSLint](https://palantir.github.io/tslint/), and [EditorConfig](http://editorconfig.org/) (ex. [Visual Studio Code](https://code.visualstudio.com/))
 
 [<sup>Back to top</sup>](#astraea-typescript--react--redux-boilerplate)
 
