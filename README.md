@@ -38,7 +38,7 @@ This is a boilerplate project for developing a mid to large scale client-side ap
 ### Overview
 ```
 astraea/
-├─ .webpack/   # Webpack build configuration
+├─ .webpack/   # Webpack build configuration builder
 ├─ .storybook/ # Webpack configuration
 ├─ assets/     # Static files to icnlude in builds
 ├─ coverage/   # Code coverage reports
@@ -64,6 +64,7 @@ astraea/
 ├─ preprocessor.js   # Set up TypeScript for Jest
 ├─ tsconfig.json     # TypeScript configuration
 ├─ tslint.json       # TypeScript linting rules
+├─ webpack.config.js # Webpack build configuration
 └─ yarn.lock         # Dependency pinning from Yarn
 ```
 
@@ -127,8 +128,8 @@ npm run build:dev
 yarn run lint
 ```
 
-### `server`
-Start a local development server in port 3000 by default. To use another port have the environment variable `PORT` set to a number or modify `hot-server.js`. The following is provided in the development server:
+### `server:hot`
+Start a local development server in port 3000 by default. To use another port have the environment variable `PORT` set to a number or modify `hot-server.js`. This task is also available as an alias to `server`. The following is provided in the development server:
 - [Hot reloading](https://webpack.github.io/docs/hot-module-replacement.html) (including [React Hot Loader](https://github.com/gaearon/react-hot-loader))
 - [Redux DevTools Extension](http://zalmoxisus.github.io/redux-devtools-extension/) (if unavailable [Logger for Redux](https://github.com/evgenyrodionov/redux-logger) is used)
 

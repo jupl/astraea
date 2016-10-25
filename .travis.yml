@@ -9,6 +9,8 @@ before_install:
   - npm install -g yarn
 install:
   - yarn
+# The script actions are to check the project is valid.
+# If using Travis for the project PLEASE MODIFY/REMOVE AS NEEDED.
 script:
   - yarn run lint
   - yarn run coverage
