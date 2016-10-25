@@ -2,7 +2,7 @@ import * as React from 'react'
 import {Provider} from 'react-redux'
 import Root from './template'
 import reducer from '../../reducer'
-import createStore from '../../../lib/create-store'
+import createStore from '../../../common/create-store'
 const renderer = require('react-test-renderer')
 
 describe('<App.Root> Template', () => {
