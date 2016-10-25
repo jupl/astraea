@@ -51,7 +51,7 @@ astraea/
 │  │  ├─ reducer.js       # Reducer for whole application
 │  │  ├─ saga.js          # Saga entry for whole application
 │  │  └─ styles.js        # Styling for application container
-│  ├─ lib/                     # General purpose utilities
+│  ├─ common/                  # Shared code used throughout project
 │  │  ├─ components/container/ # Application wrapper component
 │  │  ├─ create─store.ts       # Helper to create a Redux store
 │  │  └─ declarations.d.ts     # TypeScript declarations for project
@@ -82,7 +82,7 @@ domain/
 └─ saga.ts    # Domain sagas
 ```
 
-Rather than group items by things like components/reducers/actions/etc., items are grouped by domain which can be a saner option as the project grows. Examples of domains can be things like resources (ex. `blog/`, `users/`) or other things. (ex. `ui/`) Domains may include things like components, actions, reducer, sagas, etc. but they don't have to include all of them. In fact, you can think of `app/` and `lib/` as domains. Other files may be present as well.
+Rather than group items by things like components/reducers/actions/etc., items are grouped by domain which can be a saner option as the project grows. Examples of domains can be things like resources (ex. `blog/`, `users/`) or other things. (ex. `ui/`) Domains may include things like components, actions, reducer, sagas, etc. but they don't have to include all of them. In fact, you can think of `app/` and `common/` as domains. Other files may be present as well.
 
 ### Components
 ```

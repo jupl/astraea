@@ -4,8 +4,8 @@ import Root from './app/components/root'
 import reducer from './app/reducer'
 import saga from './app/saga'
 import {CONTAINER_STYLE} from './app/styles'
-import Container from './lib/components/container'
-import createStore from './lib/create-store'
+import Container from './common/components/container'
+import createStore from './common/create-store'
 import 'normalize.css'
 
 // Reference app container to render to
