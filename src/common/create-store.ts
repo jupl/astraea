@@ -13,16 +13,16 @@ const devToolsAvailable = !!__REDUX_DEVTOOLS_EXTENSION__
 /** Store constructor options */
 interface Options<S> {
   /** Redux reducer */
-  reducer: Reducer<S>
+  readonly reducer: Reducer<S>
 
   /** Optional saga */
-  saga?: () => SagaIterator
+  readonly saga?: () => SagaIterator
 
   /** Intial store state */
-  initialState?: S
+  readonly initialState?: S
 
   /** Additional options for Redux Devtools */
-  [name: string]: string | number | boolean | Function | S | undefined
+  readonly [name: string]: string | number | boolean | Function | S | undefined
 }
 
 /**
@@ -46,9 +46,9 @@ export default function newStore<S>(options: Options<S>): Store<S> {
 
   // Create enhancer
   const config = Object.assign({}, options)
-  delete options.reducer
-  delete options.saga
-  delete options.initialState
+  delete config.reducer
+  delete config.saga
+  delete config.initialState
   const enhancer = composeWithDevTools(config)(applyMiddleware(...middlewares))
 
   // Create store instance
