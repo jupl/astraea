@@ -7,7 +7,7 @@ import {State} from '../../reducer'
 
 /** Properties for wrapped component */
 interface Props {
-  style?: CSSProperties
+  readonly style?: CSSProperties
 }
 
 /** Wrap color page component with data from store */

@@ -7,7 +7,7 @@ type Color = string
 
 /** Structure of color state relative to application reducer */
 export interface State {
-  color: Color
+  readonly color: Color
 }
 
 /** Reducer that handles color related actions */

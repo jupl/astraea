@@ -9,10 +9,10 @@ import {
 /** Properties for color page component */
 export interface Props {
   /** CSS color to show */
-  color: string
+  readonly color: string
 
   /** Additional CSS styles to override */
-  style?: React.CSSProperties
+  readonly style?: React.CSSProperties
 }
 
 /** Actions for color page component */

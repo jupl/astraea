@@ -6,10 +6,10 @@ const {AppContainer} = require('react-hot-loader')
 /** Container component properties */
 interface Props<P> {
   /** Redux store instance */
-  store: Store<any> // tslint:disable-line:no-any
+  readonly store: Store<any> // tslint:disable-line:no-any
 
   /** Component to render */
-  component: React.ComponentClass<P> | (() => React.ReactElement<P>)
+  readonly component: React.ComponentClass<P> | (() => React.ReactElement<P>)
 }
 
 /**
