@@ -1,5 +1,13 @@
 import * as React from 'react'
-import {PAGE_STYLE} from './styles'
+
+/** Styling for root page */
+const PAGE_STYLE: React.CSSProperties = {
+  flex: 1,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  background: 'linear-gradient(transparent, gainsboro)',
+}
 
 /**
  * Render root component representing the entire application
