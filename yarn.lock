@@ -130,9 +130,9 @@
   version "0.14.41"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-0.14.41.tgz#c8fea92dc28814b2a4f6a86e634fbdb30b54f778"
 
-"@types/redux-actions":
-  version "0.8.30"
-  resolved "https://registry.yarnpkg.com/@types/redux-actions/-/redux-actions-0.8.30.tgz#d245099250d7ba99d474a92c4e6ed7a29f03004b"
+"@types/redux-actions@^0.8.31":
+  version "0.8.31"
+  resolved "https://registry.yarnpkg.com/@types/redux-actions/-/redux-actions-0.8.31.tgz#3eb49d3a9c7b1b0c335323ed6b801b3410845c08"
 
 "@types/redux@*":
   version "3.6.31"
