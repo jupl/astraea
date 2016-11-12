@@ -1,10 +1,33 @@
 import * as React from 'react'
-import {
-  BACKGROUND_STYLE,
-  BUTTON_STYLE,
-  GRADIENT_STYLE,
-  TEXT_STYLE,
-} from './styles'
+
+/** Styling for container background */
+const BACKGROUND_STYLE: React.CSSProperties = {
+  transition: 'background 0.8s ease-out',
+  display: 'flex',
+}
+
+/** Styling for buttons */
+const BUTTON_STYLE: React.CSSProperties = {
+  borderRadius: '50%',
+  background: 'radial-gradient(white, gainsboro)',
+  borderColor: 'gainsboro',
+  outline: 'none',
+}
+
+/** Styling for text */
+const TEXT_STYLE: React.CSSProperties = {
+  marginLeft: 4,
+  marginRight: 4,
+}
+
+/** Styling for gradient overlay */
+const GRADIENT_STYLE: React.CSSProperties = {
+  flex: 1,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  background: 'linear-gradient(rgba(255, 255, 255, 0.4), transparent)',
+}
 
 /** Properties for color page component */
 export interface Props {

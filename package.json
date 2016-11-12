@@ -43,7 +43,7 @@
     "@types/react": "^0.14.36",
     "@types/react-dom": "^0.14.17",
     "@types/react-redux": "^4.4.32",
-    "@types/redux-actions": "^0.8.30",
+    "@types/redux-actions": "^0.8.31",
     "awesome-typescript-loader": "^2.2.4",
     "babel-plugin-transform-inline-environment-variables": "^6.8.0",
     "babel-plugin-transform-runtime": "^6.9.0",
