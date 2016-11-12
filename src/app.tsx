@@ -47,7 +47,6 @@ function styleContainer() {
 /**
  * Update the reducer for the store. This may be called multiple times when a
  * hot reload occurs.
- * @return {void}
  */
 function updateReducer() {
   store.replaceReducer(reducer)
