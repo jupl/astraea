@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "engines": {
-    "node": "^6.0.0",
+    "node": "^6.0.0 || ^7.0.0",
     "npm": "^3.0.0"
   },
   "jest": {
