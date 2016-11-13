@@ -20,7 +20,7 @@ export default handleActions({
 /**
  * Update state to go to the previous color. If past the first color, go to the
  * end of the color list.
- * @param state Current color state
+ * @param color Current color state
  * @return Previous color state
  */
 function setPreviousColor(color: Color) {
@@ -32,7 +32,7 @@ function setPreviousColor(color: Color) {
 /**
  * Update state to go to the next color. If past the last color, go to the
  * beginning of the color list.
- * @param state Current color state
+ * @param color Current color state
  * @return Next color state
  */
 function setNextColor(color: Color) {
