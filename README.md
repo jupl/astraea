@@ -39,18 +39,18 @@ This is a boilerplate project for developing a mid to large scale client-side ap
 ```
 astraea/
 ├─ .webpack/   # Webpack build configuration builder
-├─ .storybook/ # Webpack configuration
+├─ .storybook/ # Storybook configuration
 ├─ assets/     # Static files to icnlude in builds
 ├─ coverage/   # Code coverage reports
 ├─ dist/       # Result build data from build tasks
 ├─ story/      # Result storybook build
 ├─ src/
 │  ├─ app/                # Application domain
-│  │  ├─ components/root/ # Top level applicaiton view
-│  │  ├─ actions.test.js  # Test to ensure all actions are valid
-│  │  ├─ reducer.js       # Reducer for whole application
-│  │  ├─ saga.js          # Saga entry for whole application
-│  │  └─ styles.js        # Styling for application container
+│  │  ├─ components/root/ # Top level application view
+│  │  ├─ actions.test.ts  # Test to ensure all actions are valid
+│  │  ├─ reducer.ts       # Reducer for whole application
+│  │  ├─ saga.ts          # Saga entry for whole application
+│  │  └─ styles.ts        # Styling for application container
 │  ├─ common/                  # Shared code used throughout project
 │  │  ├─ components/container/ # Application wrapper component
 │  │  ├─ create─store.ts       # Helper to create a Redux store
@@ -93,8 +93,8 @@ component/
 ```
 
 React components are grouped in a directory.
-- `template.jsx` defines the React component without any knowledge of Redux specifics or other things like React DnD. (sometimes referred as *dumb* component)
-- `index.js` is the entry point of the component when used by others.
+- `template.tsx` defines the React component without any knowledge of Redux specifics or other things like React DnD. (sometimes referred as *dumb* component)
+- `index.ts` is the entry point of the component when used by others.
   - If template does not require data/action bindings then it can just pass through the template. (see `src/app/components/root/index.ts`)
   - If template requires data/action bindings then it is done here.  (sometimes refereed as *smart* component)
 
