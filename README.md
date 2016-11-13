@@ -12,7 +12,7 @@
 - [Project Resources](#project-resources)
 
 ## About
-This is a boilerplate project for developing a mid to large scale client-side application(s) using [TypeScript](https://www.typescriptlang.org/), [React](https://github.com/facebook/react), and [Redux](http://redux.js.org/). For an example project, visit the [example branch](https://github.com/jupl/astraea/tree/example).
+This is a boilerplate project for developing a mid to large scale client-side application(s) using [TypeScript](https://www.typescriptlang.org/), [React](https://facebook.github.io/react/), and [Redux](http://redux.js.org/). For an example project, visit the [example branch](https://github.com/jupl/astraea/tree/example).
 
 [<sup>Back to top</sup>](#astraea-typescript--react--redux-boilerplate)
 
