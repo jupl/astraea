@@ -21,7 +21,7 @@ if(module.hot) {
   module.hot.accept('./app/reducer', () => setTimeout(updateReducer))
   module.hot.accept('./app/styles', () => setTimeout(styleContainer))
   module.hot.accept('./app/saga', () => true)
-  module.hot.accept('./lib/components/container', () => setTimeout(render))
+  module.hot.accept('./common/components/container', () => setTimeout(render))
 }
 styleContainer()
 render()
