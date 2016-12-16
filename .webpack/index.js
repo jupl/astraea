@@ -27,6 +27,7 @@ module.exports = ({
     addStory(config)
     addDevelopment(config)
     console.info('--- webpack: using storybook configuration')
+    break
   case 'development':
     addAssets(config, {assets})
     addDevelopment(config)
