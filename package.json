@@ -17,7 +17,9 @@
       "ts",
       "tsx"
     ],
-    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "transform": {
+      ".tsx?": "<rootDir>/jest-ts.js"
+    },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.tsx?$"
   },
   "scripts": {
