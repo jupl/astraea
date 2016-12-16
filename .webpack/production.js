@@ -14,7 +14,12 @@ module.exports = config => {
     ...config.plugins,
     new LoaderOptionsPlugin({minimize: true, debug: false}),
     new UglifyJsPlugin({
-      compress: {drop_console: true, drop_debugger: true},
+      minimize: true,
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+        warnings: false,
+      },
       output: {comments: false},
     }),
     new DefinePlugin({'process.env.NODE_ENV': '"production"'}),

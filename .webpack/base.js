@@ -24,14 +24,19 @@ module.exports = ({source, destination}) => {
     },
     module: {
       loaders: [
-        {test: /\.tsx?$/, loader: 'awesome-typescript'},
-        {test: /\.json$/, loader: 'json'},
-        {test: /\.css$/, loader: 'style!css'},
-        {test: /\.(gif|jpg|jpeg|png|svg)$/, loader: 'file'},
+        {test: /\.tsx?$/, loader: 'awesome-typescript-loader'},
+        {test: /\.json$/, loader: 'json-loader'},
+        {test: /\.css$/, loader: 'style-loader!css-loader'},
+        {test: /\.(gif|jpg|jpeg|png|svg)$/, loader: 'file-loader'},
       ],
     },
     resolve: {
-      extensions: ['.js', '.json', '.ts', '.tsx'],
+      extensions: [
+        '.js',
+        '.json',
+        '.ts',
+        '.tsx',
+      ],
     },
     plugins: [],
   }
@@ -56,7 +61,7 @@ module.exports = ({source, destination}) => {
  */
 function entries(source) {
   const files = find(resolve(source, '*.{js,ts,tsx}'))
-  return files.reduce((obj, file) => Object.assign(obj, {
-    [basename(file, extname(file))]: [file],
-  }), {})
+  return files
+    .map(file => ({file, base: basename(file, extname(file))}))
+    .reduce((obj, {base, file}) => Object.assign(obj, {[base]: [file]}), {})
 }

@@ -17,11 +17,7 @@ const addStory = require('./story')
  * @param {IndexOptions} options Options
  * @return {Object} Webpack configuration
  */
-module.exports = ({
-  source,
-  destination,
-  assets,
-}) => {
+module.exports = ({source, destination, assets}) => {
   // Create base configuration and export
   const config = createConfig({source, destination})
 
