@@ -1,3 +1,4 @@
+require('normalize.css')
 import * as React from 'react'
 import {render as renderToDOM} from 'react-dom'
 import Root from './app/components/root'
@@ -6,7 +7,6 @@ import saga from './app/saga'
 import {CONTAINER_STYLE} from './app/styles'
 import Container from './common/components/container'
 import createStore from './common/create-store'
-import 'normalize.css'
 
 // Reference app container to render to
 const container = document.getElementById('container')!
