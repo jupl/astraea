@@ -3,18 +3,11 @@ language: node_js
 node_js:
   - "node"
   - "6"
-cache:
-  directories:
-    - $HOME/.yarn-cache
-before_install:
-  - npm install -g yarn
-install:
-  - yarn
 # The script actions are to check the project is valid.
 # If using Travis for the project PLEASE MODIFY/REMOVE AS NEEDED.
 script:
-  - yarn run lint
-  - yarn run coverage
-  - yarn run build:dev
-  - yarn run build:prod
-  - yarn run build:story
+  - yarn lint
+  - yarn coverage
+  - yarn build:dev
+  - yarn build:prod
+  - yarn build:story

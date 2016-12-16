@@ -3,7 +3,8 @@ import * as actions from './actions'
 
 describe('Color reducer', () => {
   // Inital state
-  const state0 = reducer(undefined!, {type: ''})
+  // tslint:disable-next-line:no-null-keyword
+  const state0 = reducer(null!, {type: ''})
 
   it('should start with initial state', () => {
     expect(state0).toMatchSnapshot()

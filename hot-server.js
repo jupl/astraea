@@ -13,10 +13,17 @@ const webpackPlugin = {
   register: require('hapi-webpack-plugin'),
   options: {
     compiler: webpack(config),
-    assets: {noInfo: true, publicPath: config.output.publicPath},
+    assets: {
+      noInfo: true,
+      publicPath: config.output.publicPath,
+    },
   },
 }
-server.register(webpackPlugin, error => { if(error) { throw error } })
+server.register(webpackPlugin, error => {
+  if(error) {
+    throw error
+  }
+})
 
 // Start server and notify
 server.start(() => console.log(`Server running at: ${server.info.uri}`))

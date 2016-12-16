@@ -31,7 +31,7 @@ interface Options<S> {
  * @return Redux store instance
  */
 export default function newStore<S>(options: Options<S>): Store<S> {
-  const {reducer, saga, initialState} = options
+  const {reducer, saga, initialState, ...config} = options
   let middlewares: SagaMiddleware[] = []
 
   // Create saga middleware if saga is provided
@@ -45,10 +45,6 @@ export default function newStore<S>(options: Options<S>): Store<S> {
   }
 
   // Create enhancer
-  const config = Object.assign({}, options)
-  delete config.reducer
-  delete config.saga
-  delete config.initialState
   const enhancer = composeWithDevTools(config)(applyMiddleware(...middlewares))
 
   // Create store instance

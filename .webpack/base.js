@@ -4,10 +4,14 @@ const {CommonsChunkPlugin} = require('webpack').optimize
 const {resolve} = require('./util')
 
 /**
+ * @typedef {Object} BaseOptions
+ * @property {string} source Source path to read source code from
+ * @property {string} destination Destination path to write assets out
+ */
+
+/**
  * Build base Webpack configuration with defaults that can be expanded upon
- * @param {Object} options - Options
- * @param {string} options.source - Source path to read source code from
- * @param {string} options.destination - Destination path to write assets out
+ * @param {BaseOptions} options Options
  * @return {Object} Webpack configuration
  */
 module.exports = ({source, destination}) => {
@@ -20,14 +24,19 @@ module.exports = ({source, destination}) => {
     },
     module: {
       loaders: [
-        {test: /\.tsx?$/, loader: 'awesome-typescript'},
-        {test: /\.json$/, loader: 'json'},
-        {test: /\.css$/, loader: 'style!css'},
-        {test: /\.(gif|jpg|jpeg|png|svg)$/, loader: 'file'},
+        {test: /\.tsx?$/, loader: 'awesome-typescript-loader'},
+        {test: /\.json$/, loader: 'json-loader'},
+        {test: /\.css$/, loader: 'style-loader!css-loader'},
+        {test: /\.(gif|jpg|jpeg|png|svg)$/, loader: 'file-loader'},
       ],
     },
     resolve: {
-      extensions: ['.js', '.json', '.ts', '.tsx'],
+      extensions: [
+        '.js',
+        '.json',
+        '.ts',
+        '.tsx',
+      ],
     },
     plugins: [],
   }
@@ -52,7 +61,7 @@ module.exports = ({source, destination}) => {
  */
 function entries(source) {
   const files = find(resolve(source, '*.{js,ts,tsx}'))
-  return files.reduce((obj, file) => Object.assign(obj, {
-    [basename(file, extname(file))]: [file],
-  }), {})
+  return files
+    .map(file => ({file, base: basename(file, extname(file))}))
+    .reduce((obj, {base, file}) => Object.assign(obj, {[base]: [file]}), {})
 }

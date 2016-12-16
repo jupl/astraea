@@ -9,11 +9,11 @@ describe('<App.Root> Template', () => {
   const store = createStore({reducer})
 
   it('should render as expected', () => {
-    const component = renderer.create(
+    const component = renderer.create((
       <Provider store={store}>
         <Root />
       </Provider>
-    )
+    ))
     expect(component.toJSON()).toMatchSnapshot()
   })
 })

@@ -5,6 +5,6 @@ const path = require('path')
  * directory relative to our project
  * @return {string} Absolute path
  */
-exports.resolve = function resolveInProject(...args) {
+exports.resolve = function resolve(...args) {
   return path.resolve(__dirname, '..', ...args)
 }
