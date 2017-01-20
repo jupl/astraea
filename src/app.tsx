@@ -1,4 +1,4 @@
-require('normalize.css')
+import 'normalize.css/normalize.css'
 import * as React from 'react'
 import {render as renderToDOM} from 'react-dom'
 import Root from './app/components/root'

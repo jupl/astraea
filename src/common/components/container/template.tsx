@@ -1,7 +1,7 @@
 import * as React from 'react'
+import {AppContainer} from 'react-hot-loader'
 import {Provider} from 'react-redux'
 import {Store} from 'redux'
-const {AppContainer} = require('react-hot-loader')
 
 /** Container component properties */
 interface Props<P> {
