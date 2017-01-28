@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-/** Root page container */
+// Container component
 const Container = styled.div`
   position: fixed;
   top: 0;
