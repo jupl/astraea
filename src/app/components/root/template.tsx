@@ -1,18 +1,24 @@
 import * as React from 'react'
+import styled from 'styled-components'
 
-/** Styling for root page */
-const PAGE_STYLE: React.CSSProperties = {
-  flex: 1,
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  background: 'linear-gradient(transparent, gainsboro)',
-}
+/** Root page container */
+const Container = styled.div`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(white, gainsboro);
+`
 
 /**
  * Render root component representing the entire application
  * @return Root component
  */
 export default function Root() {
-  return <div style={PAGE_STYLE}>Hello, World</div>
+  return <Container>Hello, World</Container>
 }

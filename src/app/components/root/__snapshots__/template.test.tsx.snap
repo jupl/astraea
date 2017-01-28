@@ -1,14 +1,6 @@
 exports[`<App.Root> Template should render as expected 1`] = `
 <div
-  style={
-    Object {
-      "alignItems": "center",
-      "background": "linear-gradient(transparent, gainsboro)",
-      "display": "flex",
-      "flex": 1,
-      "justifyContent": "center",
-    }
-  }>
+  className="hSksZZ">
   Hello, World
 </div>
 `;
