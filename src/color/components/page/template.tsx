@@ -7,7 +7,7 @@ interface BackgroundProps {
   className?: string
   children?: React.ReactNode
 }
-let Background = ({children, className}: BackgroundProps) => (
+const Background = ({children, className}: BackgroundProps) => (
   <div className={className}>{children}</div>
 )
 const StyledBackground = styled(Background)`
