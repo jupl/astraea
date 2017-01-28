@@ -48,6 +48,7 @@
     "@types/react-redux": "^4.4.32",
     "@types/react-test-renderer": "^15.4.1",
     "@types/redux-actions": "^1.2.2",
+    "@types/webpack-env": "^1.13.0",
     "awesome-typescript-loader": "^3.0.0-beta.17",
     "babel-plugin-transform-inline-environment-variables": "^6.8.0",
     "babel-plugin-transform-react-inline-elements": "^6.22.0",

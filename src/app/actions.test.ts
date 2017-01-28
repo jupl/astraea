@@ -7,7 +7,7 @@ interface Actions {
 
 describe('Actions', () => {
   const files: string[] = find(resolve(__dirname, '../*/actions.js'))
-  const actionsTable: Actions[] = files.map(require)
+  const actionsTable: Actions[] = files.map(file => require(file))
 
   it('should be unique names', () => {
     const names = actionsTable
