@@ -1,4 +1,4 @@
-const {HotModuleReplacementPlugin, NoErrorsPlugin} = require('webpack')
+const {HotModuleReplacementPlugin, NoEmitOnErrorsPlugin} = require('webpack')
 
 // Modules requires for hot reloading in development
 const hotModules = [
@@ -17,7 +17,7 @@ module.exports = config => {
   config.plugins = [
     ...config.plugins,
     new HotModuleReplacementPlugin(),
-    new NoErrorsPlugin(),
+    new NoEmitOnErrorsPlugin(),
   ]
 
   // Add hot module code to entries
