@@ -14,7 +14,7 @@ const Container = styled.div`
   background-color: white;
 `
 
-/** Styled color page */
+// Styled color page component
 const StyledColorPage = styled(ColorPage)`
   flex: 1;
 `

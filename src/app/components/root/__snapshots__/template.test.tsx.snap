@@ -2,8 +2,7 @@ exports[`<App.Root> Template should render as expected 1`] = `
 <div
   className="evWVTv">
   <div
-    className="fSVTfK dNCNAZ"
-    color="#39cccc">
+    className="fSVTfK bIUoLE">
     <div
       className="ijXwvP">
       <button
