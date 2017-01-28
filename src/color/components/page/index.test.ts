@@ -6,9 +6,7 @@ describe('<Color.ColorPage>', () => {
       color: 'red',
       other: 'else',
     }
-    const style = {flex: 1}
     expect(props(store, {})).toMatchSnapshot()
-    expect(props(store, {style})).toMatchSnapshot()
   })
 
   it('should inject action props as expected', () => {

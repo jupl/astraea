@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {shallow} from 'enzyme'
-import ColorPage from './template'
+import {create} from 'react-test-renderer'
+import ColorPage, {Button} from './template'
 
 describe('<Color.ColorPage> Template', () => {
   const props = {
@@ -9,19 +10,14 @@ describe('<Color.ColorPage> Template', () => {
     onNextColor: jest.fn(),
   }
 
-  // TODO Enable test and move require to top when React has fix
-  xit('should render as expected', () => {
-    const renderer = require('react-test-renderer')
-    const propsWithStyle = Object.assign({}, props, {style: {top: 0}})
-    const component1 = renderer.create(<ColorPage {...props} />)
-    const component2 = renderer.create(<ColorPage {...propsWithStyle} />)
-    expect(component1.toJSON()).toMatchSnapshot()
-    expect(component2.toJSON()).toMatchSnapshot()
+  it('should render as expected', () => {
+    const component = create(<ColorPage {...props} />)
+    expect(component.toJSON()).toMatchSnapshot()
   })
 
   it('should invoke events as expected', () => {
     const component = shallow(<ColorPage {...props} />)
-    const buttons = component.find('button')
+    const buttons = component.find(Button)
     const previousButton = buttons.at(0)
     const nextButton = buttons.at(1)
 

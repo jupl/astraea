@@ -1,4 +1,3 @@
-import {CSSProperties} from 'react'
 import {connect} from 'react-redux'
 import {Dispatch} from 'redux'
 import ColorPage, {Props as TemplateProps, Actions} from './template'
@@ -7,7 +6,7 @@ import {State} from '../../reducer'
 
 /** Properties for wrapped component */
 interface Props {
-  readonly style?: CSSProperties
+  readonly className?: string
 }
 
 /** Wrap color page component with data from store */
@@ -19,8 +18,8 @@ export default connect(props, actions)(ColorPage)
  * @param props Wrapped component properties
  * @return Props to pass to component
  */
-export function props({color}: State, {style}: Props): TemplateProps {
-  return {color, style}
+export function props({color}: State, ownProps: Props): TemplateProps {
+  return {...ownProps, color}
 }
 
 /**

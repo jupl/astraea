@@ -10,7 +10,8 @@
       "presets": [["es2015", {"modules": false}]]
     },
     "production": {
-      "presets": [["es2015", {"modules": false}]]
+      "presets": [["es2015", {"modules": false}]],
+      "plugins": ["transform-react-inline-elements"]
     },
     "storybook": {
       "presets": ["es2015"]

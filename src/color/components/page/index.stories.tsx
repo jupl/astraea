@@ -2,6 +2,7 @@ import * as React from 'react'
 import {action, storiesOf} from '@kadira/storybook'
 import {Provider} from 'react-redux'
 import {combineReducers} from 'redux'
+import styled from 'styled-components'
 import color from '../../reducer'
 import createStore from '../../../common/create-store'
 import Component from '.'
@@ -16,13 +17,30 @@ const store = createStore({
 // Default props for template module
 const props = {
   color: 'white',
-  style: {flex: 1},
   onPreviousColor: action('previousColor'),
   onNextColor: action('nextColor'),
 }
 
+// Styled component for storybook
+const StyledComponent = styled(Component)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`
+
+// Styled template for storybook
+const StyledTemplate = styled(Template)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`
+
 // Define stories
 storiesOf('Color.Page', module)
   .addDecorator(story => <Provider store={store}>{story()}</Provider>)
-  .add('component', () => <Component style={{flex: 1}} />)
-  .add('template', () => <Template {...props} />)
+  .add('component', () => <StyledComponent />)
+  .add('template', () => <StyledTemplate {...props} />)

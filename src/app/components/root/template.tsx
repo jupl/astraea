@@ -1,15 +1,32 @@
 import * as React from 'react'
+import styled from 'styled-components'
 import ColorPage from '../../../color/components/page'
 
-/** Styling for root page */
-const PAGE_STYLE: React.CSSProperties = {
-  flex: 1,
-}
+/** Root page container */
+const Container = styled.div`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  display: flex;
+  background-color: white;
+`
+
+/** Styled color page */
+const StyledColorPage = styled(ColorPage)`
+  flex: 1;
+`
 
 /**
  * Render root component representing the entire application
  * @return Root component
  */
 export default function Root() {
-  return <ColorPage style={PAGE_STYLE} />
+  return (
+    <Container>
+      <StyledColorPage />
+    </Container>
+  )
 }

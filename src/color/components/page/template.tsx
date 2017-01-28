@@ -1,41 +1,43 @@
 import * as React from 'react'
+import styled from 'styled-components'
 
-/** Styling for container background */
-const BACKGROUND_STYLE: React.CSSProperties = {
-  transition: 'background 0.8s ease-out',
-  display: 'flex',
-}
+/** Container background */
+const Background = styled.div`
+  transition: background 0.8s ease-out;
+  display: flex;
+  background-color: ${({color}) => color || 'white'}
+`
 
-/** Styling for buttons */
-const BUTTON_STYLE: React.CSSProperties = {
-  borderRadius: '50%',
-  background: 'radial-gradient(white, gainsboro)',
-  borderColor: 'gainsboro',
-  outline: 'none',
-}
+/** Button */
+export const Button = styled.button`
+  border-radius: 50%;
+  background: radial-gradient(white, gainsboro);
+  border-color: gainsboro;
+  outline: none;
+`
 
-/** Styling for text */
-const TEXT_STYLE: React.CSSProperties = {
-  marginLeft: 4,
-  marginRight: 4,
-}
+/** Text */
+const Text = styled.span`
+  margin-left: 4px;
+  margin-right: 4px;
+`
 
-/** Styling for gradient overlay */
-const GRADIENT_STYLE: React.CSSProperties = {
-  flex: 1,
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  background: 'linear-gradient(rgba(255, 255, 255, 0.4), transparent)',
-}
+/** Gradient overlay */
+const Gradient = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(255, 255, 255, 0.4), transparent);
+`
 
 /** Properties for color page component */
 export interface Props {
   /** CSS color to show */
   readonly color: string
 
-  /** Additional CSS styles to override */
-  readonly style?: React.CSSProperties
+  /** Additional class names to include */
+  readonly className?: string
 }
 
 /** Actions for color page component */
@@ -53,19 +55,18 @@ export interface Actions {
  * @return Color page component
  */
 export default function ColorPage({
-  color: backgroundColor,
+  className,
+  color,
   onNextColor,
   onPreviousColor,
-  style: extra,
 }: Props & Actions) {
-  const style = Object.assign({}, BACKGROUND_STYLE, extra, {backgroundColor})
   return (
-    <div style={style}>
-      <div style={GRADIENT_STYLE}>
-        <button style={BUTTON_STYLE} onClick={onPreviousColor}>&lt;</button>
-        <span style={TEXT_STYLE}>Hello, World</span>
-        <button style={BUTTON_STYLE} onClick={onNextColor}>&gt;</button>
-      </div>
-    </div>
+    <Background color={color} className={className}>
+      <Gradient>
+        <Button onClick={onPreviousColor}>&lt;</Button>
+        <Text>Hello, World</Text>
+        <Button onClick={onNextColor}>&gt;</Button>
+      </Gradient>
+    </Background>
   )
 }

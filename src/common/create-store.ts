@@ -1,14 +1,9 @@
 import {applyMiddleware, createStore, Reducer, Store} from 'redux'
 import createSagaMiddleware, {SagaIterator, SagaMiddleware} from 'redux-saga'
-const reduxDevTools = require('redux-devtools-extension/developmentOnly')
-const {composeWithDevTools} = reduxDevTools
+import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly'
 
 // Check if Redux DevTools is available for redux-logger
-interface WindowWithDevTools extends Window {
-  __REDUX_DEVTOOLS_EXTENSION__?: Function
-}
-const {__REDUX_DEVTOOLS_EXTENSION__} = window as WindowWithDevTools
-const devToolsAvailable = !!__REDUX_DEVTOOLS_EXTENSION__
+const devToolsAvailable = !!window.__REDUX_DEVTOOLS_EXTENSION__
 
 /** Store constructor options */
 interface Options<S> {
