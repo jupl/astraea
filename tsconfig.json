@@ -20,8 +20,5 @@
   "awesomeTypescriptLoaderOptions": {
     "useBabel": true,
     "useCache": true
-  },
-  "include": [
-    "src/**/*"
-  ]
+  }
 }

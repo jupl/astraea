@@ -1,2 +1,3 @@
 // Reference our Webpack config for Storybook
-module.exports = require('../webpack.config')
+require('ts-node/register')
+module.exports = require('../webpack.config').default
