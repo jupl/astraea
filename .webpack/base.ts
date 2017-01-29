@@ -21,17 +21,15 @@ export default function createBase(
       publicPath: '/',
     },
     module: {
-      rules: [
+      loaders: [
         {
           test: /\.tsx?$/,
-          use: [{
-            loader: 'awesome-typescript-loader',
-            options: {useCache: process.env.HOT_MODULES === 'true'},
-          }],
+          loader: 'awesome-typescript-loader',
+          query: {useCache: process.env.HOT_MODULES === 'true'},
         },
-        {test: /\.json$/, use: ['json-loader']},
-        {test: /\.css$/, use: ['style-loader', 'css-loader']},
-        {test: /\.(gif|jpg|jpeg|png|svg)$/, use: ['file-loader']},
+        {test: /\.json$/, loader: 'json-loader'},
+        {test: /\.css$/, loader: 'style-loader!css-loader'},
+        {test: /\.(gif|jpg|jpeg|png|svg)$/, loader: 'file-loader'},
       ],
     },
     resolve: {
