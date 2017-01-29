@@ -17,6 +17,7 @@
       "ts",
       "tsx"
     ],
+    "setupTestFrameworkScriptFile": "<rootDir>/setup-tests.ts",
     "transform": {
       ".tsx?": "<rootDir>/jest-ts.js"
     },
