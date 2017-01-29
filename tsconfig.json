@@ -18,7 +18,6 @@
     ]
   },
   "awesomeTypescriptLoaderOptions": {
-    "useBabel": true,
-    "useCache": true
+    "useBabel": true
   }
 }
