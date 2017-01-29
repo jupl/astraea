@@ -49,8 +49,7 @@ astraea/
 │  │  ├─ components/root/ # Top level application view
 │  │  ├─ actions.test.ts  # Test to ensure all actions are valid
 │  │  ├─ reducer.ts       # Reducer for whole application
-│  │  ├─ saga.ts          # Saga entry for whole application
-│  │  └─ styles.ts        # Styling for application container
+│  │  └─ saga.ts          # Saga entry for whole application
 │  ├─ common/                  # Shared code used throughout project
 │  │  ├─ components/container/ # Application wrapper component
 │  │  ├─ create─store.ts       # Helper to create a Redux store
@@ -59,12 +58,12 @@ astraea/
 │  ├─ domain2/
 │  ├─ domainX/
 │  └─ app.tsx # Application entry point
-├─ hot─server.js     # Source code for local development server
+├─ jest-ts.js        # Set up TypeScript for Jest
+├─ hot─server.ts     # Source code for local development server
 ├─ package.json      # Configuration, tasks, and dependencies
-├─ preprocessor.js   # Set up TypeScript for Jest
 ├─ tsconfig.json     # TypeScript configuration
 ├─ tslint.json       # TypeScript linting rules
-├─ webpack.config.js # Webpack build configuration
+├─ webpack.config.ts # Webpack build configuration
 └─ yarn.lock         # Dependency pinning from Yarn
 ```
 
