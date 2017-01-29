@@ -61,6 +61,7 @@ astraea/
 ├─ jest-ts.js        # Set up TypeScript for Jest
 ├─ hot─server.ts     # Source code for local development server
 ├─ package.json      # Configuration, tasks, and dependencies
+├─ setup-tests.ts    # Source code to run before execution of tests
 ├─ tsconfig.json     # TypeScript configuration
 ├─ tslint.json       # TypeScript linting rules
 ├─ webpack.config.ts # Webpack build configuration
@@ -100,7 +101,7 @@ React components are grouped in a directory.
 ### Other Files
 
 #### `*.test.ts`, `*.test.tsx`
-Tests for components/domains/logic/etc. Some guides on tests include:
+Tests for components/domains/logic/etc. If code needs to be run before tests are executed see `setup-tests.ts` Some guides on tests include:
 - [Jest](https://facebook.github.io/jest/docs/api.html)
 - [Enzyme](http://airbnb.io/enzyme/index.html#basic-usage)
 - [React](https://facebook.github.io/jest/docs/tutorial-react.html)
