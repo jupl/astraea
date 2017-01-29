@@ -171,6 +171,7 @@ Run converage once and rerun on changes using Jest.
   - [Redux](http://redux.js.org/)
     - [Redux Saga](http://yelouafi.github.io/redux-saga/)
     - [Redux Actions](https://github.com/acdlite/redux-actions)
+  - [Styled Components](https://styled-components.com/)
   - [normalize.css](https://necolas.github.io/normalize.css/)
 - Testing
   - [Jest](http://facebook.github.io/jest/)
