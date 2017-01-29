@@ -1,5 +1,5 @@
+import {find} from 'globule'
 import {resolve} from 'path'
-const {find} = require('globule')
 
 interface Actions {
   [name: string]: Function
