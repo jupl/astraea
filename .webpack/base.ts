@@ -7,6 +7,7 @@ import {resolve} from './util'
  * Build base Webpack configuration with defaults that can be expanded upon
  * @property source Source path to read source code from
  * @property destination Destination path to write assets out
+ * @property useCache If true then use cache for TypeScript loader
  * @return Webpack configuration
  */
 export default function createBase(
