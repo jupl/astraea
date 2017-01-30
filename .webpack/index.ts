@@ -24,7 +24,8 @@ export default function createConfig({
   assets,
 }: Options): Configuration {
   // Create base configuration and export
-  let config = createBase(source, destination)
+  const hotModulesEnabled = process.env.HOT_MODULES === 'true'
+  let config = createBase(source, destination, hotModulesEnabled)
 
   // Add to configuration based on environment
   switch(process.env.NODE_ENV) {
@@ -45,7 +46,7 @@ export default function createConfig({
   }
 
   // Add hot reload support if explicitly specified
-  if(process.env.HOT_MODULES === 'true') {
+  if(hotModulesEnabled) {
     config = addHot(config)
     console.info('--- webpack: using hot modules configuration')
   }

@@ -12,6 +12,7 @@ import {resolve} from './util'
 export default function createBase(
   source: string,
   destination: string,
+  useCache: boolean,
 ): Configuration {
   let config: Configuration = {
     entry: entries(source),
@@ -25,7 +26,7 @@ export default function createBase(
         {
           test: /\.tsx?$/,
           loader: 'awesome-typescript-loader',
-          query: {useCache: process.env.HOT_MODULES === 'true'},
+          query: {useCache},
         },
         {test: /\.json$/, loader: 'json-loader'},
         {test: /\.css$/, loader: 'style-loader!css-loader'},
