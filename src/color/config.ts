@@ -1,7 +1,9 @@
+import * as colors from 'colors.css'
+
 /** Colors to cycle */
 export const COLORS = [
-  '#39cccc',
-  '#2ecc40',
-  '#ffdc00',
-  '#ff851b',
+  colors.teal,
+  colors.green,
+  colors.yellow,
+  colors.orange,
 ]
