@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Color saga should cycle until a previous/next event is fired 1`] = `
 Object {
   "done": false,

@@ -1,25 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<App.Root> Template should render as expected 1`] = `
-<div
-  className="evWVTv">
-  <div
-    className="fSVTfK bIUoLE">
-    <div
-      className="ijXwvP">
-      <button
-        className="bwNSRs"
-        onClick={[Function]}>
-        <
-      </button>
-      <span
-        className="gsqXms">
-        Hello, World
-      </span>
-      <button
-        className="bwNSRs"
-        onClick={[Function]}>
-        >
-      </button>
-    </div>
-  </div>
-</div>
+<styled.div>
+  <Styled(Connect(ColorPage)) />
+</styled.div>
 `;

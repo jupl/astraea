@@ -1,22 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<Color.ColorPage> Template should render as expected 1`] = `
-<div
-  className="cPPbgF">
-  <div
-    className="ijXwvP">
-    <button
-      className="bwNSRs"
-      onClick={[Function]}>
-      <
-    </button>
-    <span
-      className="gsqXms">
+<Styled(Background)
+  color="white"
+>
+  <styled.div>
+    <styled.button
+      onClick={[Function]}
+    >
+      &lt;
+    </styled.button>
+    <styled.span>
       Hello, World
-    </span>
-    <button
-      className="bwNSRs"
-      onClick={[Function]}>
-      >
-    </button>
-  </div>
-</div>
+    </styled.span>
+    <styled.button
+      onClick={[Function]}
+    >
+      &gt;
+    </styled.button>
+  </styled.div>
+</Styled(Background)>
 `;

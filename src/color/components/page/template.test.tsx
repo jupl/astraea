@@ -1,6 +1,5 @@
-import * as React from 'react'
 import {shallow} from 'enzyme'
-import {create} from 'react-test-renderer'
+import * as React from 'react'
 import ColorPage, {Button} from './template'
 
 describe('<Color.ColorPage> Template', () => {
@@ -11,8 +10,7 @@ describe('<Color.ColorPage> Template', () => {
   }
 
   it('should render as expected', () => {
-    const component = create(<ColorPage {...props} />)
-    expect(component.toJSON()).toMatchSnapshot()
+    expect(shallow(<ColorPage {...props} />)).toMatchSnapshot()
   })
 
   it('should invoke events as expected', () => {
