@@ -7,9 +7,8 @@ interface BackgroundProps {
   className?: string
   children?: React.ReactNode
 }
-const Background = ({children, className}: BackgroundProps) => (
-  <div className={className}>{children}</div>
-)
+const Background = ({color: _, ...props}: BackgroundProps) =>
+  <div {...props} />
 const StyledBackground = styled(Background)`
   transition: background 0.8s ease-out;
   display: flex;
