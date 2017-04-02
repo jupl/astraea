@@ -2,6 +2,8 @@ import {applyMiddleware, createStore, Reducer, Store} from 'redux'
 import createSagaMiddleware, {SagaIterator, SagaMiddleware} from 'redux-saga'
 import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly'
 
+type Saga = () => SagaIterator
+
 // Check if Redux DevTools is available for redux-logger
 const devToolsAvailable = !!window.__REDUX_DEVTOOLS_EXTENSION__
 
@@ -11,7 +13,7 @@ interface Options<S> {
   readonly reducer: Reducer<S>
 
   /** Optional saga */
-  readonly saga?: () => SagaIterator
+  readonly saga?: Saga
 
   /** Intial store state */
   readonly initialState?: S

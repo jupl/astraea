@@ -24,4 +24,4 @@ server.register({
 }, error => { if(error) { throw error } })
 
 // Start server and notify
-server.start(() => console.log(`Server running at: ${server.info.uri}`))
+server.start(() => { console.log(`Server running at: ${server.info.uri}`) })
