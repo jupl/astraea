@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Color.ColorPage> Template should render as expected 1`] = `
+exports[`<ColorPage> Template should render as expected 1`] = `
 <Styled(Background)
   color="white"
 >
