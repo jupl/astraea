@@ -1,6 +1,6 @@
 import {shallow} from 'enzyme'
 import * as React from 'react'
-import Root from './template'
+import {Root} from './template'
 
 describe('<App.Root> Template', () => {
   it('should render as expected', () => {

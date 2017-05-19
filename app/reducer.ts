@@ -4,4 +4,4 @@ import {combineReducers} from 'redux'
 export type State = {} // Replace with Domain1 & Domain2 & ...
 
 /** Combination of reducer subsets as a single reducer for Redux */
-export default combineReducers<State>({})
+export const reducer = combineReducers<State>({})

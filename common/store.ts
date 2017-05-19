@@ -1,14 +1,22 @@
-import {applyMiddleware, createStore, Reducer, Store} from 'redux'
-import createSagaMiddleware, {SagaIterator, SagaMiddleware} from 'redux-saga'
-import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly'
+import {
+  Middleware,
+  Reducer,
+  applyMiddleware,
+  createStore as createReduxStore,
+} from 'redux'
+import {
+  EnhancerOptions,
+  composeWithDevTools,
+} from 'redux-devtools-extension/developmentOnly'
+import createSagaMiddleware, {SagaIterator} from 'redux-saga'
 
 type Saga = () => SagaIterator
 
 // Check if Redux DevTools is available for redux-logger
-const devToolsAvailable = !!window.__REDUX_DEVTOOLS_EXTENSION__
+const devToolsAvailable = window.__REDUX_DEVTOOLS_EXTENSION__ !== undefined
 
 /** Store constructor options */
-interface Options<S> {
+interface Options<S> extends Readonly<EnhancerOptions> {
   /** Redux reducer */
   readonly reducer: Reducer<S>
 
@@ -17,9 +25,6 @@ interface Options<S> {
 
   /** Intial store state */
   readonly initialState?: S
-
-  /** Additional options for Redux Devtools */
-  readonly [name: string]: string | number | boolean | Function | S | undefined
 }
 
 /**
@@ -27,13 +32,20 @@ interface Options<S> {
  * @param options Options to construct store with as well
  * @return Redux store instance
  */
-export default function newStore<S>(options: Options<S>): Store<S> {
-  const {reducer, saga, initialState, ...config} = options
-  let middlewares: SagaMiddleware[] = []
+export function createStore<S>({
+  reducer,
+  saga,
+  initialState,
+  ...config,
+}: Options<S>) {
+  let middlewares: Middleware[] = []
 
   // Create saga middleware if saga is provided
-  const sagaMiddleware = saga && createSagaMiddleware()
-  middlewares = sagaMiddleware ? [...middlewares, sagaMiddleware] : middlewares
+  let sagaMiddleware
+  if(saga !== undefined) {
+    sagaMiddleware = createSagaMiddleware()
+    middlewares = [...middlewares, sagaMiddleware]
+  }
 
   // Add redux-logger middleware in development when there's no Redux DevTools
   if(process.env.NODE_ENV !== 'production' && !devToolsAvailable) {
@@ -45,10 +57,10 @@ export default function newStore<S>(options: Options<S>): Store<S> {
   const enhancer = composeWithDevTools(config)(applyMiddleware(...middlewares))
 
   // Create store instance
-  const store = createStore(reducer, initialState!, enhancer)
+  const store = createReduxStore<S>(reducer, initialState!, enhancer)
 
   // Start running saga
-  if(sagaMiddleware && saga) {
+  if(sagaMiddleware !== undefined && saga !== undefined) {
     sagaMiddleware.run(saga)
   }
 

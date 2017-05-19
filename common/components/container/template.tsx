@@ -6,7 +6,7 @@ import {Store} from 'redux'
 /** Container component properties */
 interface Props<P> {
   /** Redux store instance */
-  readonly store: Store<any> // tslint:disable-line:no-any
+  readonly store: Store<{}>
 
   /** Component to render */
   readonly component: React.ComponentClass<P> | (() => React.ReactElement<P>)
@@ -17,7 +17,7 @@ interface Props<P> {
  * @param props Component properties
  * @return Container component
  */
-export default function Container<P>({store, component: Component}: Props<P>) {
+export function Container<P>({store, component: Component}: Props<P>) {
   return (
     <AppContainer>
       <Provider store={store}>

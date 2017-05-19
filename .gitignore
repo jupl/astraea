@@ -1,5 +1,5 @@
 /.awcache/
-/dist/
+/static/
 /story/
 
 # Created by https://www.gitignore.io/api/node

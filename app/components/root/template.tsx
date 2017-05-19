@@ -19,6 +19,6 @@ const Container = styled.div`
  * Render root component representing the entire application
  * @return Root component
  */
-export default function Root() {
+export function Root() {
   return <Container>Hello, World</Container>
 }

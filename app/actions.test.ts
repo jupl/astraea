@@ -7,11 +7,11 @@ interface Actions {
 
 describe('Actions', () => {
   const files: string[] = find(resolve(__dirname, '../*/actions.js'))
-  const actionsTable: Actions[] = files.map(file => require(file))
+  const actionsTable = files.map(file => require(file) as Actions)
 
   it('should be unique names', () => {
     const names = actionsTable
-      .map(Object.keys)
+      .map(actions => Object.keys(actions))
       .reduce((array, keys) => [...array, ...keys], [])
     expect(names).toEqual([...new Set(names)])
   })
