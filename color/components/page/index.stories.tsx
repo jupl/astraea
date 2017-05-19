@@ -40,7 +40,7 @@ const StyledTemplate = styled(template.ColorPage)`
 `
 
 // Define stories
-storiesOf('Color.Page', module)
+storiesOf('<ColorPage>', module)
   .addDecorator(story => <Provider store={store}>{story()}</Provider>)
   .add('component', () => <StyledComponent />)
   .add('template', () => <StyledTemplate {...props} />)
