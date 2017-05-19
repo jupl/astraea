@@ -1,23 +1,22 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "experimentalDecorators": true,
     "jsx": "react",
+    "maxNodeModuleJsDepth": 1,
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
     "noImplicitReturns": true,
-    "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "sourceMap": true,
-    "strictNullChecks": true,
-    "target": "es2015",
-    "types": [
-      "jest",
-      "node",
-      "webpack-env"
-    ]
+    "strict": true,
+    "target": "es2015"
   },
   "awesomeTypescriptLoaderOptions": {
     "useBabel": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "**/*.js"
+  ]
 }
