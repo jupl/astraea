@@ -1,9 +1,9 @@
 import {shallow} from 'enzyme'
 import * as React from 'react'
-import {Root} from './template'
+import {AppRoot} from './template'
 
-describe('<App.Root> Template', () => {
+describe('<AppRoot> Template', () => {
   it('should render as expected', () => {
-    expect(shallow(<Root />)).toMatchSnapshot()
+    expect(shallow(<AppRoot />)).toMatchSnapshot()
   })
 })

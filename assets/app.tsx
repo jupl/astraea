@@ -1,7 +1,7 @@
 import 'normalize.css'
 import * as React from 'react'
 import {render as renderToDOM} from 'react-dom'
-import {Root} from '../app/components/root'
+import {AppRoot} from '../app/components/root'
 import {reducer} from '../app/reducer'
 import {saga} from '../app/saga'
 import {Container} from '../common/components/container'
@@ -28,7 +28,7 @@ render()
  * multiple times to rerender when a hot reload occurs.
  */
 function render() {
-  renderToDOM(<Container store={store} component={Root} />, container)
+  renderToDOM(<Container store={store} component={AppRoot} />, container)
 }
 
 /**
