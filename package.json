@@ -33,14 +33,13 @@
     "test:watch": "npm run test -- --watch",
     "server": "npm run server:hot",
     "server:hot": "cross-env NODE_ENV=development HOT_MODULES=true ts-node webpack/server",
-    "server:story": "cross-env STORYBOOK=true start-storybook -p 9001",
+    "server:story": "cross-env NODE_ENV=development STORYBOOK=true start-storybook -p 9001",
     "build": "npm run clean && webpack",
     "build:dev": "cross-env NODE_ENV=development npm run build",
     "build:prod": "cross-env NODE_ENV=production npm run build",
-    "build:story": "cross-env STORYBOOK=true build-storybook -o story"
+    "build:story": "cross-env NODE_ENV=production STORYBOOK=true build-storybook -o $PWD/story"
   },
   "devDependencies": {
-    "@kadira/storybook": "^2.35.3",
     "@storybook/react": "^3.0.0-alpha.0",
     "@types/enzyme": "^2.4.34",
     "@types/globule": "^1.1.0",
