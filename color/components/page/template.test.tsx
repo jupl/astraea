@@ -2,7 +2,7 @@ import {shallow} from 'enzyme'
 import * as React from 'react'
 import {Button, ColorPage} from './template'
 
-describe('<Color.ColorPage> Template', () => {
+describe('<ColorPage> Template', () => {
   const props = {
     color: 'white',
     onPreviousColor: jest.fn(),
