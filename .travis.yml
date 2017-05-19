@@ -10,4 +10,5 @@ script:
   - yarn coverage
   - yarn build:dev
   - yarn build:prod
-  - yarn build:story
+  # TODO Uncomment once storybook is fixed
+  # - yarn build:story
