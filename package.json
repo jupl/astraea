@@ -68,7 +68,6 @@
     "globule": "^1.0.0",
     "hapi": "^16.1.1",
     "hapi-webpack-plugin": "^2.0.0",
-    "hapiour-decorators": "^1.2.0",
     "jest": "^20.0.3",
     "normalize.css": "^7.0.0",
     "react": "^15.3.2",
@@ -91,5 +90,6 @@
     "typescript": "^2.1.4",
     "wcb": "^0.3.2",
     "webpack": "^2.2.0"
-  }
+  },
+  "dependencies": {}
 }
