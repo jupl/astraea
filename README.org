@@ -12,8 +12,6 @@
 - [[#project-resources][Project Resources]]
 
 ** About
-This is a boilerplate project for developing client-side code using [[https://www.typescriptlang.org/][TypeScript]] and [[https://webpack.js.org/][Webpack]].
-
 This is a boilerplate project for developing a mid to large scale client-side application(s) using [[https://www.typescriptlang.org/][TypeScript]], [[https://facebook.github.io/react/][React]], and [[http://redux.js.org/][Redux]]. For an example project, visit the [[https://github.com/jupl/astraea/tree/example][example branch]].
 
 ^{[[#astraea-typescript--react--redux-boilerplate][Back to top]]}
