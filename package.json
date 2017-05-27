@@ -90,6 +90,5 @@
     "typescript": "^2.1.4",
     "wcb": "^0.3.2",
     "webpack": "^2.2.0"
-  },
-  "dependencies": {}
+  }
 }
