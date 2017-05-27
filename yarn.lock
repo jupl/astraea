@@ -171,10 +171,6 @@
   version "10.3.2"
   resolved "https://registry.yarnpkg.com/@types/joi/-/joi-10.3.2.tgz#bc4ce6577c294710663d347ebe59087f375075a5"
 
-"@types/lodash@^4.14.55":
-  version "4.14.64"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.64.tgz#979cf3a3d4a368670840bf9b3e448dc33ffe84ee"
-
 "@types/mime-db@*":
   version "1.27.0"
   resolved "https://registry.yarnpkg.com/@types/mime-db/-/mime-db-1.27.0.tgz#9bc014a1fd1fdf47649c1a54c6dd7966b8284792"
@@ -192,10 +188,6 @@
 "@types/node@*", "@types/node@^7.0.0":
   version "7.0.22"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.22.tgz#4593f4d828bdd612929478ea40c67b4f403ca255"
-
-"@types/node@^6.0.0":
-  version "6.0.73"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.73.tgz#85dc4bb6f125377c75ddd2519a1eeb63f0a4ed70"
 
 "@types/podium@*":
   version "1.0.0"
@@ -233,10 +225,6 @@
   resolved "https://registry.yarnpkg.com/@types/redux-devtools-extension/-/redux-devtools-extension-2.13.2.tgz#b2e09a8c163b2b0f5072e6a5ac41474000df2111"
   dependencies:
     redux-devtools-extension "*"
-
-"@types/reflect-metadata@0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@types/reflect-metadata/-/reflect-metadata-0.0.5.tgz#9c042bfa9803d577aad4f57dfbca4b7cae4286fe"
 
 "@types/shot@*":
   version "3.4.0"
@@ -1636,12 +1624,6 @@ boom@2.x.x:
 boom@4.x.x:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/boom/-/boom-4.3.1.tgz#4f8a3005cb4a7e3889f749030fd25b96e01d2e31"
-  dependencies:
-    hoek "4.x.x"
-
-boom@^3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/boom/-/boom-3.2.2.tgz#0f0cc5d04adc5003b8c7d71f42cca7271fef0e78"
   dependencies:
     hoek "4.x.x"
 
@@ -3179,14 +3161,6 @@ handlebars@^4.0.3:
   optionalDependencies:
     uglify-js "^2.6"
 
-hapi-alive@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/hapi-alive/-/hapi-alive-1.4.0.tgz#d6d613f30940731411e87757e3fe56e752b616ef"
-  dependencies:
-    boom "^3.2.2"
-    hoek "^4.0.1"
-    joi "^8.4.2"
-
 hapi-webpack-plugin@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/hapi-webpack-plugin/-/hapi-webpack-plugin-2.0.0.tgz#f1d7488c5939ca7964c9b9696cd1f98a8b2c839c"
@@ -3195,7 +3169,7 @@ hapi-webpack-plugin@^2.0.0:
     webpack-dev-middleware "^1.10.1"
     webpack-hot-middleware "^2.17.1"
 
-hapi@^16.1.0, hapi@^16.1.1:
+hapi@^16.1.1:
   version "16.1.1"
   resolved "https://registry.yarnpkg.com/hapi/-/hapi-16.1.1.tgz#0466db0703ba15cd00f07175ccf394d9cb56b1e0"
   dependencies:
@@ -3217,19 +3191,6 @@ hapi@^16.1.0, hapi@^16.1.1:
     statehood "5.x.x"
     subtext "^4.3.x"
     topo "2.x.x"
-
-hapiour-decorators@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/hapiour-decorators/-/hapiour-decorators-1.2.0.tgz#58a9a7d1a0e447bff0d94ac4dd13647a9cd5044e"
-  dependencies:
-    "@types/hapi" "^16.0.0"
-    "@types/lodash" "^4.14.55"
-    "@types/node" "^6.0.0"
-    "@types/reflect-metadata" "0.0.5"
-    hapi "^16.1.0"
-    hapi-alive "^1.4.0"
-    lodash "^4.17.3"
-    reflect-metadata "^0.1.10"
 
 har-schema@^1.0.5:
   version "1.0.5"
@@ -3303,7 +3264,7 @@ hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
 
-hoek@4.x.x, hoek@^4.0.1:
+hoek@4.x.x:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.1.1.tgz#9cc573ffba2b7b408fb5e9c2a13796be94cddce9"
 
@@ -3967,15 +3928,6 @@ joi@10.x.x:
     items "2.x.x"
     topo "2.x.x"
 
-joi@^8.4.2:
-  version "8.4.2"
-  resolved "https://registry.yarnpkg.com/joi/-/joi-8.4.2.tgz#bd7774658fe99058d8994ed1d4b9962484ebb859"
-  dependencies:
-    hoek "4.x.x"
-    isemail "2.x.x"
-    moment "2.x.x"
-    topo "2.x.x"
-
 js-base64@^2.1.9:
   version "2.1.9"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.1.9.tgz#f0e80ae039a4bd654b5f281fc93f04a914a7fcce"
@@ -4287,7 +4239,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@4.x.x, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1:
+lodash@4.x.x, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -4502,10 +4454,6 @@ minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0:
 mobx@^2.3.4:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/mobx/-/mobx-2.7.0.tgz#cf3d82d18c0ca7f458d8f2a240817b3dc7e54a01"
-
-moment@2.x.x:
-  version "2.18.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
 
 mount-point@^1.0.0:
   version "1.2.0"
@@ -5679,10 +5627,6 @@ redux@^3.6.0:
     lodash-es "^4.2.1"
     loose-envify "^1.1.0"
     symbol-observable "^1.0.2"
-
-reflect-metadata@^0.1.10:
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.10.tgz#b4f83704416acad89988c9b15635d47e03b9344a"
 
 regenerate@^1.2.1:
   version "1.3.2"
