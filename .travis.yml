@@ -3,6 +3,9 @@ language: node_js
 node_js:
   - "node"
   - "6"
+before_install: yarn global add greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
 # The script actions are to check the project is valid.
 # If using Travis for the project PLEASE MODIFY/REMOVE AS NEEDED.
 script:
