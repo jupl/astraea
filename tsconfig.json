@@ -15,8 +15,8 @@
   "awesomeTypescriptLoaderOptions": {
     "useBabel": true
   },
-  "exclude": [
-    "node_modules",
-    "**/*.js"
+  "include": [
+    "src",
+    "*.ts"
   ]
 }

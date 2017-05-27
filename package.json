@@ -13,7 +13,7 @@
       "ts",
       "tsx"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/common/setup-tests.ts",
+    "setupTestFrameworkScriptFile": "<rootDir>/setup-tests.ts",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "npm run build:prod",
-    "clean": "trash static",
+    "clean": "trash dist",
     "coverage": "npm run test -- --coverage",
     "coverage:watch": "npm run coverage -- --watch",
     "lint": "tslint --type-check --project tsconfig.json",
@@ -32,7 +32,7 @@
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "server": "npm run server:hot",
-    "server:hot": "cross-env NODE_ENV=development HOT_MODULES=true ts-node webpack/server",
+    "server:hot": "cross-env NODE_ENV=development HOT_MODULES=true ts-node src/webpack/server",
     "server:story": "cross-env NODE_ENV=development STORYBOOK=true start-storybook -p 9001",
     "build": "npm run clean && webpack",
     "build:dev": "cross-env NODE_ENV=development npm run build",
@@ -81,8 +81,8 @@
     "redux-devtools-extension": "^2.13.0",
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.15.3",
-    "style-loader": "^0.17.0",
-    "styled-components": "^1.4.1",
+    "style-loader": "^0.18.1",
+    "styled-components": "^2.0.0",
     "trash-cli": "^1.3.0",
     "ts-jest": "^20.0.4",
     "ts-node": "^3.0.2",

@@ -1,0 +1,5 @@
+Example project
+
+[[https://travis-ci.org/jupl/astraea][file:https://img.shields.io/travis/jupl/astraea/example.svg?label=travis&style=flat-square]]
+[[https://david-dm.org/jupl/astraea/example][file:https://img.shields.io/david/jupl/astraea/example.svg?style=flat-square]]
+[[https://david-dm.org/jupl/astraea/example?type=dev][file:https://img.shields.io/david/dev/jupl/astraea/example.svg?style=flat-square]]
