@@ -12,9 +12,6 @@
     "strict": true,
     "target": "es2015"
   },
-  "awesomeTypescriptLoaderOptions": {
-    "useBabel": true
-  },
   "include": [
     "src",
     "*.ts"
