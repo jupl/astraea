@@ -7,7 +7,7 @@ import {
 import {
   EnhancerOptions,
   composeWithDevTools,
-} from 'redux-devtools-extension/developmentOnly'
+} from 'redux-devtools-extension/logOnlyInProduction'
 import createSagaMiddleware, {SagaIterator} from 'redux-saga'
 
 type Saga = () => SagaIterator
