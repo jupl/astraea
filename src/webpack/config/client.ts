@@ -1,7 +1,7 @@
 import {addRules, addToEntries, createConfiguration} from 'wcb'
 
 // Build configuration
-export let configuration = addToEntries(addRules(createConfiguration({
+export const configuration = addToEntries(addRules(createConfiguration({
   assets: process.env.STORYBOOK !== 'true' ? 'src/assets' : undefined,
   common: true,
   cssLoaders: [{test: /\.css$/, use: ['css-loader']}],
