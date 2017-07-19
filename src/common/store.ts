@@ -19,10 +19,8 @@ const devToolsAvailable = window.__REDUX_DEVTOOLS_EXTENSION__ !== undefined
 interface Options<S> extends Readonly<EnhancerOptions> {
   /** Redux reducer */
   readonly reducer: Reducer<S>
-
   /** Optional saga */
   readonly saga?: Saga
-
   /** Intial store state */
   readonly initialState?: S
 }
@@ -49,8 +47,8 @@ export function createStore<S>({
 
   // Add redux-logger middleware in development when there's no Redux DevTools
   if(process.env.NODE_ENV !== 'production' && !devToolsAvailable) {
-    const createLogger = require('redux-logger')
-    middlewares = [...middlewares, createLogger()]
+    const logger = require('redux-logger')
+    middlewares = [...middlewares, logger.default]
   }
 
   // Create enhancer

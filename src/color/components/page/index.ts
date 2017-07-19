@@ -2,15 +2,16 @@ import {connect} from 'react-redux'
 import {Dispatch} from 'redux'
 import {nextColor, previousColor} from '../../actions'
 import {State} from '../../reducer'
-import * as template from './template'
+import {ColorPage as Template} from './template'
 
 /** Properties for wrapped component */
 interface Props {
+  /** Class name */
   readonly className?: string
 }
 
 /** Wrap color page component with data from store */
-export const ColorPage = connect(props, actions)(template.ColorPage)
+export const ColorPage = connect(props, actions)(Template)
 
 /**
  * Add Redux store data as properties to component
@@ -18,8 +19,8 @@ export const ColorPage = connect(props, actions)(template.ColorPage)
  * @param props Wrapped component properties
  * @return Props to pass to component
  */
-export function props({color}: State, ownProps: Props): template.Props {
-  return {...ownProps, color}
+export function props({color}: State, _: Props): Template.Props {
+  return {color}
 }
 
 /**
@@ -27,7 +28,7 @@ export function props({color}: State, ownProps: Props): template.Props {
  * @param dispatch Redux store dispatch function
  * @return Props to pass to component
  */
-export function actions(dispatch: Dispatch<State>): template.Actions {
+export function actions(dispatch: Dispatch<State>): Template.Actions {
   return {
     onNextColor: () => dispatch(nextColor()),
     onPreviousColor: () => dispatch(previousColor()),

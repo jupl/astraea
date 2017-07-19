@@ -223,12 +223,6 @@
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/@types/redux-actions/-/redux-actions-1.2.4.tgz#92d4cbcef6495a7d7129264210586c6f865667aa"
 
-"@types/redux-devtools-extension@^2.13.0":
-  version "2.13.2"
-  resolved "https://registry.yarnpkg.com/@types/redux-devtools-extension/-/redux-devtools-extension-2.13.2.tgz#b2e09a8c163b2b0f5072e6a5ac41474000df2111"
-  dependencies:
-    redux-devtools-extension "*"
-
 "@types/shot@*":
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/@types/shot/-/shot-3.4.0.tgz#459477c5187d3ebd303660ab099e7e9e0f3b656f"
@@ -5612,7 +5606,7 @@ redux-actions@^2.0.1:
     lodash-es "^4.17.4"
     reduce-reducers "^0.1.0"
 
-redux-devtools-extension@*, redux-devtools-extension@^2.13.0:
+redux-devtools-extension@^2.13.0:
   version "2.13.2"
   resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.2.tgz#e0f9a8e8dfca7c17be92c7124958a3b94eb2911d"
 
@@ -6345,6 +6339,10 @@ tsconfig@^6.0.0:
 tslib@^1.6.0:
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.7.1.tgz#bc8004164691923a79fe8378bbeb3da2017538ec"
+
+tslint-language-service@^0.9.6:
+  version "0.9.6"
+  resolved "https://registry.yarnpkg.com/tslint-language-service/-/tslint-language-service-0.9.6.tgz#882bb0704cf8397b332ddc0af7168c7f22f279ea"
 
 tslint-react@^3.0.0:
   version "3.0.0"

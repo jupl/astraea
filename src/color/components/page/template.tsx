@@ -5,13 +5,14 @@ import styled from 'styled-components'
 interface BackgroundProps extends React.HTMLProps<HTMLDivElement> {
   color: string
 }
-const Background = ({color: _, ...props}: BackgroundProps) =>
-  <div {...props} />
 const StyledBackground = styled(Background)`
   transition: background 0.8s ease-out;
   display: flex;
   background-color: ${({color}) => color};
 `
+function Background({color: _, ...props}: BackgroundProps) {
+  return <div {...props} />
+}
 
 // Text component
 const Text = styled.span`
@@ -36,22 +37,22 @@ export const Button = styled.button`
   outline: none;
 `
 
-/** Properties for color page component */
-export interface Props {
-  /** CSS color to show */
-  readonly color: string
+export namespace ColorPage {
+  /** Properties for color page component */
+  export interface Props {
+    /** CSS color to show */
+    color: string
+    /** Additional class names to include */
+    className?: string
+  }
 
-  /** Additional class names to include */
-  readonly className?: string
-}
-
-/** Actions for color page component */
-export interface Actions {
-  /** Handler when user wants to go to next color */
-  onNextColor(): void
-
-  /** Handler when user wants to go to previous color */
-  onPreviousColor(): void
+  /** Actions for color page component */
+  export interface Actions {
+    /** Handler when user wants to go to next color */
+    onNextColor(): void
+    /** Handler when user wants to go to previous color */
+    onPreviousColor(): void
+  }
 }
 
 /**
@@ -64,7 +65,7 @@ export function ColorPage({
   color,
   onNextColor,
   onPreviousColor,
-}: Props & Actions) {
+}: Readonly<ColorPage.Props & ColorPage.Actions>) {
   return (
     <StyledBackground color={color} className={className}>
       <Gradient>
