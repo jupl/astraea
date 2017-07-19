@@ -19,10 +19,8 @@ const devToolsAvailable = window.__REDUX_DEVTOOLS_EXTENSION__ !== undefined
 interface Options<S> extends Readonly<EnhancerOptions> {
   /** Redux reducer */
   readonly reducer: Reducer<S>
-
   /** Optional saga */
   readonly saga?: Saga
-
   /** Intial store state */
   readonly initialState?: S
 }

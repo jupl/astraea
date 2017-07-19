@@ -7,7 +7,6 @@ import {Store} from 'redux'
 interface Props<P> {
   /** Redux store instance */
   readonly store: Store<{}>
-
   /** Component to render */
   readonly component: React.ComponentClass<P> | (() => React.ReactElement<P>)
 }
