@@ -3,7 +3,8 @@ import * as webpack from './plugin'
 
 const RADIX = 10
 const DEFAULT_PORT = 3000
-let port = parseInt(process.env.PORT, RADIX)
+const envPort = process.env.PORT
+let port = parseInt(envPort !== undefined ? envPort : '', RADIX)
 if(isNaN(port)) {
   port = DEFAULT_PORT
 }
