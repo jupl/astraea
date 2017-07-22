@@ -11,7 +11,7 @@ export interface State {
 }
 
 /** Reducer that handles color related actions */
-export const reducer = handleActions<Color, {}>({
+export const reducer = handleActions<Color, {} | void>({
   [`${previousColor}`]: setPreviousColor,
   [`${nextColor}`]: setNextColor,
   [`${autoNextColor}`]: setNextColor,
