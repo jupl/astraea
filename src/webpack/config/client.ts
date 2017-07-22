@@ -1,10 +1,11 @@
 import {addRules, addToEntries, createConfiguration} from 'wcb'
+import {cssLoaders} from './common'
 
-// Build configuration
+/** Webpack configuration to build client assets */
 export const configuration = addToEntries(addRules(createConfiguration({
   assets: process.env.STORYBOOK !== 'true' ? 'src/assets' : undefined,
   common: true,
-  cssLoaders: [{test: /\.css$/, use: ['css-loader']}],
+  cssLoaders,
   destination: 'dist/assets',
   log: message => console.log(message),
   source: 'src/assets',
