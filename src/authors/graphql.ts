@@ -15,8 +15,8 @@ export interface Author {
 /** Queries for resolvers */
 export interface Queries {
   author(root: {}, args: {id: Author['id']}): Value<Author>
-  postsFromAuthor(author: Author): Value<Post[]>
-  commentsFromAuthor(author: Author): Value<Comment[]>
+  commentsFromAuthor(author: Author): Value<Author['comments']>
+  postsFromAuthor(author: Author): Value<Author['posts']>
 }
 
 /** Schema definition */

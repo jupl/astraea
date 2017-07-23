@@ -16,8 +16,8 @@ export interface Comment {
 /** Queries for resolvers */
 export interface Queries {
   authorFromComment(comment: Comment): Value<Author>
-  commentsFromComment(comment: Comment): Value<Comment[]>
-  postFromComment(comment: Comment): Value<Post>
+  commentsFromComment(comment: Comment): Value<Comment['comments']>
+  postFromComment(comment: Comment): Value<Comment['post']>
 }
 
 /** Schema definition */

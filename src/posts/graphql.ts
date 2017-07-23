@@ -15,8 +15,8 @@ export interface Post {
 
 /** Queries for resolvers */
 export interface Queries {
-  authorFromPost(post: Post): Value<Author>
-  commentsFromPost(post: Post): Value<Comment[]>
+  authorFromPost(post: Post): Value<Post['author']>
+  commentsFromPost(post: Post): Value<Post['comments']>
   posts(): Value<Post[]>
   post(root: {}, {id}: {id: Post['id']}): Value<Post>
 }
