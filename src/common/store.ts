@@ -19,10 +19,12 @@ const devToolsAvailable = window.__REDUX_DEVTOOLS_EXTENSION__ !== undefined
 interface Options<S> extends Readonly<EnhancerOptions> {
   /** Redux reducer */
   readonly reducer: Reducer<S>
-  /** Optional saga */
-  readonly saga?: Saga
   /** Intial store state */
   readonly initialState?: S
+  /** Optional middlewares */
+  readonly middlewares?: Middleware[]
+  /** Optional saga */
+  readonly saga?: Saga
 }
 
 /**
@@ -32,12 +34,11 @@ interface Options<S> extends Readonly<EnhancerOptions> {
  */
 export function createStore<S>({
   reducer,
-  saga,
   initialState,
+  middlewares = [],
+  saga,
   ...config,
 }: Options<S>) {
-  let middlewares: Middleware[] = []
-
   // Create saga middleware if saga is provided
   let sagaMiddleware
   if(saga !== undefined) {
