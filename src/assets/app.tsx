@@ -1,5 +1,6 @@
 import 'normalize.css'
 import * as React from 'react'
+import {ApolloClient} from 'react-apollo'
 import {render as renderToDOM} from 'react-dom'
 import {AppRoot} from '../app/components/root'
 import {createReducer} from '../app/reducer'
@@ -10,9 +11,10 @@ import {createStore} from '../common/store'
 // Reference app container to render to
 const container = document.getElementById('container')!
 
-// Create Redux store instance
-const reducer = createReducer()
-const store = createStore({reducer, saga})
+// Set up Apollo and Redux
+const client = new ApolloClient()
+const reducer = createReducer({apollo: client.reducer()})
+const store = createStore({reducer, saga, middlewares: [client.middleware()]})
 
 // Render application. Also register to rerender if hot loading is available.
 if(module.hot) { // tslint:disable-line:strict-boolean-expressions
@@ -29,7 +31,9 @@ render()
  * multiple times to rerender when a hot reload occurs.
  */
 function render() {
-  renderToDOM(<Container store={store} component={AppRoot} />, container)
+  renderToDOM(
+    <Container client={client} store={store} component={AppRoot} />,
+    container)
 }
 
 /**
