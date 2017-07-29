@@ -64,7 +64,7 @@ const POSTS: posts.Post[] = [
 ]
 
 export const schema = makeExecutableSchema({
-  typeDefs: [appSchema, posts.schema],
+  typeDefs: [appSchema, authors.schema, comments.schema, posts.schema],
   resolvers: merge.all([
     authors.createResolvers({
       author: (_, {id}) =>
