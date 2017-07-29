@@ -1,5 +1,5 @@
 import {SagaIterator} from 'redux-saga'
-import {all, call} from 'redux-saga/effects'
+import {all, spawn} from 'redux-saga/effects'
 
 type SagaStarter = () => SagaIterator
 
@@ -8,5 +8,5 @@ const sagas: SagaStarter[] = [] // Add domain saga entry points here
 
 /** Entry point to start running all initial saga tasks */
 export function* saga(): SagaIterator {
-  yield all(sagas.map(call))
+  yield all(sagas.map(spawn))
 }
