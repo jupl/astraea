@@ -11,7 +11,7 @@ interface Props {
 }
 
 /** Wrap color page component with data from store */
-export const ColorPage = connect(props, actions)(Template)
+export const ColorPage = connect(data, actions)(Template)
 
 /**
  * Add Redux store data as properties to component
@@ -19,7 +19,7 @@ export const ColorPage = connect(props, actions)(Template)
  * @param props Wrapped component properties
  * @return Props to pass to component
  */
-export function props({color}: State, _: Props): Template.Props {
+export function data({color}: State, _: Props): Template.Data {
   return {color}
 }
 

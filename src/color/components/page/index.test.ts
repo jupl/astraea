@@ -1,15 +1,15 @@
-import {actions, props} from '.'
+import {actions, data} from '.'
 
 describe('<ColorPage>', () => {
-  it('should inject props from store as expected', () => {
+  it('should inject data from store as expected', () => {
     const store = {
       color: 'red',
       other: 'else',
     }
-    expect(props(store, {})).toMatchSnapshot()
+    expect(data(store, {})).toMatchSnapshot()
   })
 
-  it('should inject action props as expected', () => {
+  it('should inject actions as expected', () => {
     const dispatch = jest.fn()
     const {onPreviousColor, onNextColor} = actions(dispatch)
     onPreviousColor()
