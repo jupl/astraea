@@ -1,6 +1,14 @@
 import {gql, graphql} from 'react-apollo'
 import {Post} from '../../graphql'
-import {NO_POST, PostsDetail as Template} from './template'
+import {PostsDetail as Template} from './template'
+
+export const NO_POST: Post = {
+  id: 0,
+  title: '',
+  description: '',
+  author: undefined!,
+  comments: [],
+}
 
 interface Result {
   post: Post
@@ -11,7 +19,7 @@ interface Props {
 }
 
 export const PostsDetail = graphql<Result, Props, Template.Props>(gql`
-  mutation {
+  query {
     post(id: $id) {
       id
       title
