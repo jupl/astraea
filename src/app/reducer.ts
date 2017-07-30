@@ -1,7 +1,10 @@
 import {createReducerCreator} from '../common/reducer'
+import * as posts from '../posts/reducer'
 
 /** Structure of application state */
-export type State = {} // Replace with Domain1 & Domain2 & ...
+export type State = posts.State
 
 /** Reducr creator for potential extra reducers */
-export const createReducer = createReducerCreator<State>({})
+export const createReducer = createReducerCreator<State>({
+  posts: posts.reducer,
+})

@@ -1,0 +1,1 @@
+export {PostsListItem} from './template'
