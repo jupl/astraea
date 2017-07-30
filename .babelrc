@@ -1,5 +1,8 @@
 {
   "plugins": [
+    ["transform-semantic-ui-react-imports", {
+      "addLessImports": true
+    }],
     "transform-runtime",
     "react-hot-loader/babel"
   ],
