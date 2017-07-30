@@ -1,5 +1,6 @@
 import {configure} from '@storybook/react'
-import 'normalize.css'
+import 'semantic-ui-less/definitions/globals/reset.less'
+import 'semantic-ui-less/definitions/globals/site.less'
 
 // Load all stories defined in our codebase
 function loadStories() {
