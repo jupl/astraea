@@ -10,6 +10,7 @@ const Layout = styled.div`
   display: flex;
   flex-direction: column;
 `
+const MenuBar = styled.div``
 const Body = styled.div`
   flex: 1;
   overflow: auto;
@@ -22,11 +23,13 @@ const Body = styled.div`
 export function AppRoot() {
   return (
     <Layout>
-      <Container>
-        <Menu secondary>
-          <Menu.Item header>Application</Menu.Item>
-        </Menu>
-      </Container>
+      <MenuBar>
+        <Container>
+          <Menu secondary>
+            <Menu.Item header>Application</Menu.Item>
+          </Menu>
+        </Container>
+      </MenuBar>
       <Body>
         <Container>
           <Header>Hello, world</Header>
