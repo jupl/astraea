@@ -7,9 +7,7 @@ export interface Author {
   id: number
   name: string
   comments: Comment[]
-  commentIds: Comment['id'][]
   posts: Post[]
-  postIds: Post['id'][]
 }
 
 /** Queries for resolvers */

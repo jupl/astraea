@@ -6,9 +6,7 @@ export const NO_POST: Post = {
   title: '',
   description: '',
   author: undefined!,
-  authorId: undefined!,
   comments: [],
-  commentIds: [],
 }
 
 /** Interfaces for PostsList component properties */

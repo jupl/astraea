@@ -13,7 +13,21 @@ const appSchema = `
     _: Boolean
   }
 `
-const AUTHORS: authors.Author[] = [
+
+interface Author extends authors.Author {
+  commentIds: Comment['id'][]
+  postIds: Post['id'][]
+}
+interface Comment extends comments.Comment {
+  authorId: Author['id']
+  commentIds: Comment['id'][]
+}
+interface Post extends posts.Post {
+  authorId: Author['id']
+  commentIds: Comment['id'][]
+}
+
+const AUTHORS: Author[] = [
   {
     id: 1,
     name: 'John Doe',
@@ -31,7 +45,7 @@ const AUTHORS: authors.Author[] = [
     postIds: [],
   },
 ]
-const COMMENTS: comments.Comment[] = [
+const COMMENTS: Comment[] = [
   {
     id: 1,
     text: 'First post comment',
@@ -51,7 +65,7 @@ const COMMENTS: comments.Comment[] = [
     post: undefined!,
   },
 ]
-const POSTS: posts.Post[] = [
+const POSTS: Post[] = [
   {
     id: 1,
     title: 'First post',
@@ -69,17 +83,17 @@ export const schema = makeExecutableSchema({
     authors.createResolvers({
       author: (_, {id}) =>
         AUTHORS.find(author => author.id === id)!,
-      commentsFromAuthor: ({commentIds}) =>
+      commentsFromAuthor: ({commentIds}: Author) =>
         COMMENTS.filter(({id}) => commentIds.includes(id)),
-      postsFromAuthor: ({postIds}) =>
+      postsFromAuthor: ({postIds}: Author) =>
         POSTS.filter(({id}) => postIds.includes(id)),
     }),
     comments.createResolvers({
-      authorFromComment: ({authorId}) =>
+      authorFromComment: ({authorId}: Comment) =>
         AUTHORS.find(({id}) => id === authorId)!,
-      commentsFromComment: ({commentIds}) =>
+      commentsFromComment: ({commentIds}: Comment) =>
         COMMENTS.filter(({id}) => commentIds.includes(id)),
-      postFromComment: comment => {
+      postFromComment: (comment: Comment) => {
         let root = comment
         while(root.commentIds.length !== 0) {
           root = COMMENTS.find(({commentIds}) => commentIds.includes(root.id))!
@@ -88,9 +102,9 @@ export const schema = makeExecutableSchema({
       },
     }),
     posts.createResolvers({
-      authorFromPost: ({authorId}) =>
+      authorFromPost: ({authorId}: Post) =>
         AUTHORS.find(({id}) => id === authorId)!,
-      commentsFromPost: ({commentIds}) =>
+      commentsFromPost: ({commentIds}: Post) =>
         COMMENTS.filter(({id}) => commentIds.includes(id)),
       post: (_, {id}) =>
         POSTS.find(post => post.id === id)!,

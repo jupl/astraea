@@ -8,9 +8,7 @@ export interface Post {
   title: string
   description: string
   author: Author
-  authorId: Author['id']
   comments: Comment[]
-  commentIds: Comment['id'][]
 }
 
 /** Queries for resolvers */

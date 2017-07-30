@@ -7,9 +7,7 @@ export interface Comment {
   id: number
   text: String
   author: Author
-  authorId: Author['id']
   comments: Comment[]
-  commentIds: Comment['id'][]
   post: Post
 }
 
