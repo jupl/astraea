@@ -2,6 +2,25 @@
 
 exports[`<AppRoot> Template should render as expected 1`] = `
 <styled.div>
-  Hello, World
+  <styled.div>
+    <Container>
+      <Menu
+        secondary={true}
+      >
+        <MenuItem
+          header={true}
+        >
+          Application
+        </MenuItem>
+      </Menu>
+    </Container>
+  </styled.div>
+  <styled.div>
+    <Container>
+      <Header>
+        Hello, world
+      </Header>
+    </Container>
+  </styled.div>
 </styled.div>
 `;
