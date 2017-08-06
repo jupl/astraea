@@ -19,6 +19,8 @@ const devToolsAvailable = window.__REDUX_DEVTOOLS_EXTENSION__ !== undefined
 interface Options<S> extends Readonly<EnhancerOptions> {
   /** Redux reducer */
   readonly reducer: Reducer<S>
+  /** Additional enhancers */
+  readonly enhancers?: Function[]
   /** Intial store state */
   readonly initialState?: S
   /** Optional middlewares */
@@ -33,6 +35,7 @@ interface Options<S> extends Readonly<EnhancerOptions> {
  * @return Redux store instance
  */
 export function createStore<S>({
+  enhancers = [],
   reducer,
   initialState,
   middlewares = [],
@@ -53,7 +56,8 @@ export function createStore<S>({
   }
 
   // Create enhancer
-  const enhancer = composeWithDevTools(config)(applyMiddleware(...middlewares))
+  const compose = composeWithDevTools(config)
+  const enhancer = compose(...enhancers, applyMiddleware(...middlewares))
 
   // Create store instance
   const store = createReduxStore<S>(reducer, initialState!, enhancer)
