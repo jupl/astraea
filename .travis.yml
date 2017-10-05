@@ -8,8 +8,8 @@ after_script: greenkeeper-lockfile-upload
 # The script actions are to check the project is valid.
 # If using Travis for the project PLEASE MODIFY/REMOVE AS NEEDED.
 script:
-  - npm lint
-  - npm coverage
-  - npm build:dev
-  - npm build:prod
-  - npm build:story
+  - npm run lint
+  - npm run coverage
+  - npm run build:dev
+  - npm run build:prod
+  - npm run build:story
