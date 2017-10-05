@@ -3,7 +3,7 @@ import * as Adapter from 'enzyme-adapter-react-16'
 import 'jest-enzyme'
 
 // Set up Enzyme
-configure({adapter: new (Adapter as any)()})
+configure({adapter: new (Adapter as any)()}) // tslint:disable-line:no-any
 
 // For React 16
 Object.assign(global, {
