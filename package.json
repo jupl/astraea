@@ -101,7 +101,7 @@
     "tslint-language-service": "^0.9.6",
     "tslint-react": "^3.0.0",
     "typescript": "^2.4.2",
-    "wcb": "^0.5.0",
+    "wcb": "^0.5.1",
     "webpack": "^3.3.0"
   }
 }
