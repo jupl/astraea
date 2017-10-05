@@ -10,9 +10,15 @@
       "/node_modules/",
       "<rootDir>/common/store.ts"
     ],
+    "globals": {
+      "ts-jest": {
+        "useBabelrc": true
+      }
+    },
     "moduleFileExtensions": [
       "js",
       "json",
+      "jsx",
       "ts",
       "tsx"
     ],
@@ -21,7 +27,7 @@
       "enzyme-to-json/serializer"
     ],
     "transform": {
-      ".tsx?": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "\\.tsx?": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.tsx?$"
   },
@@ -44,17 +50,17 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.1.9",
-    "@storybook/react": "^3.1.9",
-    "@types/enzyme": "^2.8.2",
+    "@storybook/react": "^3.2.12",
+    "@types/enzyme": "^2.8.11",
     "@types/globule": "^1.1.0",
     "@types/hapi": "^16.1.6",
-    "@types/jest": "^20.0.4",
+    "@types/jest": "^21.1.2",
     "@types/node": "^8.0.14",
-    "@types/react": "^15.0.38",
-    "@types/react-dom": "^15.5.1",
+    "@types/react": "^16.0.9",
+    "@types/react-dom": "^16.0.0",
     "@types/react-hot-loader": "^3.0.3",
-    "@types/react-redux": "^4.4.46",
-    "@types/redux-actions": "^1.2.6",
+    "@types/react-redux": "^5.0.10",
+    "@types/redux-actions": "^2.2.2",
     "@types/storybook__addon-actions": "^3.0.1",
     "@types/storybook__react": "^3.0.2",
     "@types/webpack": "^3.0.4",
@@ -64,21 +70,24 @@
     "babel-preset-env": "^1.6.0",
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.4",
-    "enzyme": "^2.9.1",
-    "enzyme-to-json": "^1.5.0",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
+    "enzyme-to-json": "^3.1.1",
     "eslint-config-jupl": "^0.6.2",
-    "file-loader": "^0.11.2",
+    "file-loader": "^1.1.4",
     "globule": "^1.2.0",
     "hapi": "^16.5.0",
     "hapi-webpack-plugin": "^2.0.0",
-    "jest": "^20.0.3",
-    "jest-cli": "^20.0.4",
+    "jest": "^21.2.1",
+    "jest-cli": "^21.2.1",
+    "jest-enzyme": "^4.0.0",
     "normalize.css": "^7.0.0",
-    "react": "^15.6.1",
+    "react": "^16.0.0",
     "react-addons-test-utils": "^15.6.0",
-    "react-dom": "^15.6.1",
+    "react-dom": "^16.0.0",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-redux": "^5.0.5",
+    "react-test-renderer": "^16.0.0",
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
     "redux-devtools-extension": "^2.13.0",
@@ -86,7 +95,7 @@
     "redux-saga": "^0.15.4",
     "styled-components": "^2.1.1",
     "trash-cli": "^1.3.0",
-    "ts-jest": "^20.0.7",
+    "ts-jest": "^21.0.1",
     "ts-node": "^3.2.0",
     "tslint": "^5.4.3",
     "tslint-language-service": "^0.9.6",
