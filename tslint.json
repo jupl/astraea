@@ -1,6 +1,6 @@
 {
   "extends": [
-    "eslint-config-jupl/ts",
-    "eslint-config-jupl/ts/react"
+    "@jupl/tslint-config",
+    "@jupl/tslint-config/jsx"
   ]
 }

@@ -1,10 +1,9 @@
 import {Server} from 'hapi'
 import * as webpack from './plugin'
 
-const RADIX = 10
 const DEFAULT_PORT = 3000
 const envPort = process.env.PORT
-let port = parseInt(envPort !== undefined ? envPort : '', RADIX)
+let port = parseInt(envPort !== undefined ? envPort : '', 10)
 if(isNaN(port)) {
   port = DEFAULT_PORT
 }
