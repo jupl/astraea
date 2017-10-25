@@ -14,9 +14,5 @@
     ],
     "strict": true,
     "target": "es2017"
-  },
-  "include": [
-    "src",
-    "*.ts"
-  ]
+  }
 }

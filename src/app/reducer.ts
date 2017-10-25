@@ -4,5 +4,5 @@ import {createReducerCreator} from '../common/reducer'
 // tslint:disable-next-line:interface-over-type-literal
 export type State = {} // = Domain1 & Domain2 & ...
 
-/** Reducr creator for potential extra reducers */
+/** Reducer creator for potential extra reducers */
 export const createReducer = createReducerCreator<State>({})
