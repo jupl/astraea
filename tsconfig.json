@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "checkJs": true,
     "experimentalDecorators": true,
     "jsx": "react",
     "maxNodeModuleJsDepth": 1,
@@ -14,9 +15,5 @@
     ],
     "strict": true,
     "target": "es2017"
-  },
-  "include": [
-    "src",
-    "*.ts"
-  ]
+  }
 }
