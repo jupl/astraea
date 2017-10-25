@@ -8,9 +8,6 @@
     "production": {
       "plugins": ["transform-react-inline-elements"]
     },
-    "storybook": {
-      "presets": ["env"]
-    },
     "test": {
       "presets": ["env"]
     }

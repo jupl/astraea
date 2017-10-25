@@ -1,12 +1,12 @@
-import {actions, data} from '.'
+import {actions, props} from '.'
 
 describe('<ColorPage>', () => {
-  it('should inject data from store as expected', () => {
+  it('should inject props as expected', () => {
     const store = {
       color: 'red',
       other: 'else',
     }
-    expect(data(store, {})).toMatchSnapshot()
+    expect(props(store, {})).toMatchSnapshot()
   })
 
   it('should inject actions as expected', () => {

@@ -16,17 +16,17 @@ type Saga = () => SagaIterator
 const devToolsAvailable = window.__REDUX_DEVTOOLS_EXTENSION__ !== undefined
 
 /** Store constructor options */
-interface Options<S> extends Readonly<EnhancerOptions> {
+interface IOptions<S> extends EnhancerOptions {
   /** Redux reducer */
-  readonly reducer: Reducer<S>
+  reducer: Reducer<S>
   /** Additional enhancers */
-  readonly enhancers?: Function[]
+  enhancers?: Function[]
   /** Intial store state */
-  readonly initialState?: S
+  initialState?: S
   /** Optional middlewares */
-  readonly middlewares?: Middleware[]
+  middlewares?: Middleware[]
   /** Optional saga */
-  readonly saga?: Saga
+  saga?: Saga
 }
 
 /**
@@ -38,10 +38,12 @@ export function createStore<S>({
   enhancers = [],
   reducer,
   initialState,
-  middlewares = [],
+  middlewares: baseMiddlewares = [],
   saga,
   ...config,
-}: Options<S>) {
+}: IOptions<S>) {
+  let middlewares = baseMiddlewares
+
   // Create saga middleware if saga is provided
   let sagaMiddleware
   if(saga !== undefined) {

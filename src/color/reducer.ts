@@ -6,7 +6,7 @@ import {COLORS} from './config'
 type Color = string
 
 /** Structure of color state relative to application reducer */
-export interface State {
+export interface IState {
   readonly color: Color
 }
 

@@ -10,7 +10,7 @@ const AUTO_TIMEOUT = 4000
  * manually change color
  */
 export function* saga(): SagaIterator {
-  for( ; ; ) {
+  for(;;) {
     const {end} = yield race({
       timeout: call(delay, AUTO_TIMEOUT),
       end: take([`${previousColor}`, `${nextColor}`]),

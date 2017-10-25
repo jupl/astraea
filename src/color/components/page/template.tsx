@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 // Background component
-interface BackgroundProps extends React.HTMLProps<HTMLDivElement> {
+interface IBackgroundProps extends React.HTMLProps<HTMLDivElement> {
   color: string
 }
 const StyledBackground = styled(Background)`
@@ -10,7 +10,7 @@ const StyledBackground = styled(Background)`
   display: flex;
   background-color: ${({color}) => color};
 `
-function Background({color: _, ...props}: BackgroundProps) {
+function Background({color: _, ...props}: IBackgroundProps) {
   return <div {...props} />
 }
 
@@ -37,23 +37,19 @@ export const Button = styled.button`
   outline: none;
 `
 
-export namespace ColorPage {
-  /** Data for color page component */
-  export interface Data {
-    /** CSS color to show */
-    color: string
-    /** Additional class names to include */
-    className?: string
-  }
-  /** Actions for color page component */
-  export interface Actions {
-    /** Handler when user wants to go to next color */
-    onNextColor(): void
-    /** Handler when user wants to go to previous color */
-    onPreviousColor(): void
-  }
-  /** Properties for color page component */
-  export type Props = Actions & Data
+/** Data for color page component */
+export interface IProps {
+  /** CSS color to show */
+  color: string
+  /** Additional class names to include */
+  className?: string
+}
+/** Actions for color page component */
+export interface IActions {
+  /** Handler when user wants to go to next color */
+  onNextColor(): void
+  /** Handler when user wants to go to previous color */
+  onPreviousColor(): void
 }
 
 /**
@@ -66,7 +62,7 @@ export function ColorPage({
   color,
   onNextColor,
   onPreviousColor,
-}: Readonly<ColorPage.Props>) {
+}: IProps & IActions) {
   return (
     <StyledBackground color={color} className={className}>
       <Gradient>
