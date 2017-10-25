@@ -8,7 +8,7 @@
   "jest": {
     "coveragePathIgnorePatterns": [
       "/node_modules/",
-      "<rootDir>/common/store.ts"
+      "<rootDir>/jest/"
     ],
     "globals": {
       "ts-jest": {
@@ -23,9 +23,9 @@
       "tsx"
     ],
     "setupFiles": [
-      "<rootDir>/shims.ts"
+      "<rootDir>/jest/shims.ts"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/setup-tests.ts",
+    "setupTestFrameworkScriptFile": "<rootDir>/jest/setup.ts",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
