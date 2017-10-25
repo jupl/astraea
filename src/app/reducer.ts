@@ -1,8 +1,8 @@
 import {createReducerCreator} from '../common/reducer'
 
 /** Structure of application state */
-// tslint:disable-next-line:no-empty-interface
-export interface IState {} // Extend Domain1, Domain2, ...
+// tslint:disable-next-line:interface-over-type-literal
+export type State = {} // = Domain1 & Domain2 & ...
 
 /** Reducr creator for potential extra reducers */
-export const createReducer = createReducerCreator<IState>({})
+export const createReducer = createReducerCreator<State>({})

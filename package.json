@@ -52,7 +52,7 @@
     "build:story": "cross-env NODE_ENV=production STORYBOOK=true build-storybook -o $PWD/story"
   },
   "devDependencies": {
-    "@jupl/tslint-config": "^0.1.1",
+    "@jupl/tslint-config": "^0.2.0",
     "@storybook/addon-actions": "^3.2.13",
     "@storybook/react": "^3.2.13",
     "@types/enzyme": "^3.1.0",
