@@ -22,14 +22,17 @@
       "ts",
       "tsx"
     ],
+    "setupFiles": [
+      "<rootDir>/shims.ts"
+    ],
     "setupTestFrameworkScriptFile": "<rootDir>/setup-tests.ts",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.tsx?$",
     "transform": {
       "\\.tsx?": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.tsx?$"
+    }
   },
   "scripts": {
     "start": "npm run build:prod",
