@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 // Background component
-interface IBackgroundProps extends React.HTMLProps<HTMLDivElement> {
+interface BackgroundProps extends React.HTMLProps<HTMLDivElement> {
   color: string
 }
 const StyledBackground = styled(Background)`
@@ -10,7 +10,7 @@ const StyledBackground = styled(Background)`
   display: flex;
   background-color: ${({color}) => color};
 `
-function Background({color: _, ...props}: IBackgroundProps) {
+function Background({color: _, ...props}: BackgroundProps) {
   return <div {...props} />
 }
 
@@ -38,14 +38,14 @@ export const Button = styled.button`
 `
 
 /** Data for color page component */
-export interface IProps {
+export interface Props {
   /** CSS color to show */
   color: string
   /** Additional class names to include */
   className?: string
 }
 /** Actions for color page component */
-export interface IActions {
+export interface Actions {
   /** Handler when user wants to go to next color */
   onNextColor(): void
   /** Handler when user wants to go to previous color */
@@ -62,7 +62,7 @@ export function ColorPage({
   color,
   onNextColor,
   onPreviousColor,
-}: IProps & IActions) {
+}: Props & Actions) {
   return (
     <StyledBackground color={color} className={className}>
       <Gradient>

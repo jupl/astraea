@@ -2,13 +2,13 @@ import {find} from 'globule'
 import {resolve} from 'path'
 import {ActionFunctions} from 'redux-actions'
 
-interface IActions {
-  [name: string]: ActionFunctions<any> // tslint:disable-line:no-any
+interface Actions {
+  [name: string]: ActionFunctions<{}>
 }
 
 describe('Actions', () => {
   const files: string[] = find(resolve(__dirname, '../*/actions.ts'))
-  const actionsTable = files.map(file => require(file) as IActions)
+  const actionsTable = files.map(file => require(file) as Actions)
 
   it('should be unique names', () => {
     const names = actionsTable

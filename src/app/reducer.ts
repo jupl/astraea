@@ -1,9 +1,8 @@
-import * as color from '../color/reducer'
+import * as Color from '../color/reducer'
 import {createReducerCreator} from '../common/reducer'
 
 /** Structure of application state */
-// tslint:disable-next-line:no-empty-interface
-export type IState = color.IState
+export type State = Color.State
 
 /** Reducer creator for potential extra reducers */
-export const createReducer = createReducerCreator<IState>({})
+export const createReducer = createReducerCreator<State>({})

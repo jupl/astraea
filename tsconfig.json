@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "checkJs": true,
     "experimentalDecorators": true,
     "jsx": "react",
     "maxNodeModuleJsDepth": 1,
