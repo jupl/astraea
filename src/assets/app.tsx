@@ -1,3 +1,6 @@
+import {InMemoryCache} from 'apollo-cache-inmemory'
+import {ApolloClient} from 'apollo-client'
+import {createHttpLink} from 'apollo-link-http'
 import 'normalize.css'
 import * as React from 'react'
 import {render as renderToDOM} from 'react-dom'
@@ -10,7 +13,11 @@ import {createStore} from '../common/store'
 // Reference app container to render to
 const container = document.getElementById('container')!
 
-// Create Redux store instance
+// Set up Apollo and Redux
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  link: createHttpLink({uri: '/graphql'}),
+})
 const store = createStore({reducer: createReducer(), saga})
 
 // Render application. Also register to rerender if hot loading is available.
@@ -28,7 +35,12 @@ render()
  * multiple times to rerender when a hot reload occurs.
  */
 function render() {
-  renderToDOM(<Container store={store}><AppRoot /></Container>, container)
+  const component = (
+    <Container store={store} client={client}>
+      <AppRoot />
+    </Container>
+  )
+  renderToDOM(component, container)
 }
 
 /**
