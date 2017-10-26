@@ -11,5 +11,5 @@ script:
   - npm run lint
   - npm run coverage
   - npm run build:dev
-  - npm run build:prod
   - npm run build:story
+  - npm run package
