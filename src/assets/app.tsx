@@ -11,8 +11,7 @@ import {createStore} from '../common/store'
 const container = document.getElementById('container')!
 
 // Create Redux store instance
-const reducer = createReducer()
-const store = createStore({reducer, saga})
+const store = createStore({reducer: createReducer(), saga})
 
 // Render application. Also register to rerender if hot loading is available.
 if(module.hot) { // tslint:disable-line:strict-boolean-expressions
@@ -37,5 +36,5 @@ function render() {
  * hot reload occurs.
  */
 function updateReducer() {
-  store.replaceReducer(reducer)
+  store.replaceReducer(createReducer())
 }
