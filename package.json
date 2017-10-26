@@ -1,10 +1,10 @@
 {
   "name": "app",
   "version": "0.0.1",
+  "private": true,
   "engines": {
     "node": ">=8"
   },
-  "private": true,
   "jest": {
     "coveragePathIgnorePatterns": [
       "/node_modules/",
@@ -16,6 +16,7 @@
         "useBabelrc": true
       }
     },
+    "mapCoverage": true,
     "moduleFileExtensions": [
       "js",
       "json",
