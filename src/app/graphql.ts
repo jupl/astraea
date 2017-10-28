@@ -1,7 +1,6 @@
-import * as merge from 'deepmerge'
 import {makeExecutableSchema} from 'graphql-tools'
 
-const appSchema = `
+const typeDefs = `
   schema {
     query: Query
   }
@@ -13,6 +12,5 @@ const appSchema = `
 
 /** GraphQL schema */
 export const schema = makeExecutableSchema({
-  typeDefs: [appSchema],
-  resolvers: merge.all([]),
+  typeDefs: [typeDefs],
 })
