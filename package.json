@@ -42,7 +42,7 @@
     "clean": "trash dist",
     "coverage": "npm run test -- --coverage",
     "coverage:watch": "npm run coverage -- --watch",
-    "lint": "npm run lint:file -- '*.ts' 'src/**/*.ts'",
+    "lint": "npm run lint:file -- '*.ts' 'src/**/*.ts{,x}'",
     "lint:file": "tslint --project tsconfig.json",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
