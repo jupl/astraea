@@ -1,4 +1,3 @@
-import {SagaIterator} from 'redux-saga'
 import {all, spawn} from 'redux-saga/effects'
 import * as color from '../color/saga'
 
@@ -6,6 +5,6 @@ import * as color from '../color/saga'
 const sagas = [color.saga]
 
 /** Entry point to start running all initial saga tasks */
-export function* saga(): SagaIterator {
+export function* saga() {
   yield all(sagas.map(spawn))
 }

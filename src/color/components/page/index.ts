@@ -7,7 +7,7 @@ import * as Template from './template'
 /** Properties for wrapped component */
 export interface Props {
   /** Class name */
-  readonly className?: string
+  className?: string
 }
 
 /** Wrap color page component with data from store */

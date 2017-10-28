@@ -1,4 +1,4 @@
-import {handleActions} from 'redux-actions'
+import {Action, handleActions} from 'redux-actions'
 import {autoNextColor, nextColor, previousColor} from './actions'
 import {COLORS} from './config'
 
@@ -7,11 +7,11 @@ type Color = string
 
 /** Structure of color state relative to application reducer */
 export interface State {
-  readonly color: Color
+  color: Color
 }
 
 /** Reducer that handles color related actions */
-export const reducer = handleActions<Color, {} | void>({
+export const reducer = handleActions({
   [`${previousColor}`]: setPreviousColor,
   [`${nextColor}`]: setNextColor,
   [`${autoNextColor}`]: setNextColor,
@@ -21,9 +21,10 @@ export const reducer = handleActions<Color, {} | void>({
  * Update state to go to the previous color. If past the first color, go to the
  * end of the color list.
  * @param color Current color state
+ * @param _action Unused dispatched action
  * @return Previous color state
  */
-function setPreviousColor(color: Color) {
+function setPreviousColor(color: Color, _action: Action<void>): Color {
   const oldIndex = COLORS.indexOf(color)
   const newIndex = (oldIndex + COLORS.length - 1) % COLORS.length
   return COLORS[newIndex]
@@ -33,9 +34,10 @@ function setPreviousColor(color: Color) {
  * Update state to go to the next color. If past the last color, go to the
  * beginning of the color list.
  * @param color Current color state
+ * @param _action Unused dispatched action
  * @return Next color state
  */
-function setNextColor(color: Color) {
+function setNextColor(color: Color, _action: Action<void>): Color {
   const oldIndex = COLORS.indexOf(color)
   const newIndex = (oldIndex + 1) % COLORS.length
   return COLORS[newIndex]
