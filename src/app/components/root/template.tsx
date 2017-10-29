@@ -1,10 +1,14 @@
 import * as React from 'react'
-import {PostsList} from '../../../posts/components/list'
+
+/** Template properties */
+export interface Props {
+  component: React.ComponentClass
+}
 
 /**
  * Render root component representing the entire application
  * @return Root component
  */
-export function AppRoot() {
-  return <PostsList />
+export function AppRoot({component: Component}: Props) {
+  return <Component />
 }
