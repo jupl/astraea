@@ -7,12 +7,8 @@ interface Actions {
 }
 
 describe('Actions', () => {
-  const actionFiles: string[] = find(resolve(__dirname, '../*/actions.ts'))
-  const routesFiles: string[] = find(resolve(__dirname, '../*/routes.ts'))
-  const actionsTable = [
-    ...actionFiles.map(file => require(file) as Actions),
-    ...routesFiles.map(file => require(file).navigation as Actions),
-  ]
+  const files: string[] = find(resolve(__dirname, '../*/actions.ts'))
+  const actionsTable = files.map(file => require(file) as Actions)
 
   it('should be unique names', () => {
     const names = actionsTable
