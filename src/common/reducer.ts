@@ -1,14 +1,20 @@
 import {Reducer, ReducersMapObject, combineReducers} from 'redux'
 import {LocationState} from 'redux-first-router'
 
+interface Location extends LocationState {
+  payload: {
+    [key: string]: any // tslint:disable-line:no-any
+  }
+}
+
 /** Structure of common state */
 export interface State {
-  location: LocationState
+  location: Location
 }
 
 /** Required additional reducers */
 export interface ExtraReducers extends ReducersMapObject {
-  location: Reducer<LocationState>
+  location: Reducer<Location>
 }
 
 /**
