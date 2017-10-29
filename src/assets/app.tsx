@@ -61,5 +61,5 @@ function render() {
  * hot reload occurs.
  */
 function updateReducer() {
-  store.replaceReducer(createReducer())
+  store.replaceReducer(createReducer({location: router.reducer}))
 }
