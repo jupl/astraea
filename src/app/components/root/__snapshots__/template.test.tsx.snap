@@ -1,7 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<AppRoot> Template should render as expected 1`] = `
-<styled.div>
-  Hello, World
-</styled.div>
-`;
+exports[`<AppRoot> Template should render as expected 1`] = `<FauxComponent />`;

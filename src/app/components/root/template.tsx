@@ -2,7 +2,7 @@ import * as React from 'react'
 
 /** Template properties */
 export interface Props {
-  component: React.ComponentClass
+  component: React.ComponentClass | React.StatelessComponent
 }
 
 /**

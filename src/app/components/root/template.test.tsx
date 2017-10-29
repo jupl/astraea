@@ -4,6 +4,10 @@ import {AppRoot} from './template'
 
 describe('<AppRoot> Template', () => {
   it('should render as expected', () => {
-    expect(shallow(<AppRoot />)).toMatchSnapshot()
+    expect(shallow(<AppRoot component={FauxComponent} />)).toMatchSnapshot()
   })
 })
+
+function FauxComponent() {
+  return <div>Hello, world</div>
+}
