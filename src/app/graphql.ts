@@ -1,16 +1,7 @@
-import {makeExecutableSchema} from 'graphql-tools'
+import {createSchema} from '../common/graphql'
 
-const typeDefs = `
-  schema {
-    query: Query
-  }
-
-  type Query {
-    _: Boolean
-  }
-`
-
-/** GraphQL schema */
-export const schema = makeExecutableSchema({
-  typeDefs: [typeDefs],
+/** Schema for application GraphQL */
+export const schema = createSchema({
+  typeDefs: [],
+  resolvers: {},
 })
