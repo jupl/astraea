@@ -1,4 +1,5 @@
 import {connect} from 'react-redux'
+import {PostsItem} from '../../../posts/components/item'
 import {PostsList} from '../../../posts/components/list'
 import {State} from '../../reducer'
 import {navigation} from '../../routes'
@@ -15,6 +16,9 @@ export function props({location: {type}}: State): Template.Props {
   const nav = Object.values(navigation).find(action => `${action}` === type)
   let component: Template.Props['component']
   switch(nav) {
+  case navigation.post:
+    component = PostsItem
+    break
   default:
     component = PostsList
     break

@@ -92,31 +92,49 @@ export const schema = createSchema<Resolvers>({
         POSTS.filter(({id}) => postIds.includes(id)),
     },
     Comment: {
-      author: ({authorId}: Comment) =>
-        AUTHORS.find(({id}) => id === authorId)!,
+      author: ({authorId}: Comment) => findAuthor(authorId),
       comments: ({commentIds}: Comment) =>
         COMMENTS.filter(({id}) => commentIds.includes(id)),
       post: (comment: Comment) => {
-        let root = comment
-        while(root.commentIds.length !== 0) {
-          root = COMMENTS.find(({commentIds}) => commentIds.includes(root.id))!
+        let root: Comment | undefined = comment
+        let post: Post | undefined
+        while(root !== undefined && root.commentIds.length !== 0) {
+          root = COMMENTS.find(({commentIds}) => commentIds.includes(root!.id))
         }
-        return POSTS.find(({commentIds}) => commentIds.includes(root.id))!
+        if(root !== undefined) {
+          post = POSTS.find(({commentIds}) => commentIds.includes(root!.id))
+        }
+        if(post === undefined) {
+          throw new Error('Cannot find post')
+        }
+        return post
       },
     },
     Post: {
-      author: ({authorId}: Post) =>
-        AUTHORS.find(({id}) => id === authorId)!,
+      author: ({authorId}: Post) => findAuthor(authorId),
       comments: ({commentIds}: Post) =>
         COMMENTS.filter(({id}) => commentIds.includes(id)),
     },
     Query: {
-      author: (_, {id}) =>
-        AUTHORS.find(author => author.id === id)!,
-      post: (_, {id}) =>
-        POSTS.find(post => post.id === id)!,
-      posts: () =>
-        POSTS,
+      author: (_, {id}) => findAuthor(id),
+      post: (_, {id}) => findPost(id),
+      posts: () => POSTS,
     },
   },
 })
+
+function findAuthor(authorId: Author['id']) {
+  const author = AUTHORS.find(({id}) => id === authorId)
+  if(author === undefined) {
+    throw new Error('Cannot find author')
+  }
+  return author
+}
+
+function findPost(postId: Post['id']) {
+  const post = POSTS.find(({id}) => id === postId)
+  if(post === undefined) {
+    throw new Error('Cannot find post')
+  }
+  return post
+}

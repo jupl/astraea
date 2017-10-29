@@ -1,13 +1,13 @@
 import * as React from 'react'
 import Link from 'redux-first-router-link'
-import * as Posts from '../../graphql'
+import {Post} from '../../graphql'
 import {navigation} from '../../routes'
 import {PostsListItem} from '../list-item'
 
 /** Component properties */
 export interface Props {
-  posts: Posts.Post[]
   loading: boolean
+  posts?: Post[]
 }
 
 /**
@@ -16,12 +16,19 @@ export interface Props {
  * @return Posts list
  */
 export function PostsList({loading, posts}: Props) {
-  const contents = loading
-    ? 'Loading'
-    : posts.map(post => (
-      <Link key={post.id} to={navigation.post(post)}>
-        <PostsListItem post={post} />
-      </Link>
-    ))
-  return <div>{contents}</div>
+  if(loading) {
+    return <div>Loading</div>
+  }
+  if(posts === undefined) {
+    return <div>Error</div>
+  }
+  return <div>{posts.map(createPost)}</div>
+}
+
+function createPost(post: Post) {
+  return (
+    <Link key={post.id} to={navigation.post(post)}>
+      <PostsListItem post={post} />
+    </Link>
+  )
 }
