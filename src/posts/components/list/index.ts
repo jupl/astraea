@@ -9,7 +9,7 @@ interface Result {
 }
 
 /** Wrap posts list component with data from store */
-export const PostsList = graphql<Result, Template.Props>(gql`
+export const PostsList = graphql<Result, {}, Template.Props>(gql`
   query {
     posts {
       id
