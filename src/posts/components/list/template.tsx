@@ -1,5 +1,7 @@
 import * as React from 'react'
+import Link from 'redux-first-router-link'
 import * as Posts from '../../graphql'
+import {navigation} from '../../routes'
 import {PostsListItem} from '../list-item'
 
 /** Component properties */
@@ -16,6 +18,10 @@ export interface Props {
 export function PostsList({loading, posts}: Props) {
   const contents = loading
     ? 'Loading'
-    : posts.map(post => <PostsListItem key={post.id} post={post} />)
+    : posts.map(post => (
+      <Link key={post.id} to={navigation.post(post)}>
+        <PostsListItem post={post} />
+      </Link>
+    ))
   return <div>{contents}</div>
 }

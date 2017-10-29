@@ -1,8 +1,17 @@
-
+import {createAction} from 'redux-actions'
 import {RoutesMap} from 'redux-first-router'
-import {navigatePost} from './actions'
+
+/** Navigate payload */
+export interface PostPayload {
+  id: number
+}
+
+/** Navigation */
+export const navigation = {
+  post: createAction<PostPayload>('POSTS_NAVIGATE_POST'),
+}
 
 /** Application routes */
 export const routes: RoutesMap = {
-  [`${navigatePost}`]: '/posts/:id',
+  [`${navigation.post}`]: '/posts/:id',
 }
