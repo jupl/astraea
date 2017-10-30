@@ -1,4 +1,6 @@
 import * as React from 'react'
+import Link from 'redux-first-router-link'
+import {navigation} from '../../routes'
 
 /** Template properties */
 export interface Props {
@@ -10,5 +12,14 @@ export interface Props {
  * @return Root component
  */
 export function AppRoot({component: Component}: Props) {
-  return <Component />
+  return (
+    <div>
+      <div>
+        <Link to={navigation.home()}>Home</Link>
+        |
+        <Link to={navigation.addPost()}>Add Post</Link>
+      </div>
+      <Component />
+    </div>
+  )
 }

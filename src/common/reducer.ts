@@ -1,5 +1,6 @@
 import {Reducer, ReducersMapObject, combineReducers} from 'redux'
 import {LocationState} from 'redux-first-router'
+import * as Form from 'redux-form'
 
 interface Location extends LocationState {
   payload: {
@@ -9,6 +10,7 @@ interface Location extends LocationState {
 
 /** Structure of common state */
 export interface State {
+  form: Form.FormState
   location: Location
 }
 
@@ -24,6 +26,10 @@ export interface ExtraReducers extends ReducersMapObject {
  */
 export function createReducerCreator<S>(reducers: ReducersMapObject) {
   return function createReducer(extraReducers: ExtraReducers) {
-    return combineReducers<S>({...reducers, ...extraReducers})
+    return combineReducers<S>({
+      ...reducers,
+      ...extraReducers,
+      form: Form.reducer,
+    })
   }
 }
