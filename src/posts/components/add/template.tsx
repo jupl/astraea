@@ -14,7 +14,7 @@ export function PostsAdd({
   valid,
 }: InjectedFormProps<Form>) {
   const disableClear = pristine || submitting
-  const disableSubmit = disableClear || !valid
+  const disableSubmit = submitting || !valid
   return (
     <form onSubmit={handleSubmit}>
       <div>
