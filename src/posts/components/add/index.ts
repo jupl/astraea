@@ -8,7 +8,7 @@ export const PostsAdd = reduxForm<Template.Form>({
 })(Template.PostsAdd)
 
 function validate({title, description}: Template.Form) {
-  let errors: Template.Form = {}
+  let errors = {}
   if(title === undefined || title.trim() === '') {
     errors = {...errors, title: 'Title cannot be empty'}
   }
