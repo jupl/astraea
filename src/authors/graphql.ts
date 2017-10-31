@@ -11,6 +11,9 @@ export interface Author {
   posts: Posts.Post[]
 }
 
+// Arguments for author query
+type AuthorArgs = Pick<Author, 'id'>
+
 /** Resolvers */
 export interface Resolvers extends IResolvers {
   Author: {
@@ -18,7 +21,7 @@ export interface Resolvers extends IResolvers {
     posts(author: Author): Value<Posts.Post[]>
   }
   Query: {
-    author(root: {}, args: {id: Author['id']}): Value<Author>
+    author(root: {}, args: AuthorArgs): Value<Author>
   }
 }
 

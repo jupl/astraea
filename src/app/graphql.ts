@@ -58,7 +58,7 @@ const COMMENTS: Comment[] = [
   },
 ]
 
-const POSTS: Post[] = [
+let posts: Post[] = [
   {
     id: 1,
     title: 'First post',
@@ -89,7 +89,7 @@ export const schema = createSchema<Resolvers>({
       comments: ({commentIds}: Author) =>
         COMMENTS.filter(({id}) => commentIds.includes(id)),
       posts: ({postIds}: Author) =>
-        POSTS.filter(({id}) => postIds.includes(id)),
+        posts.filter(({id}) => postIds.includes(id)),
     },
     Comment: {
       author: ({authorId}: Comment) => findAuthor(authorId),
@@ -102,7 +102,7 @@ export const schema = createSchema<Resolvers>({
           root = COMMENTS.find(({commentIds}) => commentIds.includes(root!.id))
         }
         if(root !== undefined) {
-          post = POSTS.find(({commentIds}) => commentIds.includes(root!.id))
+          post = posts.find(({commentIds}) => commentIds.includes(root!.id))
         }
         if(post === undefined) {
           throw new Error('Cannot find post')
@@ -115,10 +115,25 @@ export const schema = createSchema<Resolvers>({
       comments: ({commentIds}: Post) =>
         COMMENTS.filter(({id}) => commentIds.includes(id)),
     },
+    Mutation: {
+      addPost: (_, {title, description}) => {
+        const post: Post = {
+          id: posts.length + 1,
+          title,
+          description,
+          authorId: 1,
+          author: undefined!,
+          commentIds: [],
+          comments: [],
+        }
+        posts = [...posts, post]
+        return post
+      },
+    },
     Query: {
       author: (_, {id}) => findAuthor(id),
       post: (_, {id}) => findPost(id),
-      posts: () => POSTS,
+      posts: () => posts,
     },
   },
 })
@@ -132,7 +147,7 @@ function findAuthor(authorId: Author['id']) {
 }
 
 function findPost(postId: Post['id']) {
-  const post = POSTS.find(({id}) => id === postId)
+  const post = posts.find(({id}) => id === postId)
   if(post === undefined) {
     throw new Error('Cannot find post')
   }

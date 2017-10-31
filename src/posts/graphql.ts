@@ -12,15 +12,24 @@ export interface Post {
   comments: Comments.Comment[]
 }
 
+/** Arguments for post query */
+export type PostArgs = Pick<Post, 'id'>
+
+/** Arguments for add post mutation */
+export type AddPostArgs = Pick<Post, 'title' | 'description'>
+
 /** Resolvers */
 export interface Resolvers extends IResolvers {
   Post: {
     author(post: Post): Value<Authors.Author>
     comments(post: Post): Value<Comments.Comment[]>
   }
+  Mutation: {
+    addPost(root: {}, args: AddPostArgs): Value<Post>
+  }
   Query: {
     posts(): Value<Post[]>
-    post(root: {}, {id}: {id: Post['id']}): Value<Post>
+    post(root: {}, args: PostArgs): Value<Post>
   }
 }
 
@@ -37,6 +46,10 @@ export function typeDefs(): ITypedef[] {
         description: String!
         author: Author!
         comments: [Comment!]!
+      }
+
+      extend type Mutation {
+        addPost(title: String!, description: String!): Post!
       }
 
       extend type Query {
