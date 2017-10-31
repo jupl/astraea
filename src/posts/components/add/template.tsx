@@ -1,11 +1,16 @@
 import * as React from 'react'
 import {Field, InjectedFormProps} from 'redux-form'
 
+/** Form attributes */
 export interface Form {
   title?: string
   description?: string
 }
 
+/**
+ * Render add post form component
+ * @return Add post component
+ */
 export function PostsAdd({
   handleSubmit,
   pristine,
