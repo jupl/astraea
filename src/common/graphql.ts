@@ -7,7 +7,12 @@ import {
 
 const typeDef = `
   schema {
+    mutation: Mutation
     query: Query
+  }
+
+  type Mutation {
+    _: Boolean
   }
 
   type Query {
