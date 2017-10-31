@@ -1,3 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<AppRoot> Template should render as expected 1`] = `<FauxComponent />`;
+exports[`<AppRoot> Template should render as expected 1`] = `
+<div>
+  <div>
+    <Connect(Link)
+      to={
+        Object {
+          "type": "COMMON_NAVIGATE_HOME",
+        }
+      }
+    >
+      Home
+    </Connect(Link)>
+    |
+    <Connect(Link)
+      to={
+        Object {
+          "type": "POSTS_NAVIGATE_ADD",
+        }
+      }
+    >
+      Add Post
+    </Connect(Link)>
+  </div>
+  <FauxComponent />
+</div>
+`;
