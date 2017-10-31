@@ -4,7 +4,7 @@ import {Post} from '../../graphql'
 /** Post item properties */
 export interface Props {
   loading: boolean
-  post?: Post
+  post?: Pick<Post, 'title'>
 }
 
 /**

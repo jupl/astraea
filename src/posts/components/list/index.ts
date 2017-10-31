@@ -1,10 +1,10 @@
 import gql from 'graphql-tag'
 import {graphql} from 'react-apollo'
-import * as Posts from '../../graphql'
+import {Post} from '../../graphql'
 import * as Template from './template'
 
 interface Result {
-  posts?: Posts.Post[]
+  posts?: Pick<Post, 'id' | 'title'>[]
 }
 
 /** Wrap posts list component with data from store */

@@ -7,7 +7,7 @@ import {navigation} from '../../routes'
 import * as Template from './template'
 
 interface Result {
-  addPost?: Post
+  addPost?: Pick<Post, 'id'>
 }
 
 type GQLProps = ChildProps<{}, Result>

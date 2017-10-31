@@ -7,7 +7,7 @@ import {navigation} from '../../routes'
 import * as Template from './template'
 
 interface Result {
-  post?: Post
+  post?: Pick<Post, 'title'>
 }
 
 interface Props {
@@ -18,7 +18,6 @@ const reduxDecorator = connect(reduxProps)
 const gqlDecorator = graphql<Result, Props, Template.Props>(gql`
   query($id: Int!) {
     post(id: $id) {
-      id
       title
     }
   }

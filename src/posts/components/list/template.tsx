@@ -7,7 +7,7 @@ import {PostsListItem} from '../list-item'
 /** Component properties */
 export interface Props {
   loading: boolean
-  posts?: Post[]
+  posts?: Pick<Post, 'id' | 'title'>[]
 }
 
 /**
