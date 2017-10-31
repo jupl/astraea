@@ -1,11 +1,9 @@
 import * as React from 'react'
 import {Field, InjectedFormProps} from 'redux-form'
+import {Post} from '../../graphql'
 
 /** Form attributes */
-export interface Form {
-  title?: string
-  description?: string
-}
+export type Form = Partial<Pick<Post, 'description' | 'title'>>
 
 /**
  * Render add post form component
