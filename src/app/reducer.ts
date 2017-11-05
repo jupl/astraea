@@ -5,4 +5,6 @@ import * as Common from '../common/reducer'
 export type State = Common.State & Color.State
 
 /** Reducer creator for potential extra reducers */
-export const createReducer = Common.createReducerCreator<State>({})
+export const createReducer = Common.createReducerCreator<State>({
+  color: Color.reducer,
+})

@@ -1,6 +1,7 @@
 import 'normalize.css'
 import * as React from 'react'
 import {render as renderToDOM} from 'react-dom'
+import createSagaMiddleware from 'redux-saga'
 import {AppRoot} from '../app/components/root'
 import {createReducer} from '../app/reducer'
 import {saga} from '../app/saga'
@@ -11,7 +12,12 @@ import {createStore} from '../common/store'
 const container = document.getElementById('container')!
 
 // Create Redux store instance
-const store = createStore({reducer: createReducer(), saga})
+const sagaMiddleware = createSagaMiddleware()
+const store = createStore({
+  middlewares: [sagaMiddleware],
+  reducer: createReducer(),
+})
+sagaMiddleware.run(saga)
 
 // Render application. Also register to rerender if hot loading is available.
 if(module.hot) { // tslint:disable-line:strict-boolean-expressions
