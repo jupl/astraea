@@ -23,7 +23,6 @@ const store = createStore({reducer: createReducer()})
 if(module.hot) { // tslint:disable-line:strict-boolean-expressions
   module.hot.accept('../app/components/root', render)
   module.hot.accept('../app/reducer', updateReducer)
-  module.hot.accept('../app/saga', () => true)
   module.hot.accept('../common/components/container', render)
 }
 render()
