@@ -9,7 +9,6 @@ import {connectRoutes} from 'redux-first-router'
 import {AppRoot} from '../app/components/root'
 import {createReducer} from '../app/reducer'
 import {routes} from '../app/routes'
-import {saga} from '../app/saga'
 import {Container} from '../common/components/container'
 import {createStore} from '../common/store'
 
@@ -29,7 +28,6 @@ const store = createStore({
   enhancers: [router.enhancer],
   middlewares: [router.middleware],
   reducer: createReducer({location: router.reducer}),
-  saga,
 })
 
 // Render application. Also register to rerender if hot loading is available.
@@ -37,7 +35,6 @@ if(module.hot) { // tslint:disable-line:strict-boolean-expressions
   module.hot.accept('../app/components/root', render)
   module.hot.accept('../app/reducer', updateReducer)
   module.hot.accept('../app/routes', () => true)
-  module.hot.accept('../app/saga', () => true)
   module.hot.accept('../common/components/container', render)
 }
 render()
