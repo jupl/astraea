@@ -44,8 +44,7 @@ astraea/
 │  ├─ app/                     # Application domain
 │  │  ├─ components/root/      # Top level application view
 │  │  ├─ actions.test.ts       # Test to ensure all actions are valid
-│  │  ├─ reducer.ts            # Reducer for whole application
-│  │  └─ saga.ts               # Saga entry for whole application
+│  │  └─ reducer.ts            # Reducer for whole application
 │  ├─ assets/                  # Static files and entry points to include in builds
 │  │  └─ app.tsx               # An application entry point
 │  ├─ common/                  # Shared code used throughout project
@@ -75,10 +74,9 @@ domain/
 │  ├─ component2/
 │  └─ componentX/
 ├─ actions.ts # Redux actions for domain
-├─ reducer.ts # Domain reducer
-└─ saga.ts    # Domain sagas
+└─ reducer.ts # Domain reducer
 #+END_EXAMPLE
-Rather than group items by things like components/reducers/actions/etc., items are grouped by domain which can be a saner option as the project grows. Examples of domains can be things like resources (ex. =blog/=, =users/=) or other things. (ex. =ui/=) Domains may include things like components, actions, reducer, sagas, etc. but they don't have to include all of them. In fact, you can think of =app/= and =common/= as domains. Other files may be present as well.
+Rather than group items by things like components/reducers/actions/etc., items are grouped by domain which can be a saner option as the project grows. Examples of domains can be things like resources (ex. =blog/=, =users/=) or other things. (ex. =ui/=) Domains may include things like components, actions, reducer, etc. but they don't have to include all of them. In fact, you can think of =app/= and =common/= as domains. Other files may be present as well.
 *** Components
 #+BEGIN_EXAMPLE
 component/
@@ -97,7 +95,6 @@ Tests for components/domains/logic/etc. If code needs to be run before tests are
 - [[http://airbnb.io/enzyme/index.html#basic-usage][Enzyme]]
 - [[https://facebook.github.io/jest/docs/tutorial-react.html][React]]
 - [[http://redux.js.org/docs/recipes/WritingTests.html][Redux]]
-- [[http://yelouafi.github.io/redux-saga/docs/advanced/Testing.html][Redux Saga]]
 **** =*.stories.tsx=
 Defines a story to display in React Storybook. Typically this file is in a component. (ex. =index.stories.tsx=) [[https://getstorybook.io/docs/react-storybook/basics/writing-stories][This guide]] provides information on how to write stories.
 **** =__snapshots__=
@@ -145,7 +142,6 @@ Check codebase against linting rules. Optionally, some errors can be fixed autom
 - Libraries
   - [[https://facebook.github.io/react/][React]]
   - [[http://redux.js.org/][Redux]]
-    - [[http://yelouafi.github.io/redux-saga/][Redux Saga]]
     - [[https://github.com/acdlite/redux-actions][Redux Actions]]
   - [[https://styled-components.com/][Styled Components]]
   - [[https://necolas.github.io/normalize.css/][normalize.css]]

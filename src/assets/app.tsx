@@ -3,7 +3,6 @@ import * as React from 'react'
 import {render as renderToDOM} from 'react-dom'
 import {AppRoot} from '../app/components/root'
 import {createReducer} from '../app/reducer'
-import {saga} from '../app/saga'
 import {Container} from '../common/components/container'
 import {createStore} from '../common/store'
 
@@ -11,13 +10,12 @@ import {createStore} from '../common/store'
 const container = document.getElementById('container')!
 
 // Create Redux store instance
-const store = createStore({reducer: createReducer(), saga})
+const store = createStore({reducer: createReducer()})
 
 // Render application. Also register to rerender if hot loading is available.
 if(module.hot) { // tslint:disable-line:strict-boolean-expressions
   module.hot.accept('../app/components/root', render)
   module.hot.accept('../app/reducer', updateReducer)
-  module.hot.accept('../app/saga', () => true)
   module.hot.accept('../common/components/container', render)
 }
 render()
