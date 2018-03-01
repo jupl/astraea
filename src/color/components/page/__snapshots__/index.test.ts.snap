@@ -1,20 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ColorPage> should inject actions as expected 1`] = `
-Array [
-  Array [
-    Object {
-      "type": "COLORS_PREVIOUS_COLOR",
-    },
-  ],
-  Array [
-    Object {
-      "type": "COLORS_NEXT_COLOR",
-    },
-  ],
-]
-`;
-
 exports[`<ColorPage> should inject props as expected 1`] = `
 Object {
   "color": "red",

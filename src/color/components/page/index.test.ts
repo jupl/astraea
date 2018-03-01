@@ -1,4 +1,4 @@
-import {actions, props} from '.'
+import {props} from '.'
 
 describe('<ColorPage>', () => {
   it('should inject props as expected', () => {
@@ -7,13 +7,5 @@ describe('<ColorPage>', () => {
       other: 'else',
     }
     expect(props(store, {})).toMatchSnapshot()
-  })
-
-  it('should inject actions as expected', () => {
-    const dispatch = jest.fn()
-    const {onPreviousColor, onNextColor} = actions(dispatch)
-    onPreviousColor()
-    onNextColor()
-    expect(dispatch.mock.calls).toMatchSnapshot()
   })
 })
