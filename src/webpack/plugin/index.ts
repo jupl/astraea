@@ -10,5 +10,9 @@ export const options = {
   assets: {
     logLevel: 'warn',
     publicPath: configuration.output.publicPath,
+    watchOptions: {
+      aggregateTimeout: 300,
+      poll: 1000,
+    },
   },
 }
