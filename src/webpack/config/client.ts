@@ -1,8 +1,8 @@
-import {addRules, addToEntries, createConfiguration} from 'wcb'
+import {addRules, createConfiguration} from 'wcb'
 import {cssLoaders} from './common'
 
 /** Webpack configuration */
-export const configuration = addToEntries(addRules(createConfiguration({
+export const configuration = addRules(createConfiguration({
   assets: process.env.STORYBOOK !== 'true' ? 'src/assets' : undefined,
   common: true,
   cssLoaders,
@@ -12,4 +12,4 @@ export const configuration = addToEntries(addRules(createConfiguration({
   useBabel: true,
 }), [
   {test: /\.(gif|jpg|jpeg|png|svg)$/, use: ['file-loader']},
-]), ['react-hot-loader/patch'])
+])

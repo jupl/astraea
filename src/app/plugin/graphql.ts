@@ -1,8 +1,8 @@
-import {HapiPluginOptions, graphqlHapi} from 'apollo-server-hapi'
+import {HapiPluginOptions} from 'apollo-server-hapi'
 import {schema} from '../graphql'
 
-/** Plugin to register */
-export const register = graphqlHapi
+// Plugin
+export {graphqlHapi as plugin} from 'apollo-server-hapi'
 
 /** Options for plugin */
 export const options: HapiPluginOptions = {
