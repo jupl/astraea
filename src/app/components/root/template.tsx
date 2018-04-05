@@ -1,5 +1,4 @@
 import * as React from 'react'
-import {hot} from 'react-hot-loader'
 import styled from 'styled-components'
 
 // Container component
@@ -16,5 +15,10 @@ const Container = styled.div`
   background: linear-gradient(white, gainsboro);
 `
 
-/** Render root component representing the entire application */
-export const AppRoot = hot(module)(() => <Container>Hello, World</Container>)
+/**
+ * Render root component representing the entire application
+ * @return Root component
+ */
+export function AppRoot() {
+  return <Container>Hello, World</Container>
+}
