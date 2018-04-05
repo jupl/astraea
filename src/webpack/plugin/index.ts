@@ -1,15 +1,14 @@
-import * as hapiWebpackPlugin from 'hapi-webpack-plugin'
 import * as webpack from 'webpack'
 import {configuration} from '../config/client'
 
-/** Plugin to register */
-export const register = hapiWebpackPlugin
+// Plugin
+export {plugin} from 'hapi-webpack-plugin'
 
 /** Options for plugin */
 export const options = {
   compiler: webpack(configuration),
   assets: {
-    noInfo: true,
+    logLevel: 'warn',
     publicPath: configuration.output.publicPath,
   },
 }

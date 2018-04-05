@@ -6,7 +6,7 @@ exports[`<ColorPage> Template should render as expected 1`] = `
 >
   <styled.div>
     <styled.button
-      onClick={[Function]}
+      onClick={[MockFunction]}
     >
       &lt;
     </styled.button>
@@ -14,7 +14,7 @@ exports[`<ColorPage> Template should render as expected 1`] = `
       Hello, World
     </styled.span>
     <styled.button
-      onClick={[Function]}
+      onClick={[MockFunction]}
     >
       &gt;
     </styled.button>
