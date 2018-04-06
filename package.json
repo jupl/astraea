@@ -40,7 +40,7 @@
     "clean": "trash dist",
     "coverage": "npm run test -- --coverage",
     "coverage:watch": "npm run coverage -- --watch",
-    "lint": "npm run lint:file -- '*.ts' 'src/**/*.ts{,x}'",
+    "lint": "npm run lint:file -- '*.ts' 'src/**/*.ts{,x}' && tsc --noEmit",
     "lint:file": "tslint --project tsconfig.json",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
@@ -110,7 +110,7 @@
     "tslint-language-service": "^0.9.9",
     "tslint-react": "^3.5.1",
     "typescript": "^2.8.1",
-    "wcb": "^0.6.4",
+    "wcb": "^0.6.5",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14"
   }
