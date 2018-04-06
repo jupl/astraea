@@ -20,15 +20,7 @@ const typeDef = `
   }
 `
 
-type SchemaOptions
-  = 'connectors'
-  | 'logger'
-  | 'allowUndefinedInResolve'
-  | 'resolverValidationOptions'
-
-type BaseOptions = Pick<IExecutableSchemaDefinition, SchemaOptions>
-
-interface Options<R extends IResolvers> extends BaseOptions {
+interface Options<R extends IResolvers> extends IExecutableSchemaDefinition {
   typeDefs: ITypedef[]
   resolvers: R & Resolvers
 }
