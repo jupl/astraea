@@ -44,10 +44,10 @@ export function createStore<S>({
     middlewares = [...middlewares, logger.default]
   }
 
-  // Create enhancer
-  const compose = composeWithDevTools(config)
-  const enhancer = compose(...enhancers, applyMiddleware(...middlewares))
-
   // Create store instance
-  return createReduxStore<S>(reducer, initialState!, enhancer)
+  return createReduxStore<S>(
+    reducer,
+    initialState!,
+    composeWithDevTools(config)(...enhancers, applyMiddleware(...middlewares)),
+  )
 }
