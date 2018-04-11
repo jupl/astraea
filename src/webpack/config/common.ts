@@ -1,6 +1,6 @@
-import {ICSSLoader} from 'wcb'
+import {CSSLoader} from 'wcb'
 
 /** CSS loaders */
-export const cssLoaders: ICSSLoader[] = [
+export const cssLoaders: CSSLoader[] = [
   {test: /\.css$/, use: ['css-loader']},
 ]

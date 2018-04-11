@@ -3,7 +3,7 @@ import {resolve} from 'path'
 import {ActionFunctions} from 'redux-actions'
 
 interface Actions {
-  [name: string]: ActionFunctions<any> // tslint:disable-line:no-any
+  [name: string]: ActionFunctions<{}>
 }
 
 describe('Actions', () => {

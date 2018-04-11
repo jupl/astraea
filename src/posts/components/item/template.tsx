@@ -1,17 +1,19 @@
 import * as React from 'react'
+import {DataProps} from 'react-apollo'
 import {Post} from '../../graphql'
 
-/** Post item properties */
-export interface Props {
-  loading: boolean
-  post?: Pick<Post, 'title'>
+interface Data {
+  post: Pick<Post, 'title'>
 }
+
+/** Post item properties */
+export type Props = DataProps<Data>
 
 /**
  * Render post item detail
  * @return Post item component
  */
-export function PostsItem({loading, post}: Props) {
+export function PostsItem({data: {loading, post}}: Props) {
   if(loading) {
     return <div>Loading</div>
   }

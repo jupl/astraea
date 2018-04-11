@@ -1,9 +1,9 @@
-import {makeExecutableSchema} from 'graphql-tools'
 import {
   IExecutableSchemaDefinition,
   IResolvers,
   ITypedef,
-} from 'graphql-tools/dist/Interfaces'
+  makeExecutableSchema,
+} from 'graphql-tools'
 
 const typeDef = `
   schema {
@@ -20,15 +20,7 @@ const typeDef = `
   }
 `
 
-type SchemaOptions
-  = 'connectors'
-  | 'logger'
-  | 'allowUndefinedInResolve'
-  | 'resolverValidationOptions'
-
-type BaseOptions = Pick<IExecutableSchemaDefinition, SchemaOptions>
-
-interface Options<R extends IResolvers> extends BaseOptions {
+interface Options<R extends IResolvers> extends IExecutableSchemaDefinition {
   typeDefs: ITypedef[]
   resolvers: R & Resolvers
 }

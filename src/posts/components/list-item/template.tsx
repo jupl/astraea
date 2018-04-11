@@ -3,7 +3,7 @@ import * as Posts from '../../graphql'
 
 /** Component properties */
 export interface Props {
-  post: Posts.Post
+  post: Pick<Posts.Post, 'title'>
 }
 
 /**

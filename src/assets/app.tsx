@@ -31,7 +31,7 @@ const store = createStore({
 })
 
 // Render application. Also register to rerender if hot loading is available.
-if(module.hot) { // tslint:disable-line:strict-boolean-expressions
+if(module.hot !== undefined) {
   module.hot.accept('../app/components/root', render)
   module.hot.accept('../app/reducer', updateReducer)
   module.hot.accept('../app/routes', () => true)

@@ -6,25 +6,20 @@ import {Post} from '../../graphql'
 import {navigation} from '../../routes'
 import * as Template from './template'
 
-interface Result {
-  post?: Pick<Post, 'title'>
-}
-
 interface Props {
   id?: Post['id']
 }
 
 const reduxDecorator = connect(reduxProps)
-const gqlDecorator = graphql<Result, Props, Template.Props>(gql`
+const gqlDecorator = graphql<Props>(gql`
   query($id: Int!) {
     post(id: $id) {
       title
     }
   }
 `, {
-  skip: ({id}) => id === undefined,
+  skip: ({id}: Props) => id === undefined,
   options: ({id}) => ({variables: {id}}),
-  props: ({data}) => data,
 })
 
 /** Wrap posts list component with data from store */

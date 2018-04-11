@@ -1,4 +1,4 @@
-import {IResolvers, ITypedef} from 'graphql-tools/dist/Interfaces'
+import {IResolvers, ITypedef} from 'graphql-tools'
 import * as Comments from '../comments/graphql'
 import {Value} from '../common/graphql'
 import * as Posts from '../posts/graphql'
