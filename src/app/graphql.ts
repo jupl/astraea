@@ -26,36 +26,25 @@ export const schema = CommonGQL.createSchema<Resolvers<Context>>({
   typeDefs: [AuthorsGQL.typeDefs, CommentsGQL.typeDefs, PostsGQL.typeDefs],
   resolvers: {
     Author: {
-      comments: async({comments}, _, {dao}) =>
-        dao.comment.loadMany(comments),
-      posts: async({posts}, _, {dao}) =>
-        dao.post.loadMany(posts),
+      comments: async({comments}, _, {dao}) => dao.comment.loadMany(comments),
+      posts: async({posts}, _, {dao}) => dao.post.loadMany(posts),
     },
     Comment: {
-      author: async({author}, _, {dao}) =>
-        dao.author.load(author),
-      comments: async({comments}, _, {dao}) =>
-        dao.comment.loadMany(comments),
-      post: async({id}, _, {dao}) =>
-        dao.post.loadByCommentId(id),
+      author: async({author}, _, {dao}) => dao.author.load(author),
+      comments: async({comments}, _, {dao}) => dao.comment.loadMany(comments),
+      post: async({id}, _, {dao}) => dao.post.loadByCommentId(id),
     },
     Post: {
-      author: async({author}, _, {dao}) =>
-        dao.author.load(author),
-      comments: async({comments}, _, {dao}) =>
-        dao.comment.loadMany(comments),
+      author: async({author}, _, {dao}) => dao.author.load(author),
+      comments: async({comments}, _, {dao}) => dao.comment.loadMany(comments),
     },
     Mutation: {
-      addPost: async(_, args, {dao}) =>
-        dao.post.add({...args, author: 1}),
+      addPost: async(_, args, {dao}) => dao.post.add({...args, author: 1}),
     },
     Query: {
-      author: async(_, {id}, {dao}) =>
-        dao.author.load(id),
-      post: async(_, {id}, {dao}) =>
-        dao.post.load(id),
-      posts: async(_, __, {dao}) =>
-        dao.post.loadAll(),
+      author: async(_, {id}, {dao}) => dao.author.load(id),
+      post: async(_, {id}, {dao}) => dao.post.load(id),
+      posts: async(_, __, {dao}) => dao.post.loadAll(),
     },
   },
 })
