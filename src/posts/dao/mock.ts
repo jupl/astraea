@@ -1,8 +1,7 @@
 import {Options} from 'dataloader'
-import {DAO as BaseDAO} from '.'
+import {AddPostArgs, DAO as BaseDAO, Post} from '.'
 import {Comment} from '../../comments/dao'
 import {data as commentsData} from '../../comments/dao/mock'
-import {AddPostArgs, Post} from '../dao'
 
 /** Data powering DAO */
 export let data: Post[] = [

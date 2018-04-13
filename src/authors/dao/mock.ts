@@ -1,6 +1,5 @@
 import {Options} from 'dataloader'
-import {DAO as BaseDAO} from '.'
-import {Author} from '../dao'
+import {Author, DAO as BaseDAO} from '.'
 
 /** Data powering DAO */
 export let data: Author[] = [

@@ -1,6 +1,5 @@
 import {Options} from 'dataloader'
-import {DAO as BaseDAO} from '.'
-import {Comment} from '../dao'
+import {Comment, DAO as BaseDAO} from '.'
 
 /** Data powering DAO */
 export let data: Comment[] = [
