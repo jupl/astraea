@@ -13,10 +13,11 @@ export type Resolvers =
 
 /**
  * Build a GraphQL schema given DAOs
- * @param dao DAO instances
+ * @param createDAO DAO factory
  * @return GraphQL schema
  */
-export function createSchema(dao: DAO) {
+export function createSchema(createDAO: () => DAO) {
+  const dao = createDAO()
   return CommonGQL.createSchema<Resolvers>({
     typeDefs: [AuthorsGQL.typeDefs, CommentsGQL.typeDefs, PostsGQL.typeDefs],
     resolvers: {

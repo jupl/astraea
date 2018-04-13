@@ -8,5 +8,5 @@ export {graphqlHapi as plugin} from 'apollo-server-hapi'
 /** Options for plugin */
 export const options: HapiPluginOptions = {
   path: '/graphql',
-  graphqlOptions: {schema: createSchema(createDAO())},
+  graphqlOptions: {schema: createSchema(createDAO)},
 }
