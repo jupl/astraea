@@ -14,11 +14,11 @@ export interface Comment extends DAO.BaseComment {
 }
 
 /** Resolvers */
-export interface Resolvers extends IResolvers {
+export interface Resolvers<C> extends IResolvers<{}, C> {
   Comment: {
-    author(comment: DAO.Comment): Value<Author>
-    comments(comment: DAO.Comment): Value<DAO.Comment[]>
-    post(comment: DAO.Comment): Value<Post>
+    author(comment: DAO.Comment, args: {}, context: C): Value<Author>
+    comments(comment: DAO.Comment, args: {}, context: C): Value<DAO.Comment[]>
+    post(comment: DAO.Comment, args: {}, context: C): Value<Post>
   }
 }
 

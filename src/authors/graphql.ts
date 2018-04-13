@@ -16,13 +16,13 @@ export interface Author extends DAO.BaseAuthor {
 type AuthorArgs = Pick<Author, 'id'>
 
 /** Resolvers */
-export interface Resolvers extends IResolvers {
+export interface Resolvers<C> extends IResolvers<{}, C> {
   Author: {
-    comments(author: DAO.Author): Value<Comment[]>
-    posts(author: DAO.Author): Value<Post[]>
+    comments(author: DAO.Author, args: {}, context: C): Value<Comment[]>
+    posts(author: DAO.Author, args: {}, context: C): Value<Post[]>
   }
   Query: {
-    author(root: {}, args: AuthorArgs): Value<DAO.Author>
+    author(root: {}, args: AuthorArgs, context: C): Value<DAO.Author>
   }
 }
 

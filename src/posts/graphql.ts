@@ -19,17 +19,17 @@ export type PostArgs = Pick<Post, 'id'>
 export type AddPostArgs = Pick<Post, 'title' | 'description'>
 
 /** Resolvers */
-export interface Resolvers extends IResolvers {
+export interface Resolvers<C> extends IResolvers<{}, C> {
   Post: {
-    author(post: DAO.Post): Value<Author>
-    comments(post: DAO.Post): Value<Comment[]>
+    author(post: DAO.Post, args: {}, context: C): Value<Author>
+    comments(post: DAO.Post, args: {}, context: C): Value<Comment[]>
   }
   Mutation: {
-    addPost(root: {}, args: AddPostArgs): Value<DAO.Post>
+    addPost(root: {}, args: AddPostArgs, context: C): Value<DAO.Post>
   }
   Query: {
-    posts(): Value<DAO.Post[]>
-    post(root: {}, args: PostArgs): Value<DAO.Post>
+    posts(root: {}, args: {}, context: C): Value<DAO.Post[]>
+    post(root: {}, args: PostArgs, context: C): Value<DAO.Post>
   }
 }
 
