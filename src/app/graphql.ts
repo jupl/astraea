@@ -9,8 +9,8 @@ export interface Context {
   dao: DAO
 }
 
-/** Options for createContextFactory */
-export interface CreateContextFactoryOptions {
+/** Options for createContext */
+export interface CreateContextOptions {
   createDAO(): DAO
 }
 
@@ -61,16 +61,12 @@ export const schema = CommonGQL.createSchema<Resolvers<Context>>({
 })
 
 /**
- * Create context builder that would be used per request
+ * Create context that would be used per request
  * @param createDAO DAO creator
- * @return Context factory run per equest
+ * @return GraphQL context
  */
-export function createContextFactory({
-  createDAO,
-}: CreateContextFactoryOptions) {
-  return function createContext(): Context {
-    return {
-      dao: createDAO(),
-    }
+export function createContext({createDAO}: CreateContextOptions): Context {
+  return {
+    dao: createDAO(),
   }
 }
