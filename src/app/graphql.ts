@@ -65,8 +65,12 @@ export const schema = CommonGQL.createSchema<Resolvers<Context>>({
  * @param createDAO DAO creator
  * @return GraphQL context
  */
-export function createContext({createDAO}: CreateContextOptions): Context {
+export function createContext({
+  createDAO,
+  ...context,
+}: CreateContextOptions): Context {
   return {
+    ...context,
     dao: createDAO(),
   }
 }
