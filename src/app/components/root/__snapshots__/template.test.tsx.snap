@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<AppRoot> Template should render as expected 1`] = `
-<div>
+<React.Fragment>
   <div>
     <Connect(Link)
       to={
@@ -24,5 +24,5 @@ exports[`<AppRoot> Template should render as expected 1`] = `
     </Connect(Link)>
   </div>
   <FauxComponent />
-</div>
+</React.Fragment>
 `;

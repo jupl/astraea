@@ -23,7 +23,7 @@ export function PostsList({data: {loading, posts}}: Props) {
   return <>{posts.map(createPost)}</>
 }
 
-function createPost(post: Post) {
+function createPost(post: Data['posts'][0]) {
   return (
     <div>
       <Link key={post.id} to={navigation.post(post)}>

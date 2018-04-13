@@ -1,6 +1,5 @@
 import * as DataLoader from 'dataloader'
 import {Author} from '../../authors/dao'
-import {Post} from '../../posts/dao'
 
 /** Base comment schema */
 export interface BaseComment {
@@ -12,7 +11,6 @@ export interface BaseComment {
 export interface Comment extends BaseComment {
   author: Author['id']
   comments: Comment['id'][]
-  post: Post['id']
 }
 
 /** Comments dao */

@@ -1,6 +1,7 @@
 import gql from 'graphql-tag'
 import {graphql} from 'react-apollo'
 import {connect} from 'react-redux'
+import {Comment} from '../../../comments/graphql'
 import * as Common from '../../../common/reducer'
 import {Post} from '../../graphql'
 import {navigation} from '../../routes'
@@ -10,9 +11,13 @@ interface Props {
   id?: Post['id']
 }
 
+interface PostResponse extends Pick<Post, 'description' | 'title'> {
+  comments: Pick<Comment, 'id'>[]
+}
+
 /** Apollo response */
 export interface Data {
-  post: Pick<Post, 'description' | 'title'>
+  post: PostResponse
 }
 
 const reduxDecorator = connect(reduxProps)
@@ -21,6 +26,9 @@ const gqlDecorator = graphql<Props>(gql`
     post(id: $id) {
       title
       description
+      comments {
+        id
+      }
     }
   }
 `, {

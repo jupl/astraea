@@ -8,14 +8,12 @@ export let data: Comment[] = [
     text: 'First post comment',
     author: 1,
     comments: [2], // tslint:disable-line:no-magic-numbers
-    post: undefined!,
   },
   {
     id: 2,
     text: 'First post comment reply',
     author: 2,
     comments: [],
-    post: undefined!,
   },
 ]
 

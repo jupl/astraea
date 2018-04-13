@@ -17,7 +17,7 @@ export let data: Post[] = [
     title: 'Second post',
     description: 'Second post description',
     author: 1,
-    comments: [1],
+    comments: [],
   },
 ]
 

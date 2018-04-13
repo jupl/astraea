@@ -43,6 +43,7 @@ export const schema = CommonGQL.createSchema<Resolvers<Context>>({
     },
     Query: {
       author: async(_, {id}, {dao}) => dao.author.load(id),
+      comment: async(_, {id}, {dao}) => dao.comment.load(id),
       post: async(_, {id}, {dao}) => dao.post.load(id),
       posts: async(_, __, {dao}) => dao.post.loadAll(),
     },

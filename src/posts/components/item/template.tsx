@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {DataProps} from 'react-apollo'
 import {Data} from '.'
+import {CommentsItem} from '../../../comments/components/item'
 
 /** Post item properties */
 export type Props = DataProps<Data>
@@ -16,10 +17,14 @@ export function PostsItem({data: {loading, post}}: Props) {
   if(post === undefined) {
     return <>Error</>
   }
+  const comments = post.comments.map(comment => (
+    <div key={comment.id}><CommentsItem {...comment} /></div>
+  ))
   return (
     <>
       <div>{post.title}</div>
       <div>{post.description}</div>
+      {comments}
     </>
   )
 }
