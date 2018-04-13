@@ -19,18 +19,20 @@ export type Props = DataProps<Data>
  */
 export function PostsList({data: {loading, posts}}: Props) {
   if(loading) {
-    return <div>Loading</div>
+    return <>Loading</>
   }
   if(posts === undefined) {
-    return <div>Error</div>
+    return <>Error</>
   }
-  return <div>{posts.map(createPost)}</div>
+  return <>{posts.map(createPost)}</>
 }
 
 function createPost(post: Post) {
   return (
-    <Link key={post.id} to={navigation.post(post)}>
-      <PostsListItem post={post} />
-    </Link>
+    <div>
+      <Link key={post.id} to={navigation.post(post)}>
+        <PostsListItem post={post} />
+      </Link>
+    </div>
   )
 }

@@ -15,10 +15,10 @@ export type Props = DataProps<Data>
  */
 export function PostsItem({data: {loading, post}}: Props) {
   if(loading) {
-    return <div>Loading</div>
+    return <>Loading</>
   }
   if(post === undefined) {
-    return <div>Error</div>
+    return <>Error</>
   }
-  return <div>{post.title}</div>
+  return <>{post.title}</>
 }

@@ -13,13 +13,13 @@ export interface Props {
  */
 export function AppRoot({component: Component}: Props) {
   return (
-    <div>
+    <>
       <div>
         <Link to={navigation.home()}>Home</Link>
         |
         <Link to={navigation.addPost()}>Add Post</Link>
       </div>
       <Component />
-    </div>
+    </>
   )
 }

@@ -11,5 +11,5 @@ export interface Props {
  * @return List item
  */
 export function PostsListItem({post}: Props) {
-  return <div>{post.title}</div>
+  return <>{post.title}</>
 }
