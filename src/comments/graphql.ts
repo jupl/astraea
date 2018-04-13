@@ -1,23 +1,24 @@
 import {IResolvers, ITypedef} from 'graphql-tools/dist/Interfaces'
-import * as Authors from '../authors/graphql'
+import {Author} from '../authors/dao'
+import * as AuthorsGQL from '../authors/graphql'
 import {Value} from '../common/graphql'
-import * as Posts from '../posts/graphql'
+import {Post} from '../posts/dao'
+import * as PostsGQL from '../posts/graphql'
+import * as DAO from './dao'
 
 /** Comment schema */
-export interface Comment {
-  id: number
-  text: string
-  author: Authors.Author
+export interface Comment extends DAO.BaseComment {
+  author: AuthorsGQL.Author
   comments: Comment[]
-  post: Posts.Post
+  post: PostsGQL.Post
 }
 
 /** Resolvers */
 export interface Resolvers extends IResolvers {
   Comment: {
-    author(comment: Comment): Value<Authors.Author>
-    comments(comment: Comment): Value<Comment[]>
-    post(comment: Comment): Value<Posts.Post>
+    author(comment: DAO.Comment): Value<Author>
+    comments(comment: DAO.Comment): Value<DAO.Comment[]>
+    post(comment: DAO.Comment): Value<Post>
   }
 }
 
@@ -36,7 +37,7 @@ export function typeDefs(): ITypedef[] {
         post: Post!
       }
     `,
-    Authors.typeDefs,
-    Posts.typeDefs,
+    AuthorsGQL.typeDefs,
+    PostsGQL.typeDefs,
   ]
 }

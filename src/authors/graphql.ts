@@ -1,14 +1,15 @@
 import {IResolvers, ITypedef} from 'graphql-tools'
-import * as Comments from '../comments/graphql'
+import {Comment} from '../comments/dao'
+import * as CommentsGQL from '../comments/graphql'
 import {Value} from '../common/graphql'
-import * as Posts from '../posts/graphql'
+import {Post} from '../posts/dao'
+import * as PostsGQL from '../posts/graphql'
+import * as DAO from './dao'
 
 /** Author schema */
-export interface Author {
-  id: number
-  name: string
-  comments: Comments.Comment[]
-  posts: Posts.Post[]
+export interface Author extends DAO.BaseAuthor {
+  comments: CommentsGQL.Comment[]
+  posts: PostsGQL.Post[]
 }
 
 // Arguments for author query
@@ -17,11 +18,11 @@ type AuthorArgs = Pick<Author, 'id'>
 /** Resolvers */
 export interface Resolvers extends IResolvers {
   Author: {
-    comments(author: Author): Value<Comments.Comment[]>
-    posts(author: Author): Value<Posts.Post[]>
+    comments(author: DAO.Author): Value<Comment[]>
+    posts(author: DAO.Author): Value<Post[]>
   }
   Query: {
-    author(root: {}, args: AuthorArgs): Value<Author>
+    author(root: {}, args: AuthorArgs): Value<DAO.Author>
   }
 }
 
@@ -43,7 +44,7 @@ export function typeDefs(): ITypedef[] {
         author(id: Int!): Author!
       }
     `,
-    Comments.typeDefs,
-    Posts.typeDefs,
+    CommentsGQL.typeDefs,
+    PostsGQL.typeDefs,
   ]
 }

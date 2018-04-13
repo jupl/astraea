@@ -1,15 +1,15 @@
 import {IResolvers, ITypedef} from 'graphql-tools'
-import * as Authors from '../authors/graphql'
-import * as Comments from '../comments/graphql'
+import {Author} from '../authors/dao'
+import * as AuthorsGQL from '../authors/graphql'
+import {Comment} from '../comments/dao'
+import * as CommentsGQL from '../comments/graphql'
 import {Value} from '../common/graphql'
+import * as DAO from './dao'
 
 /** Post schema */
-export interface Post {
-  id: number
-  title: string
-  description: string
-  author: Authors.Author
-  comments: Comments.Comment[]
+export interface Post extends DAO.BasePost {
+  author: AuthorsGQL.Author
+  comments: CommentsGQL.Comment[]
 }
 
 /** Arguments for post query */
@@ -21,15 +21,15 @@ export type AddPostArgs = Pick<Post, 'title' | 'description'>
 /** Resolvers */
 export interface Resolvers extends IResolvers {
   Post: {
-    author(post: Post): Value<Authors.Author>
-    comments(post: Post): Value<Comments.Comment[]>
+    author(post: DAO.Post): Value<Author>
+    comments(post: DAO.Post): Value<Comment[]>
   }
   Mutation: {
-    addPost(root: {}, args: AddPostArgs): Value<Post>
+    addPost(root: {}, args: AddPostArgs): Value<DAO.Post>
   }
   Query: {
-    posts(): Value<Post[]>
-    post(root: {}, args: PostArgs): Value<Post>
+    posts(): Value<DAO.Post[]>
+    post(root: {}, args: PostArgs): Value<DAO.Post>
   }
 }
 
@@ -57,7 +57,7 @@ export function typeDefs(): ITypedef[] {
         posts: [Post!]!
       }
     `,
-    Authors.typeDefs,
-    Comments.typeDefs,
+    AuthorsGQL.typeDefs,
+    CommentsGQL.typeDefs,
   ]
 }
