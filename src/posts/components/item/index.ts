@@ -10,11 +10,17 @@ interface Props {
   id?: Post['id']
 }
 
+/** Apollo response */
+export interface Data {
+  post: Pick<Post, 'description' | 'title'>
+}
+
 const reduxDecorator = connect(reduxProps)
 const gqlDecorator = graphql<Props>(gql`
   query($id: Int!) {
     post(id: $id) {
       title
+      description
     }
   }
 `, {

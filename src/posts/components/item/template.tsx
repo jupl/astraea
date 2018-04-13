@@ -1,10 +1,6 @@
 import * as React from 'react'
 import {DataProps} from 'react-apollo'
-import {Post} from '../../graphql'
-
-interface Data {
-  post: Pick<Post, 'title'>
-}
+import {Data} from '.'
 
 /** Post item properties */
 export type Props = DataProps<Data>
@@ -20,5 +16,10 @@ export function PostsItem({data: {loading, post}}: Props) {
   if(post === undefined) {
     return <>Error</>
   }
-  return <>{post.title}</>
+  return (
+    <>
+      <div>{post.title}</div>
+      <div>{post.description}</div>
+    </>
+  )
 }

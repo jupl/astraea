@@ -1,13 +1,9 @@
 import * as React from 'react'
 import {DataProps} from 'react-apollo'
 import Link from 'redux-first-router-link'
-import {Post} from '../../graphql'
+import {Data} from '.'
 import {navigation} from '../../routes'
 import {PostsListItem} from '../list-item'
-
-interface Data {
-  posts: Pick<Post, 'id' | 'title'>[]
-}
 
 /** Component properties */
 export type Props = DataProps<Data>
