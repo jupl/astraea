@@ -11,15 +11,19 @@ export type Props = DataProps<Data>
  * @return Post item component
  */
 export function PostsItem({data: {loading, post}}: Props) {
+  // Check that data is ready and available
   if(loading) {
     return <>Loading</>
   }
   if(post === undefined) {
     return <>Error</>
   }
-  const comments = post.comments.map(comment => (
-    <div key={comment.id}><CommentsItem {...comment} /></div>
-  ))
+
+  // Construct comments
+  const comments = post.comments.length > 0
+    ? post.comments.map(c => <CommentsItem key={c.id} {...c} />)
+    : <div>No comments</div>
+
   return (
     <>
       <div>{post.title}</div>

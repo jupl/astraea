@@ -4,7 +4,6 @@ import {Author} from '../../../authors/graphql'
 import {Comment} from '../../graphql'
 import * as Template from './template'
 
-// TODO add expand option to omit loading child comments
 interface Props {
   id?: Comment['id']
 }
