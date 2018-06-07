@@ -6,7 +6,6 @@ export {plugin} from 'hapi-webpack-plugin'
 
 /** Options for plugin */
 export const options = {
-  compiler: webpack(configuration),
   assets: {
     logLevel: 'warn',
     publicPath: configuration.output.publicPath,
@@ -15,4 +14,5 @@ export const options = {
       poll: 1000,
     },
   },
+  compiler: webpack(configuration),
 }
