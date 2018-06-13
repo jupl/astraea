@@ -5,8 +5,8 @@ import {Button, ColorPage} from './template'
 describe('<ColorPage> Template', () => {
   const props = {
     color: 'white',
-    onPreviousColor: jest.fn(),
     onNextColor: jest.fn(),
+    onPreviousColor: jest.fn(),
   }
 
   it('should render as expected', () => {

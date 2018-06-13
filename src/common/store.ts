@@ -1,4 +1,5 @@
 import {
+  DeepPartial,
   Middleware,
   Reducer,
   applyMiddleware,
@@ -19,7 +20,7 @@ interface Options<S> extends EnhancerOptions {
   /** Additional enhancers */
   enhancers?: Function[]
   /** Intial store state */
-  initialState?: S
+  initialState?: DeepPartial<S>
   /** Optional middlewares */
   middlewares?: Middleware[]
 }
@@ -30,11 +31,11 @@ interface Options<S> extends EnhancerOptions {
  * @return Redux store instance
  */
 export function createStore<S>({
-  enhancers = [],
+  enhancers: baseEnhancers = [],
   reducer,
   initialState,
   middlewares: baseMiddlewares = [],
-  ...config,
+  ...config
 }: Options<S>) {
   let middlewares = baseMiddlewares
 
@@ -45,9 +46,9 @@ export function createStore<S>({
   }
 
   // Create store instance
-  return createReduxStore<S>(
-    reducer,
-    initialState!,
-    composeWithDevTools(config)(...enhancers, applyMiddleware(...middlewares)),
-  )
+  const enhancers = [...baseEnhancers, applyMiddleware(...middlewares)]
+  const compose = composeWithDevTools(config)
+  return initialState !== undefined
+    ? createReduxStore(reducer, initialState, compose(...enhancers))
+    : createReduxStore(reducer, compose(...enhancers))
 }

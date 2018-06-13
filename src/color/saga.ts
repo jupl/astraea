@@ -12,10 +12,10 @@ const AUTO_TIMEOUT = 4000
 export function* saga() {
   for(;;) {
     const {end} = yield race({
+      end: take([previousColor.type, nextColor.type]),
       timeout: call(delay, AUTO_TIMEOUT),
-      end: take([`${previousColor}`, `${nextColor}`]),
     })
     if(end != undefined) { break }
-    yield put(autoNextColor())
+    yield put(autoNextColor(undefined))
   }
 }

@@ -1,34 +1,25 @@
-import {Action, handleActions} from 'redux-actions'
-import {autoNextColor, nextColor, previousColor} from './actions'
+import {createReducer} from 'hard-reducer'
+import {Reducer} from 'redux'
+import * as Actions from './actions'
 import {COLORS} from './config'
-
-/** Structure of color state */
-type Color = string
 
 /** Structure of color state relative to application reducer */
 export interface State {
   color: Color
 }
 
-/** Reducer that handles color related actions */
-export const reducer = handleActions({
-  [`${previousColor}`]: setPreviousColor,
-  [`${nextColor}`]: setNextColor,
-  [`${autoNextColor}`]: setNextColor,
-}, COLORS[0])
+/** Structure of color state */
+export type Color = string
 
-/**
- * Update state to go to the previous color. If past the first color, go to the
- * end of the color list.
- * @param state Current color state
- * @param _action Unused dispatched action
- * @return Previous color state
- */
-function setPreviousColor(state: Color, _action: Action<void>): Color {
-  const oldIndex = COLORS.indexOf(state)
-  const newIndex = (oldIndex + COLORS.length - 1) % COLORS.length
-  return COLORS[newIndex]
-}
+/** Reducer that handles color related actions */
+export const reducer = createReducer<Color>(COLORS[0])
+  .case(Actions.previousColor, state => {
+    const oldIndex = COLORS.indexOf(state)
+    const newIndex = (oldIndex + COLORS.length - 1) % COLORS.length
+    return COLORS[newIndex]
+  })
+  .case(Actions.nextColor, setNextColor)
+  .case(Actions.autoNextColor, setNextColor) as Reducer<Color>
 
 /**
  * Update state to go to the next color. If past the last color, go to the
@@ -37,7 +28,7 @@ function setPreviousColor(state: Color, _action: Action<void>): Color {
  * @param _action Unused dispatched action
  * @return Next color state
  */
-function setNextColor(state: Color, _action: Action<void>): Color {
+function setNextColor(state: Color): Color {
   const oldIndex = COLORS.indexOf(state)
   const newIndex = (oldIndex + 1) % COLORS.length
   return COLORS[newIndex]

@@ -1,11 +1,12 @@
 import {connect} from 'react-redux'
-import {nextColor, previousColor} from '../../actions'
+import * as Actions from '../../actions'
 import {State} from '../../reducer'
 import * as Template from './template'
 
-const actions: Template.Actions = {
-  onNextColor: nextColor,
-  onPreviousColor: previousColor,
+/** Action handlers */
+export const actions = {
+  onNextColor: () => Actions.nextColor(undefined),
+  onPreviousColor: () => Actions.previousColor(undefined),
 }
 
 /** Properties for wrapped component */

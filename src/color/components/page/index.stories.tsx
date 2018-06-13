@@ -18,8 +18,8 @@ const store = createStore({
 // Default props for template module
 const props = {
   color: 'white',
-  onPreviousColor: action('previousColor'),
   onNextColor: action('nextColor'),
+  onPreviousColor: action('previousColor'),
 }
 
 // Styled component for storybook

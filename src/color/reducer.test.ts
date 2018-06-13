@@ -10,7 +10,7 @@ describe('Color reducer', () => {
   })
 
   it('should handle previous color', () => {
-    const action = actions.previousColor()
+    const action = actions.previousColor(undefined)
     const state1 = reducer(state0, action)
     const state2 = reducer(state1, action)
     expect(state1).toMatchSnapshot()
@@ -18,7 +18,7 @@ describe('Color reducer', () => {
   })
 
   it('should handle next color', () => {
-    const action = actions.nextColor()
+    const action = actions.nextColor(undefined)
     const state1 = reducer(state0, action)
     const state2 = reducer(state1, action)
     expect(state1).toMatchSnapshot()
@@ -26,7 +26,7 @@ describe('Color reducer', () => {
   })
 
   it('should handle auto next color', () => {
-    const action = actions.autoNextColor()
+    const action = actions.autoNextColor(undefined)
     const state1 = reducer(state0, action)
     const state2 = reducer(state1, action)
     expect(state1).toMatchSnapshot()

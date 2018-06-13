@@ -1,9 +1,8 @@
 import {find} from 'globule'
 import {resolve} from 'path'
-import {ActionFunctions} from 'redux-actions'
 
 interface Actions {
-  [name: string]: ActionFunctions<{}>
+  [name: string]: Function
 }
 
 describe('Actions', () => {
@@ -21,7 +20,7 @@ describe('Actions', () => {
     const types = actionsTable
       .map(actions => Object.keys(actions).map(x => actions[x]))
       .reduce((array, actions) => [...array, ...actions], [])
-      .map(String)
+      .map(action => action().type)
     expect(types).toEqual([...new Set(types)])
   })
 })

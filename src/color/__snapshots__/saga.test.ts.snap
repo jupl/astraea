@@ -10,8 +10,8 @@ Object {
         "@@redux-saga/IO": true,
         "TAKE": Object {
           "pattern": Array [
-            "COLORS_PREVIOUS_COLOR",
-            "COLORS_NEXT_COLOR",
+            "Color.previousColor",
+            "Color.nextColor",
           ],
         },
       },
@@ -37,7 +37,8 @@ Object {
     "@@redux-saga/IO": true,
     "PUT": Object {
       "action": Object {
-        "type": "COLORS_AUTO_NEXT_COLOR",
+        "payload": undefined,
+        "type": "Color.autoNextColor",
       },
       "channel": null,
     },
@@ -55,8 +56,8 @@ Object {
         "@@redux-saga/IO": true,
         "TAKE": Object {
           "pattern": Array [
-            "COLORS_PREVIOUS_COLOR",
-            "COLORS_NEXT_COLOR",
+            "Color.previousColor",
+            "Color.nextColor",
           ],
         },
       },
@@ -82,7 +83,8 @@ Object {
     "@@redux-saga/IO": true,
     "PUT": Object {
       "action": Object {
-        "type": "COLORS_AUTO_NEXT_COLOR",
+        "payload": undefined,
+        "type": "Color.autoNextColor",
       },
       "channel": null,
     },
@@ -100,8 +102,8 @@ Object {
         "@@redux-saga/IO": true,
         "TAKE": Object {
           "pattern": Array [
-            "COLORS_PREVIOUS_COLOR",
-            "COLORS_NEXT_COLOR",
+            "Color.previousColor",
+            "Color.nextColor",
           ],
         },
       },

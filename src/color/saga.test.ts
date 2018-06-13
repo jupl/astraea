@@ -14,6 +14,6 @@ describe('Color saga', () => {
     })
 
     // Verify saga ends when end is reached
-    expect(it.next({end: nextColor()})).toMatchSnapshot()
+    expect(it.next({end: nextColor(undefined)})).toMatchSnapshot()
   })
 })
