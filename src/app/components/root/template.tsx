@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 // Container component
@@ -19,6 +19,4 @@ const Container = styled.div`
  * Render root component representing the entire application
  * @return Root component
  */
-export function AppRoot() {
-  return <Container>Hello, World</Container>
-}
+export const AppRoot = () => <Container>Hello, World</Container>

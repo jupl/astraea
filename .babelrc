@@ -1,15 +1,9 @@
 {
-  "plugins": [
-    "transform-runtime",
-    "react-hot-loader/babel"
-  ],
-  "presets": [["env", {"modules": false}]],
+  "plugins": ["react-hot-loader/babel"],
+  "presets": [["@babel/preset-env", {"modules": false}]],
   "env": {
     "production": {
-      "plugins": ["transform-react-inline-elements"]
-    },
-    "test": {
-      "presets": ["env"]
+      "plugins": ["@babel/plugin-transform-react-inline-elements"]
     }
   }
 }

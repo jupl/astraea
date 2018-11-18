@@ -1,8 +1,12 @@
-import * as React from 'react'
-import {hot} from 'react-hot-loader'
-import {Provider, ProviderProps} from 'react-redux'
+import React, {ReactNode} from 'react'
 
-/** Render container component adding possible dev tools and redux store */
-export const Container = hot(module)((props: ProviderProps) => (
-  <Provider {...props} />
-))
+/** Component properties */
+export interface Props {
+  children: ReactNode
+}
+
+/**
+ * Render container component
+ * @return Decorated component
+ */
+export const Container = ({children}: Props) => <>{children}</>

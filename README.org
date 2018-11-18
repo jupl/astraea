@@ -1,7 +1,10 @@
-#+HTML: <h1>Astraea <sub><sub><sub>TypeScript + React + Redux Boilerplate</sub></sub></sub></h1>
+e+HTML: <h1>Astraea <sub><sub><sub>TypeScript + React Boilerplate</sub></sub></sub></h1>
 [[https://travis-ci.org/jupl/astraea][file:https://img.shields.io/travis/jupl/astraea/master.svg?label=travis&style=flat-square]]
 [[https://david-dm.org/jupl/astraea/master][file:https://img.shields.io/david/jupl/astraea/master.svg?style=flat-square]]
 [[https://david-dm.org/jupl/astraea/master?type=dev][file:https://img.shields.io/david/dev/jupl/astraea/master.svg?style=flat-square]]
+
+** Note
+Recently [[https://redux.js.org/][Redux]] support has been removed from this boilerplate. It can still be incorporated, but by default this boilerplate is focused more on React. There are many other options like [[https://mobx.js.org/][Mobx]], [[https://reactjs.org/docs/context.html][context]], and more.
 
 ** Table of Contents
 - [[#about][About]]
@@ -12,57 +15,47 @@
 - [[#project-resources][Project Resources]]
 
 ** About
-This is a boilerplate project for developing a mid to large scale client-side application(s) using [[https://www.typescriptlang.org/][TypeScript]], [[https://facebook.github.io/react/][React]], and [[http://redux.js.org/][Redux]]. For an example project, visit the [[https://github.com/jupl/astraea/tree/example][example branch]].
+This is a boilerplate project for developing a mid to large scale client-side application(s) using [[https://www.typescriptlang.org/][TypeScript]] and [[https://facebook.github.io/react/][React]]. For an example project, visit the [[https://github.com/jupl/astraea/tree/example][example branch]].
 
-^{[[#astraea-typescript--react--redux-boilerplate][Back to top]]}
+^{[[#astraea-typescript--react-boilerplate][Back to top]]}
 
 ** Prerequisites
 - [[https://nodejs.org/en/][Node.js]] (8.x minimum required)
   - [[https://docs.npmjs.com/cli/npm][npm CLI]] is usually included with Node.js
-- [[https://yarnpkg.com/en/docs/install][Yarn]] (recommended)
 - Editor with support for TypeScript, [[https://palantir.github.io/tslint/][TSLint]], and [[http://editorconfig.org/][EditorConfig]] (ex. [[https://code.visualstudio.com/][Visual Studio Code]])
 
-^{[[#astraea-typescript--react--redux-boilerplate][Back to top]]}
+^{[[#astraea-typescript--react-boilerplate][Back to top]]}
 
 ** Getting Started
 1. Clone/download this repository.
 2. Install dependencies using npm *or* Yarn:
-  - =npm install=
-  - =yarn=
+   - =npm install=
 3. Start running tasks as described below in the [[#tasks][tasks section]].
 
-^{[[#astraea-typescript--react--redux-boilerplate][Back to top]]}
+^{[[#astraea-typescript--react-boilerplate][Back to top]]}
 
 ** Project structure
 *** Overview
 #+BEGIN_EXAMPLE
 astraea/
+├─ .coverage/                  # Code coverage reports
 ├─ .storybook/                 # Storybook configuration
-├─ coverage/                   # Code coverage reports
 ├─ dist/assets/                # Result assets from build tasks
+├─ dist/story/                 # Result storybook build
+├─ jest/                       # Code that runs before tests are run
 ├─ src/                        # Source code
 │  ├─ app/                     # Application domain
-│  │  ├─ components/root/      # Top level application view
-│  │  ├─ actions.test.ts       # Test to ensure all actions are valid
-│  │  └─ reducer.ts            # Reducer for whole application
+│  │  └─ components/root/      # Top level application view
 │  ├─ assets/                  # Static files and entry points to include in builds
 │  │  └─ app.tsx               # An application entry point
-│  ├─ common/                  # Shared code used throughout project
-│  │  ├─ components/container/ # Application wrapper component
-│  │  └─ store.ts              # Helper to create a Redux store
-│  └─ webpack/                 # Webpack related code
-│     ├─ config/               # Webpack build configurations
-│     ├─ plugin/               # Webpack plugins
-│     └─ server.ts             # Local development server
-├─ story/                      # Result storybook build
-├─ declarations.d.ts           # TypeScript declarations
+│  └─ common/                  # Shared code used throughout project
+│     ├─ components/container/ # Application wrapper component
+│     └─ declarations/         # TypeScript declarations
 ├─ package.json                # Configuration, tasks, and dependencies
-├─ package-lock.json           # Dependency pinning from NPM
-├─ setup-tests.ts              # Code that runs before tests are run
+├─ package-lock.json           # Dependency pinning
 ├─ tsconfig.json               # TypeScript configuration
 ├─ tslint.json                 # TypeScript linting rules
-├─ webpack.config.ts           # Webpack build configuration
-└─ yarn.lock                   # Dependency pinning from Yarn
+└─ webpack.config.ts           # Webpack build configuration
 #+END_EXAMPLE
 *** Entry Points
 When TypeScript code is built, any files directly inside the =src/assets/= directory are used to create the output files. The boilerplate currently generates =app.js=, as there is a single entry point inside =src/assets/=. (=src/assets/index.js=) If there are more than one entry points more files generated as well as an additional file =common.js=, which contains shared code across all entry points. =common.js= must be loaded before you load an entry point. You can see what gets generated by running the =build:dev= / =build:prod= task. (see the [[#tasks][tasks section]])
@@ -73,8 +66,7 @@ domain/
 │  ├─ component1/ # See Component sections below
 │  ├─ component2/
 │  └─ componentX/
-├─ actions.ts # Redux actions for domain
-└─ reducer.ts # Domain reducer
+└─ ...            # Other domain items (Redux, MobX, context, etc.)
 #+END_EXAMPLE
 Rather than group items by things like components/reducers/actions/etc., items are grouped by domain which can be a saner option as the project grows. Examples of domains can be things like resources (ex. =blog/=, =users/=) or other things. (ex. =ui/=) Domains may include things like components, actions, reducer, etc. but they don't have to include all of them. In fact, you can think of =app/= and =common/= as domains. Other files may be present as well.
 *** Components
@@ -84,7 +76,7 @@ component/
 └─ template.tsx
 #+END_EXAMPLE
 React components are grouped in a directory.
-- =template.tsx= defines the React component without any knowledge of Redux specifics or other things like React DnD. (sometimes referred as /dumb/ component)
+- =template.tsx= defines the React component without any knowledge of outside logic (ex: Redux) specifics or other things like React DnD. (sometimes referred as /dumb/ component)
 - =index.ts= is the entry point of the component when used by others.
   - If template does not require data/action bindings then it can just pass through the template. (see =src/app/components/root/index.ts=)
   - If template requires data/action bindings then it is done here.  (sometimes refereed as /smart/ component)
@@ -94,13 +86,12 @@ Tests for components/domains/logic/etc. If code needs to be run before tests are
 - [[https://facebook.github.io/jest/docs/api.html][Jest]]
 - [[http://airbnb.io/enzyme/index.html#basic-usage][Enzyme]]
 - [[https://facebook.github.io/jest/docs/tutorial-react.html][React]]
-- [[http://redux.js.org/docs/recipes/WritingTests.html][Redux]]
 **** =*.stories.tsx=
 Defines a story to display in React Storybook. Typically this file is in a component. (ex. =index.stories.tsx=) [[https://getstorybook.io/docs/react-storybook/basics/writing-stories][This guide]] provides information on how to write stories.
 **** =__snapshots__=
 Generated files/directories when using Jest's [[https://facebook.github.io/jest/docs/tutorial-react.html#snapshot-testing][snapshot feature]]. These files should be left to Jest and not touched manually.
 
-^{[[#astraea-typescript--react--redux-boilerplate][Back to top]]}
+^{[[#astraea-typescript--react-boilerplate][Back to top]]}
 
 ** Tasks
 Tasks can be executed in the following manner:
@@ -120,19 +111,18 @@ Alias for =server:hot=.
 *** =server:hot=
 Start a local development server with hot reloading. To override the port change the environment variable =PORT=. The following is provided:
 - [[https://webpack.js.org/concepts/hot-module-replacement][Hot reloading]] (including [[https://github.com/gaearon/react-hot-loader][React Hot Loader]])
-- [[http://zalmoxisus.github.io/redux-devtools-extension/][Redux DevTools Extension]] (if unavailable [[https://github.com/evgenyrodionov/redux-logger][Logger for Redux]] is used)
 *** =server:story=
 Start a local server for React Storybook on port 9001. For more information visit the [[https://getstorybook.io/docs][documentation for React Storybook]].
 *** =build:dev= / =build:prod=
 Build application and include assets into a packaged build in the =dist/assets/= directory. The build for =build:dev= is not minifed and includes source maps, making it ideal for development. The build for =build:prod= is minified (with dead code elimination) and does not include source maps, making it ideal for production.
 *** =build:story=
-Generate a static build of React Storybook in the =story/= disrectory.
+Generate a static build of React Storybook in the =dist/story/= disrectory.
 *** =test= / =test:watch= / =coverage= / =coverage:watch=
 Execute tests once or continuously on file changes. In addition, code coverage can be determined. For more information visit the [[https://facebook.github.io/jest/docs/configuration.html][documentation for Jest]].
 *** =lint= / =lint:fix=
 Check codebase against linting rules. Optionally, some errors can be fixed automatically.
 
-^{[[#astraea-typescript--react--redux-boilerplate][Back to top]]}
+^{[[#astraea-typescript--react-boilerplate][Back to top]]}
 
 ** Project Resources
 - Language
@@ -141,8 +131,6 @@ Check codebase against linting rules. Optionally, some errors can be fixed autom
     - [[https://github.com/palantir/tslint-react][TSLint React]]
 - Libraries
   - [[https://facebook.github.io/react/][React]]
-  - [[http://redux.js.org/][Redux]]
-    - [[https://github.com/acdlite/redux-actions][Redux Actions]]
   - [[https://styled-components.com/][Styled Components]]
   - [[https://necolas.github.io/normalize.css/][normalize.css]]
 - Testing
@@ -150,8 +138,7 @@ Check codebase against linting rules. Optionally, some errors can be fixed autom
   - [[https://github.com/airbnb/enzyme/][Enzyme]]
 - Development Tools
   - [[https://getstorybook.io/][React Storybook]]
-  - [[https://github.com/zalmoxisus/redux-devtools-extension][Redux DevTools]]
 - Build Tools
   - [[https://webpack.js.org/][Webpack]]
 
-^{[[#astraea-typescript--react--redux-boilerplate][Back to top]]}
+^{[[#astraea-typescript--react-boilerplate][Back to top]]}
