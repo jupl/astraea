@@ -40,8 +40,9 @@ This is a boilerplate project for developing a mid to large scale client-side ap
 astraea/
 ├─ .coverage/                  # Code coverage reports
 ├─ .storybook/                 # Storybook configuration
-├─ dist/assets/                # Result assets from build tasks
-├─ dist/story/                 # Result storybook build
+├─ dist/                       # Result from build tasks
+│  ├─ assets/                  # Result assets
+│  └─ story/                   # Result storybook build
 ├─ jest/                       # Code that runs before tests are run
 ├─ src/                        # Source code
 │  ├─ app/                     # Application domain
