@@ -28,7 +28,7 @@ This is a boilerplate project for developing a mid to large scale client-side ap
 
 ** Getting Started
 1. Clone/download this repository.
-2. Install dependencies using npm *or* Yarn:
+2. Install dependencies using npm:
    - =npm install=
 3. Start running tasks as described below in the [[#tasks][tasks section]].
 
@@ -97,12 +97,10 @@ Generated files/directories when using Jest's [[https://facebook.github.io/jest/
 Tasks can be executed in the following manner:
 #+BEGIN_EXAMPLE
 npm run [command]  # npm
-yarn run [command] # Yarn
 #+END_EXAMPLE
 Examples:
 #+BEGIN_EXAMPLE
 npm run server
-yarn run lint
 #+END_EXAMPLE
 *** =start=
 Alias for =build:prod=.
