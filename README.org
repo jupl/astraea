@@ -1,10 +1,10 @@
-e+HTML: <h1>Astraea <sub><sub><sub>TypeScript + React Boilerplate</sub></sub></sub></h1>
+#+HTML: <h1>Astraea <sub><sub><sub>TypeScript + React Boilerplate</sub></sub></sub></h1>
 [[https://travis-ci.org/jupl/astraea][file:https://img.shields.io/travis/jupl/astraea/master.svg?label=travis&style=flat-square]]
 [[https://david-dm.org/jupl/astraea/master][file:https://img.shields.io/david/jupl/astraea/master.svg?style=flat-square]]
 [[https://david-dm.org/jupl/astraea/master?type=dev][file:https://img.shields.io/david/dev/jupl/astraea/master.svg?style=flat-square]]
 
 ** Note
-Recently [[https://redux.js.org/][Redux]] support has been removed from this boilerplate. It can still be incorporated, but by default this boilerplate is focused more on React. There are many other options like [[https://mobx.js.org/][Mobx]], [[https://reactjs.org/docs/context.html][context]], and more.
+Recently [[https://redux.js.org/][Redux]] support has been removed from this boilerplate. It can still be incorporated, but by default this boilerplate is focused more on React. There are many other options like [[https://mobx.js.org/][MobX]], [[https://reactjs.org/docs/context.html][context]], and more.
 
 ** Table of Contents
 - [[#about][About]]
@@ -137,7 +137,7 @@ Check codebase against linting rules. Optionally, some errors can be fixed autom
   - [[https://facebook.github.io/jest/][Jest]]
   - [[https://github.com/airbnb/enzyme/][Enzyme]]
 - Development Tools
-  - [[https://getstorybook.io/][React Storybook]]
+  - [[https://storybook.js.org/][Storybook]]
 - Build Tools
   - [[https://webpack.js.org/][Webpack]]
 
