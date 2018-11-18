@@ -12,5 +12,4 @@ script:
   - npm run coverage
   - npm run build:dev
   - npm run build:prod
-  # Uncomment once storybook is updated
-  # - npm run build:story
+  - npm run build:story
