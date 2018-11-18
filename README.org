@@ -86,7 +86,7 @@ Tests for components/domains/logic/etc. If code needs to be run before tests are
 - [[https://facebook.github.io/jest/docs/api.html][Jest]]
 - [[http://airbnb.io/enzyme/index.html#basic-usage][Enzyme]]
 - [[https://facebook.github.io/jest/docs/tutorial-react.html][React]]
-**** =*.stories.tsx=
+**** =*.stories.tsx=, =*.story.tsx=
 Defines a story to display in React Storybook. Typically this file is in a component. (ex. =index.stories.tsx=) [[https://getstorybook.io/docs/react-storybook/basics/writing-stories][This guide]] provides information on how to write stories.
 **** =__snapshots__=
 Generated files/directories when using Jest's [[https://facebook.github.io/jest/docs/tutorial-react.html#snapshot-testing][snapshot feature]]. These files should be left to Jest and not touched manually.
