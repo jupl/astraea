@@ -1,31 +1,16 @@
 {
   "coverageDirectory": "<rootDir>/.coverage",
-  "coveragePathIgnorePatterns": [
-    "/node_modules/",
-    "<rootDir>/common/store.ts",
-    "<rootDir>/.jest/"
-  ],
   "globals": {
     "ts-jest": {
-      "useBabelrc": true
+      "babelConfig": {
+        "plugins": ["dynamic-import-node"]
+      },
+      "tsConfig": "<rootDir>/tsconfig.node.json"
     }
   },
-  "moduleFileExtensions": [
-    "js",
-    "json",
-    "jsx",
-    "ts",
-    "tsx"
-  ],
-  "setupFiles": [
-    "<rootDir>/.jest/shims.ts"
-  ],
-  "setupTestFrameworkScriptFile": "<rootDir>/.jest/setup.ts",
+  "preset": "ts-jest",
+  "setupTestFrameworkScriptFile": "<rootDir>/jest/setup.ts",
   "snapshotSerializers": [
     "enzyme-to-json/serializer"
-  ],
-  "testRegex": "(/__tests__/.*|\\.(test|spec))\\.tsx?$",
-  "transform": {
-    ".tsx?": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-  }
+  ]
 }

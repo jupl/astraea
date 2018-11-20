@@ -39,17 +39,10 @@ export const Button = styled.button`
 
 /** Data for color page component */
 export interface Props {
-  /** CSS color to show */
-  color: string
-  /** Additional class names to include */
   className?: string
-}
-/** Actions for color page component */
-export interface Actions {
-  /** Handler when user wants to go to next color */
-  onNextColor(): void
-  /** Handler when user wants to go to previous color */
-  onPreviousColor(): void
+  selectedColor: string
+  nextColor(): void
+  previousColor(): void
 }
 
 /**
@@ -59,16 +52,16 @@ export interface Actions {
  */
 export function ColorPage({
   className,
-  color,
-  onNextColor,
-  onPreviousColor,
-}: Props & Actions) {
+  nextColor,
+  previousColor,
+  selectedColor,
+}: Props) {
   return (
-    <StyledBackground color={color} className={className}>
+    <StyledBackground color={selectedColor} className={className}>
       <Gradient>
-        <Button onClick={onPreviousColor}>&lt;</Button>
+        <Button onClick={previousColor}>&lt;</Button>
         <Text>Hello, World</Text>
-        <Button onClick={onNextColor}>&gt;</Button>
+        <Button onClick={nextColor}>&gt;</Button>
       </Gradient>
     </StyledBackground>
   )

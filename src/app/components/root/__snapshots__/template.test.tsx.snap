@@ -2,6 +2,6 @@
 
 exports[`<AppRoot> Template should render as expected 1`] = `
 <styled.div>
-  <Styled(Connect(ColorPage)) />
+  <Styled(Component) />
 </styled.div>
 `;

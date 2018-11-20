@@ -1,12 +1,12 @@
-import {shallow} from 'enzyme'
+import {mount, shallow} from 'enzyme'
 import * as React from 'react'
 import {Button, ColorPage} from './template'
 
 describe('<ColorPage> Template', () => {
   const props = {
-    color: 'white',
-    onNextColor: jest.fn(),
-    onPreviousColor: jest.fn(),
+    nextColor: jest.fn(),
+    previousColor: jest.fn(),
+    selectedColor: 'white',
   }
 
   it('should render as expected', () => {
@@ -14,20 +14,20 @@ describe('<ColorPage> Template', () => {
   })
 
   it('should invoke events as expected', () => {
-    const component = shallow(<ColorPage {...props} />)
+    const component = mount(<ColorPage {...props} />)
     const buttons = component.find(Button)
     const previousButton = buttons.at(0)
     const nextButton = buttons.at(1)
 
-    expect(props.onPreviousColor).not.toBeCalled()
-    expect(props.onNextColor).not.toBeCalled()
+    expect(props.previousColor).not.toBeCalled()
+    expect(props.nextColor).not.toBeCalled()
 
     previousButton.simulate('click')
-    expect(props.onPreviousColor.mock.calls.length).toBe(1)
-    expect(props.onNextColor).not.toHaveBeenCalled()
+    expect(props.previousColor.mock.calls.length).toBe(1)
+    expect(props.nextColor).not.toHaveBeenCalled()
 
     nextButton.simulate('click')
-    expect(props.onPreviousColor.mock.calls.length).toBe(1)
-    expect(props.onNextColor.mock.calls.length).toBe(1)
+    expect(props.previousColor.mock.calls.length).toBe(1)
+    expect(props.nextColor.mock.calls.length).toBe(1)
   })
 })

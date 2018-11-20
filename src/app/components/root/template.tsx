@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import {ColorPage} from '../../../color/components/page'
 
@@ -23,10 +23,8 @@ const StyledColorPage = styled(ColorPage)`
  * Render root component representing the entire application
  * @return Root component
  */
-export function AppRoot() {
-  return (
-    <Container>
-      <StyledColorPage />
-    </Container>
-  )
-}
+export const AppRoot = () => (
+  <Container>
+    <StyledColorPage />
+  </Container>
+)

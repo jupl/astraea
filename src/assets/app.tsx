@@ -1,29 +1,23 @@
+import * as colors from 'colors.css'
 import 'normalize.css'
-import * as React from 'react'
+import React from 'react'
 import {render as renderToDOM} from 'react-dom'
-import createSagaMiddleware from 'redux-saga'
 import {AppRoot} from '../app/components/root'
-import {createReducer} from '../app/reducer'
-import {saga} from '../app/saga'
 import {Container} from '../common/components/container'
-import {createStore} from '../common/store'
+
+const COLORS: [string, ...string[]] = [
+  colors.teal,
+  colors.green,
+  colors.yellow,
+  colors.orange,
+]
 
 // Reference app container to render to
 const container = document.getElementById('container')!
 
-// Create Redux store instance
-const sagaMiddleware = createSagaMiddleware()
-const store = createStore({
-  middlewares: [sagaMiddleware],
-  reducer: createReducer(),
-})
-sagaMiddleware.run(saga)
-
 // Render application. Also register to rerender if hot loading is available.
 if(module.hot !== undefined) {
   module.hot.accept('../app/components/root', render)
-  module.hot.accept('../app/reducer', updateReducer)
-  module.hot.accept('../app/saga', () => true)
   module.hot.accept('../common/components/container', render)
 }
 render()
@@ -34,13 +28,5 @@ render()
  * multiple times to rerender when a hot reload occurs.
  */
 function render() {
-  renderToDOM(<Container store={store}><AppRoot /></Container>, container)
-}
-
-/**
- * Update the reducer for the store. This may be called multiple times when a
- * hot reload occurs.
- */
-function updateReducer() {
-  store.replaceReducer(createReducer())
+  renderToDOM(<Container><AppRoot colors={COLORS} /></Container>, container)
 }
