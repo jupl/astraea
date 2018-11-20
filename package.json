@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "npm run build:prod",
-    "clean": "trash dist",
+    "clean": "trash dist/assets",
     "coverage": "npm run test -- --coverage",
     "coverage:watch": "npm run coverage -- --watch",
     "lint": "tsc && npm run lint:file",
@@ -68,8 +68,8 @@
     "tslint-sonarts": "^1.8.0",
     "typescript": "^3.1.6",
     "typescript-tslint-plugin": "^0.1.0",
-    "wcb": "^0.12.4",
-    "webpack": "^4.25.1",
+    "wcb": "^0.12.6",
+    "webpack": "^4.26.0",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
   }
