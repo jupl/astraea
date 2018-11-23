@@ -70,7 +70,7 @@
     "tslint-sonarts": "^1.8.0",
     "typescript": "^3.1.6",
     "typescript-tslint-plugin": "^0.1.0",
-    "wcb": "^0.13.2",
+    "wcb": "^0.13.3",
     "webpack": "^4.26.0",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
