@@ -1,6 +1,11 @@
 {
-  "plugins": ["react-hot-loader/babel"],
-  "presets": [["@babel/preset-env", {"modules": false}]],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
+    "react-hot-loader/babel"
+  ],
+  "presets": [
+    ["@babel/preset-env", {"modules": false, "useBuiltIns": "usage"}]
+  ],
   "env": {
     "production": {
       "plugins": ["@babel/plugin-transform-react-inline-elements"]

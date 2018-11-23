@@ -1,14 +1,18 @@
-import 'normalize.css'
 import React from 'react'
 import {render as renderToDOM} from 'react-dom'
 import {AppRoot} from '../app/components/root'
 import {Container} from '../common/components/container'
 
 // Reference app container to render to
-const container = document.getElementById('container')!
+const ID = 'container'
+let container = document.getElementById(ID)
+if(container === null) {
+  container = Object.assign(document.createElement('div'), {id: ID})
+  document.body.appendChild(container)
+}
 
 // Render application. Also register to rerender if hot loading is available.
-if(module.hot !== undefined) {
+if(module.hot) { // tslint:disable-line:strict-boolean-expressions
   module.hot.accept('../app/components/root', render)
   module.hot.accept('../common/components/container', render)
 }
