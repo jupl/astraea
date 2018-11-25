@@ -4,7 +4,7 @@ import {AppRoot} from '../app/components/root'
 import {Container} from '../common/components/container'
 
 // Reference app container to render to
-const ID = 'container'
+const ID = 'root'
 let container = document.getElementById(ID)
 if(container === null) {
   container = Object.assign(document.createElement('div'), {id: ID})
