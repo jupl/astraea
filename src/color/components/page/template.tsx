@@ -1,18 +1,8 @@
+import {IconButton} from '@material-ui/core'
+import {NavigateBefore, NavigateNext} from '@material-ui/icons'
 import * as React from 'react'
 import styled from 'styled-components'
-
-// Background component
-interface BackgroundProps extends React.HTMLProps<HTMLDivElement> {
-  color: string
-}
-const StyledBackground = styled(Background)`
-  transition: background 0.8s ease-out;
-  display: flex;
-  background-color: ${({color}) => color};
-`
-function Background({color: _, ...props}: BackgroundProps) {
-  return <div {...props} />
-}
+import {GlobalStyle} from './global'
 
 // Text component
 const Text = styled.span`
@@ -26,20 +16,12 @@ const Gradient = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(255, 255, 255, 0.4), transparent);
-`
-
-/** Button component */
-export const Button = styled.button`
-  border-radius: 50%;
-  background: radial-gradient(white, gainsboro);
-  border-color: gainsboro;
-  outline: none;
 `
 
 /** Data for color page component */
 export interface Props {
   className?: string
+  autoColor: boolean
   selectedColor: string
   nextColor(): void
   previousColor(): void
@@ -51,18 +33,23 @@ export interface Props {
  * @return Color page component
  */
 export function ColorPage({
-  className,
+  autoColor,
   nextColor,
   previousColor,
   selectedColor,
 }: Props) {
   return (
-    <StyledBackground color={selectedColor} className={className}>
+    <>
+      <GlobalStyle color={selectedColor} />
       <Gradient>
-        <Button onClick={previousColor}>&lt;</Button>
-        <Text>Hello, World</Text>
-        <Button onClick={nextColor}>&gt;</Button>
+        <IconButton color="primary" onClick={previousColor}>
+          <NavigateBefore />
+        </IconButton>
+        <Text>Auto color cycling is {autoColor ? 'on' : 'off'}</Text>
+        <IconButton color="primary" onClick={nextColor}>
+          <NavigateNext />
+        </IconButton>
       </Gradient>
-    </StyledBackground>
+    </>
   )
 }

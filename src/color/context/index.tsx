@@ -4,6 +4,7 @@ const TIMER = 4000
 
 /** Props injected into component */
 export interface Context {
+  autoColor: boolean
   selectedColor: string
   previousColor(): void
   nextColor(): void
@@ -11,6 +12,7 @@ export interface Context {
 
 /** Initial context value for validation */
 export const INITIAL_CONTEXT: Context = {
+  autoColor: false,
   nextColor: undefined!,
   previousColor: undefined!,
   selectedColor: 'white',
@@ -29,6 +31,7 @@ export interface Props {
 export class Provider extends Component<Props, Context> {
   /** Initial state */
   state = {
+    autoColor: false,
     colors: this.props.colors,
     nextColor: () => {
       this.stopTimer()
@@ -45,6 +48,7 @@ export class Provider extends Component<Props, Context> {
 
   componentDidMount() {
     this.intervalId = window.setInterval(() => this.nextColor(), TIMER)
+    this.setState({autoColor: true})
   }
 
   componentDidUpdate(props: Props) {
@@ -75,6 +79,7 @@ export class Provider extends Component<Props, Context> {
 
   private stopTimer() {
     window.clearInterval(this.intervalId)
+    this.setState({autoColor: false})
   }
 
   private jumpColor(count: number) {

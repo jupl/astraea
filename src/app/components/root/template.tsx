@@ -1,30 +1,56 @@
-import React from 'react'
+import {AppBar, CircularProgress, Toolbar, Typography} from '@material-ui/core'
+import React, {ComponentProps, Suspense} from 'react'
+import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 import styled from 'styled-components'
-import {ColorPage} from '../../../color/components/page'
-
-// Container component
-const Container = styled.div`
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: auto;
-  display: flex;
-  background-color: white;
-`
-
-// Styled color page component
-const StyledColorPage = styled(ColorPage)`
-  flex: 1;
-`
+import {GlobalStyle} from './global'
 
 /**
  * Render root component representing the entire application
  * @return Root component
  */
 export const AppRoot = () => (
-  <Container>
-    <StyledColorPage />
-  </Container>
+  <Router>
+    <>
+      <GlobalStyle />
+      <AppBar>
+        <Toolbar>
+          <ToolbarLink to="/">
+            <Typography variant="h6">Application</Typography>
+          </ToolbarLink>
+        </Toolbar>
+      </AppBar>
+      <Suspense fallback={<Loading />}>
+        <Switch>
+          <Route path="/color" exact component={ColorPage} />
+          <Route path="/" exact component={HomePage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </Suspense>
+    </>
+  </Router>
 )
+
+type ProgressProps = ComponentProps<typeof CircularProgress>
+const Loading = styled((p: ProgressProps) => <CircularProgress {...p} />)`
+  margin: 0 auto;
+  align-self: center;
+`
+
+const ToolbarLink = styled(Link)`
+  text-decoration: none;
+`
+
+const HomePage = React.lazy(async() => {
+  const module = await import('../home-page')
+  return {default: module.AppHomePage}
+})
+
+const NotFoundPage = React.lazy(async() => {
+  const module = await import('../not-found-page')
+  return {default: module.AppNotFoundPage}
+})
+
+const ColorPage = React.lazy(async() => {
+  const module = await import('../../../color/components/page')
+  return {default: module.ColorPage}
+})

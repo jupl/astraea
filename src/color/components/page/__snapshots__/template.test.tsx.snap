@@ -1,23 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ColorPage> Template should render as expected 1`] = `
-<Styled(Background)
-  color="white"
->
+<Fragment>
+  <GlobalStyleComponent
+    color="white"
+    suppressMultiMountWarning={false}
+  />
   <styled.div>
-    <styled.button
+    <WithStyles(IconButton)
+      color="primary"
       onClick={[MockFunction]}
     >
-      &lt;
-    </styled.button>
+      <pure(NavigateBeforeIcon) />
+    </WithStyles(IconButton)>
     <styled.span>
-      Hello, World
+      Auto color cycling is 
+      off
     </styled.span>
-    <styled.button
+    <WithStyles(IconButton)
+      color="primary"
       onClick={[MockFunction]}
     >
-      &gt;
-    </styled.button>
+      <pure(NavigateNextIcon) />
+    </WithStyles(IconButton)>
   </styled.div>
-</Styled(Background)>
+</Fragment>
+`;
+
+exports[`<ColorPage> Template should render as expected 2`] = `
+<Fragment>
+  <GlobalStyleComponent
+    color="white"
+    suppressMultiMountWarning={false}
+  />
+  <styled.div>
+    <WithStyles(IconButton)
+      color="primary"
+      onClick={[MockFunction]}
+    >
+      <pure(NavigateBeforeIcon) />
+    </WithStyles(IconButton)>
+    <styled.span>
+      Auto color cycling is 
+      on
+    </styled.span>
+    <WithStyles(IconButton)
+      color="primary"
+      onClick={[MockFunction]}
+    >
+      <pure(NavigateNextIcon) />
+    </WithStyles(IconButton)>
+  </styled.div>
+</Fragment>
 `;

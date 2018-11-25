@@ -1,9 +1,11 @@
+import {IconButton} from '@material-ui/core'
 import {mount, shallow} from 'enzyme'
 import * as React from 'react'
-import {Button, ColorPage} from './template'
+import {ColorPage} from './template'
 
 describe('<ColorPage> Template', () => {
   const props = {
+    autoColor: false,
     nextColor: jest.fn(),
     previousColor: jest.fn(),
     selectedColor: 'white',
@@ -11,11 +13,12 @@ describe('<ColorPage> Template', () => {
 
   it('should render as expected', () => {
     expect(shallow(<ColorPage {...props} />)).toMatchSnapshot()
+    expect(shallow(<ColorPage {...props} autoColor />)).toMatchSnapshot()
   })
 
   it('should invoke events as expected', () => {
     const component = mount(<ColorPage {...props} />)
-    const buttons = component.find(Button)
+    const buttons = component.find(IconButton)
     const previousButton = buttons.at(0)
     const nextButton = buttons.at(1)
 

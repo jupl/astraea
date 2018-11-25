@@ -1,5 +1,6 @@
-import * as Context from './context'
+import {Context} from '../../context'
+import {withContext} from '../../util'
 import * as Template from './template'
 
-/** Wrap color page component with data from store */
-export const ColorPage = Context.wrap(Template.ColorPage)
+/** Inject context data into component */
+export const ColorPage = withContext(Context)(Template.ColorPage)
