@@ -6,13 +6,13 @@ import {Container} from '../common/components/container'
 // Reference app container to render to
 const ID = 'root'
 let container = document.getElementById(ID)
-if(container === null) {
+if(!container) {
   container = Object.assign(document.createElement('div'), {id: ID})
   document.body.appendChild(container)
 }
 
 // Render application. Also register to rerender if hot loading is available.
-if(module.hot) { // tslint:disable-line:strict-boolean-expressions
+if(module.hot) {
   module.hot.accept('../app/components/root', render)
   module.hot.accept('../common/components/container', render)
 }
