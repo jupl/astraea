@@ -4,7 +4,6 @@ exports[`<ColorPage> Template should render as expected 1`] = `
 <Fragment>
   <GlobalStyleComponent
     color="white"
-    suppressMultiMountWarning={false}
   />
   <styled.div>
     <WithStyles(IconButton)
@@ -31,7 +30,6 @@ exports[`<ColorPage> Template should render as expected 2`] = `
 <Fragment>
   <GlobalStyleComponent
     color="white"
-    suppressMultiMountWarning={false}
   />
   <styled.div>
     <WithStyles(IconButton)

@@ -21,7 +21,7 @@ if(container === null) {
 }
 
 // Render application. Also register to rerender if hot loading is available.
-if(module.hot) { // tslint:disable-line:strict-boolean-expressions
+if(module.hot) {
   module.hot.accept('../app/components/root', render)
   module.hot.accept('../common/components/container', render)
   module.hot.accept('../common/theme', render)

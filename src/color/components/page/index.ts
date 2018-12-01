@@ -1,5 +1,5 @@
+import {withContext} from '../../../common/util'
 import {Context} from '../../context'
-import {withContext} from '../../util'
 import * as Template from './template'
 
 /** Inject context data into component */
