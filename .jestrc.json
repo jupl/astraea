@@ -1,0 +1,19 @@
+{
+  "coverageDirectory": "<rootDir>/.coverage",
+  "globals": {
+    "ts-jest": {
+      "babelConfig": {
+        "plugins": ["dynamic-import-node"]
+      },
+      "tsConfig": "<rootDir>/tsconfig.node.json"
+    }
+  },
+  "moduleNameMapper": {
+    "^~/(.*)": "<rootDir>/src/$1"
+  },
+  "preset": "ts-jest",
+  "setupTestFrameworkScriptFile": "<rootDir>/jest/setup.ts",
+  "snapshotSerializers": [
+    "enzyme-to-json/serializer"
+  ]
+}

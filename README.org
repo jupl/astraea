@@ -1,0 +1,16 @@
+* Development
+Launch both servers in Node and Java. For instance:
+
+#+BEGIN_EXAMPLE
+npm run server
+
+# In another window, or launch app using something like IntelliJ
+./gradlew bootRun
+#+END_EXAMPLE
+
+* Building
+Before assembling a JAR, run the following command to generate HTML/CSS/JS and place it in resources:
+
+#+BEGIN_EXAMPLE
+npm run build:prod
+#+END_EXAMPLE
