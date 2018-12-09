@@ -2,10 +2,5 @@
   "extends": [
     "@jupl/tslint-config",
     "@jupl/tslint-config/jsx"
-  ],
-  "rules": {
-    "no-magic-numbers": false,
-    "no-object-mutation": false,
-    "no-require-imports": true
-  }
+  ]
 }
