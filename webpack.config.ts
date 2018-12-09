@@ -8,7 +8,13 @@ export default addRules(createConfiguration({
   atlOptions: {
     useBabel: true,
   },
-  base: {
+  cssLoaders: [{test: /\.css$/, use: ['css-loader']}],
+  destination: 'dist/assets',
+  devServer: true,
+  html: !isStorybook,
+  source: 'src/assets',
+  split: true,
+  webpack: {
     devServer: {
       historyApiFallback: true,
     },
@@ -16,12 +22,6 @@ export default addRules(createConfiguration({
       publicPath: '/',
     },
   },
-  cssLoaders: [{test: /\.css$/, use: ['css-loader']}],
-  destination: 'dist/assets',
-  devServer: true,
-  html: !isStorybook,
-  source: 'src/assets',
-  split: true,
 }), [
   {test: /\.(gif|jpg|jpeg|png|svg)$/, use: ['file-loader']},
 ])
