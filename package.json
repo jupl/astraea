@@ -71,7 +71,7 @@
     "tslint": "^5.11.0",
     "typescript": "^3.2.1",
     "typescript-tslint-plugin": "^0.1.2",
-    "wcb": "^0.13.4",
+    "wcb": "^0.14.0",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
