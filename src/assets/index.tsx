@@ -1,5 +1,5 @@
 import React from 'react'
-import {render as renderToDOM} from 'react-dom'
+import {render} from 'react-dom'
 import {AppRoot} from '../app/components/root'
 import {Container} from '../common/components/container'
 
@@ -15,4 +15,4 @@ if(!container) {
   container = Object.assign(document.createElement('div'), {id: ID})
   document.body.appendChild(container)
 }
-renderToDOM(<Container><AppRoot /></Container>, container)
+render(<Container><AppRoot /></Container>, container)
