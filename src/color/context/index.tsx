@@ -20,7 +20,7 @@ export const INITIAL_CONTEXT: Context = {
 
 /** Context */
 export const Context = createContext(INITIAL_CONTEXT)
-Context.displayName = 'Color'
+Object.assign(Context, {displayName: 'Color'})
 
 /** Component properties */
 export interface Props {
