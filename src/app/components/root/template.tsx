@@ -1,8 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Container} from '../../../common/components/container'
+
+/**
+ * Render root component representing the entire application
+ * @return Root component
+ */
+export const AppRoot = () => (
+  <Container>
+    <Root>
+      Hello, World
+    </Root>
+  </Container>
+)
 
 // Container component
-const Container = styled.div`
+const Root = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -14,9 +27,3 @@ const Container = styled.div`
   align-items: center;
   background: linear-gradient(white, gainsboro);
 `
-
-/**
- * Render root component representing the entire application
- * @return Root component
- */
-export const AppRoot = () => <Container>Hello, World</Container>

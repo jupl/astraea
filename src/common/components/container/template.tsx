@@ -1,7 +1,6 @@
 import React, {ReactNode} from 'react'
 
-/** Component properties */
-export interface Props {
+interface Props {
   children: ReactNode
 }
 
