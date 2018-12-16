@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "allowJs": true,
+    "baseUrl": "./src",
     "esModuleInterop": true,
     "jsx": "react",
     "maxNodeModuleJsDepth": 1,
@@ -11,6 +12,9 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "paths": {
+      "~/*": ["*"]
+    },
     "plugins": [
       {"name": "typescript-tslint-plugin"}
     ],

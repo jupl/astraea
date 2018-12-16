@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Container} from '../../../common/components/container'
+import {Container} from '~/common/components/container'
 
 /**
  * Render root component representing the entire application

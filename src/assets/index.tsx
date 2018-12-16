@@ -1,6 +1,6 @@
 import React from 'react'
 import {render} from 'react-dom'
-import {AppRoot} from '../app/components/root'
+import {AppRoot} from '~/app/components/root'
 
 // Render application
 const ID = 'root'

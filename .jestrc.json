@@ -8,6 +8,9 @@
       "tsConfig": "<rootDir>/tsconfig.node.json"
     }
   },
+  "moduleNameMapper": {
+    "^~/(.*)": "<rootDir>/src/$1"
+  },
   "preset": "ts-jest",
   "setupTestFrameworkScriptFile": "<rootDir>/jest/setup.ts",
   "snapshotSerializers": [
