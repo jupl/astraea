@@ -1,9 +1,3 @@
 {
-  "extends": [
-    "@jupl/tslint-config",
-    "@jupl/tslint-config/jsx"
-  ],
-  "rules": {
-    "no-implicit-dependencies": [true, "dev", ["~"]]
-  }
+  "extends": "@jupl/ts"
 }
