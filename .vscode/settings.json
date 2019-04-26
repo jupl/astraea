@@ -1,0 +1,6 @@
+{
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "tslint.autoFixOnSave": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

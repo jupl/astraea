@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Server",
+      "type": "npm",
+      "script": "server",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": {
+          "regexp": "_____"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^.*Project is running at.*$",
+          "endsPattern": "^.*Compiled successfully.*$"
+        }
+      }
+    }
+  ]
+}
