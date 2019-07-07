@@ -57,7 +57,7 @@
     "normalize.css": "^8.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-hot-loader": "^4.8.4",
+    "react-hot-loader": "^4.12.5",
     "styled-components": "^4.2.0",
     "trash-cli": "^2.0.0",
     "ts-node": "^8.1.0",
