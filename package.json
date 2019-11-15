@@ -55,7 +55,7 @@
     "jest-enzyme": "^7.0.2",
     "lint-staged": "^8.1.5",
     "normalize.css": "^8.0.1",
-    "react": "^16.8.6",
+    "react": "^16.12.0",
     "react-dom": "^16.8.6",
     "react-hot-loader": "^4.8.4",
     "styled-components": "^4.2.0",
