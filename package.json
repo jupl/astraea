@@ -20,7 +20,7 @@
     "build:story": "cross-env STORYBOOK=true NODE_ENV=production TS_NODE_PROJECT=tsconfig.base.json build-storybook -o dist/story"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.3",
+    "@babel/core": "^7.8.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-react-inline-elements": "^7.2.0",
     "@babel/polyfill": "^7.4.3",
