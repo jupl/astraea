@@ -27,7 +27,7 @@
     "@babel/preset-env": "^7.4.3",
     "@jupl/ts": "0.0.5",
     "@storybook/addon-actions": "^5.3.11",
-    "@storybook/react": "^5.0.10",
+    "@storybook/react": "^5.3.11",
     "@types/enzyme": "^3.9.1",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^23.3.14",
