@@ -28,7 +28,7 @@
     "@jupl/ts": "0.0.5",
     "@storybook/addon-actions": "^5.0.10",
     "@storybook/react": "^5.0.10",
-    "@types/enzyme": "^3.9.1",
+    "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^23.3.14",
     "@types/node": "^11.13.7",
