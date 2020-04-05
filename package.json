@@ -53,7 +53,7 @@
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "jest-enzyme": "^7.0.2",
-    "lint-staged": "^8.1.5",
+    "lint-staged": "^10.1.2",
     "normalize.css": "^8.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
